@@ -21,12 +21,17 @@ import {
   Sparkles,
   CheckSquare,
   Compass,
-  AlertCircle
+  AlertCircle,
+  Pen,
+  Highlighter,
+  Eraser,
+  PenTool
 } from 'lucide-react';
 import { Ayah, UserSettings } from '../types';
 import { ALL_PARA1_AYAHS, getAudioUrlForAyah } from '../data/quranProvider';
 import { getAyahQA, getAyahActionPoints } from '../data/ayahStudyData';
 import { saveLastRead } from '../utils/storage';
+import { AyahAnnotationCanvas } from './AyahAnnotationCanvas';
 
 interface AyahReaderViewProps {
   currentSurahNumber: number;
@@ -61,9 +66,27 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
   const [audioDuration, setAudioDuration] = useState(0);
   const [copied, setCopied] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isAnnotating, setIsAnnotating] = useState(false);
+  const [hasSavedAnnotations, setHasSavedAnnotations] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const tabsScrollRef = useRef<HTMLDivElement | null>(null);
+  const cardContainerRef = useRef<HTMLDivElement | null>(null);
+
+  // Check if current Ayah has saved annotations
+  useEffect(() => {
+    try {
+      const key = `maarif_draw_${currentAyah.surahNumber}_${currentAyah.ayahNumber}`;
+      const saved = localStorage.getItem(key);
+      if (saved && JSON.parse(saved).length > 0) {
+        setHasSavedAnnotations(true);
+      } else {
+        setHasSavedAnnotations(false);
+      }
+    } catch {
+      setHasSavedAnnotations(false);
+    }
+  }, [currentAyah.surahNumber, currentAyah.ayahNumber, isAnnotating]);
 
   // Update Automatic Last Read when viewing an ayah
   useEffect(() => {
@@ -206,6 +229,23 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           </div>
 
           <div className="flex items-center gap-0.5">
+            {/* Pencil / Highlighter / Eraser Annotation Button */}
+            <button
+              id="btn-reader-annotation"
+              onClick={() => setIsAnnotating(!isAnnotating)}
+              className={`p-2 rounded-full transition-all cursor-pointer relative ${
+                isAnnotating
+                  ? 'bg-[#524631] text-amber-300 ring-2 ring-[#EDE9DE]'
+                  : 'hover:bg-[#63553C] text-white'
+              }`}
+              title="Pencil, Highlighter & Eraser / قلم، ہائی لائٹر اور ربڑ"
+            >
+              <PenTool className="w-4.5 h-4.5" />
+              {hasSavedAnnotations && !isAnnotating && (
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 ring-1 ring-[#7D6B4B]" />
+              )}
+            </button>
+
             {/* Share / Options */}
             <button
               id="btn-reader-share"
@@ -287,22 +327,55 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
       {/* Main Ayah Card Container */}
       <div className="max-w-xl mx-auto p-3.5 space-y-3.5">
         <div
+          ref={cardContainerRef}
           id="main-ayah-card"
-          className={`rounded-2xl shadow-xs border p-5 transition-all relative ${
+          className={`rounded-2xl shadow-xs border p-5 transition-all relative overflow-hidden ${
             settings.theme === 'sepia'
               ? 'bg-[#FDFCF8] border-[#E5E0D0]'
               : settings.theme === 'dark'
               ? 'bg-[#262420] border-[#3D3A34] text-[#EDE9DE]'
               : 'bg-[#FDFCF8] border-[#E5E0D0]'
           }`}
-          onClick={() => onOpenSelectOption(currentAyah)}
+          onClick={() => {
+            if (!isAnnotating) {
+              onOpenSelectOption(currentAyah);
+            }
+          }}
         >
+          {/* Interactive Annotation Canvas Overlay & Dock */}
+          <AyahAnnotationCanvas
+            surahNumber={currentAyah.surahNumber}
+            ayahNumber={currentAyah.ayahNumber}
+            containerRef={cardContainerRef}
+            isActive={isAnnotating}
+            onClose={() => setIsAnnotating(false)}
+          />
+
           {/* Quick Ayah Actions bar */}
-          <div className="flex items-center justify-between pb-3 border-b border-[#E5E0D0] text-xs text-[#9A8D70] font-sans">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E5E0D0] text-xs text-[#9A8D70] font-sans relative z-10">
             <span className="font-semibold text-[#7D6B4B] flex items-center gap-1">
               <span>Para 1</span> • <span>Ruku {currentAyah.rukuNumber}</span> • <span>Page {currentAyah.pageNumber}</span>
             </span>
-            <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
+              {/* Annotation Toggle Pill */}
+              <button
+                id="btn-card-annotate-toggle"
+                onClick={() => setIsAnnotating(!isAnnotating)}
+                className={`px-2.5 py-1 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
+                  isAnnotating
+                    ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                    : hasSavedAnnotations
+                    ? 'bg-amber-100 text-amber-900 border border-amber-300 font-semibold'
+                    : 'bg-[#F4F1E6] hover:bg-[#EAE5D5] text-[#7D6B4B] border border-[#E5E0D0]'
+                }`}
+                title="Pencil, Highlighter & Eraser (قلم و ہائی لائٹر)"
+              >
+                <Pen className="w-3.5 h-3.5" />
+                <span className="font-urdu text-[11.5px]">
+                  {isAnnotating ? 'ڈرا بند کریں' : hasSavedAnnotations ? 'نوٹس موجود ہیں' : 'قلم و ہائی لائٹر'}
+                </span>
+              </button>
+
               <button
                 onClick={handleCopyText}
                 className="p-1 text-[#9A8D70] hover:text-[#7D6B4B] transition-colors cursor-pointer"

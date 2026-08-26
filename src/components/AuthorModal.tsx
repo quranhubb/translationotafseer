@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { UserCheck, X, BookOpen, Award, CheckCircle2 } from 'lucide-react';
 import { AUTHOR_DATA } from '../data/author';
+import appLogo from '../assets/images/maarif_quran_logo_1787749243934.jpg';
 
 interface AuthorModalProps {
   isOpen: boolean;
@@ -17,9 +18,19 @@ export const AuthorModal: React.FC<AuthorModalProps> = ({ isOpen, onClose }) => 
       <div className="bg-[#FDFCF8] w-full max-w-lg rounded-2xl shadow-2xl border border-[#E5E0D0] flex flex-col max-h-[85vh] animate-in fade-in zoom-in-95 duration-150 overflow-hidden">
         {/* Header */}
         <div className="p-4 border-b border-[#E5E0D0] flex items-center justify-between bg-[#F4F1E6]">
-          <div className="flex items-center gap-2 text-[#7D6B4B]">
-            <UserCheck className="w-5 h-5" />
-            <h3 className="font-bold text-[#2D2D2D] text-base font-serif">About the Author & Tafseer</h3>
+          <div className="flex items-center gap-2.5 text-[#7D6B4B]">
+            <div className="w-8 h-8 rounded-lg overflow-hidden border border-[#DCD7C9] shrink-0 shadow-2xs">
+              <img
+                src={appLogo}
+                alt="App Logo"
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div>
+              <h3 className="font-bold text-[#2D2D2D] text-base font-serif leading-tight">About the Author & Tafseer</h3>
+              <p className="text-[10px] text-[#7D6B4B] font-sans font-medium">Maarif-ul-Quran • معارف القرآن</p>
+            </div>
           </div>
           <button onClick={onClose} className="p-1 text-[#9A8D70] hover:text-[#2D2D2D] cursor-pointer">
             <X className="w-5 h-5" />

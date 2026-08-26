@@ -14,6 +14,7 @@ interface SelectOptionModalProps {
   onOpenMushafMode: () => void;
   onOpenWebsite: () => void;
   onToggleFullScreen: () => void;
+  onOpenAnnotation?: () => void;
 }
 
 export const SelectOptionModal: React.FC<SelectOptionModalProps> = ({
@@ -29,10 +30,12 @@ export const SelectOptionModal: React.FC<SelectOptionModalProps> = ({
   onOpenMushafMode,
   onOpenWebsite,
   onToggleFullScreen,
+  onOpenAnnotation,
 }) => {
   if (!isOpen || !ayah) return null;
 
   const options = [
+    { label: '✏️ Pencil & Highlighter (قلم و ہائی لائٹر)', action: onOpenAnnotation || (() => {}) },
     { label: 'Set Manual Last Read', action: onSetManualLastRead },
     { label: 'Add to Collection', action: onAddToCollection },
     { label: 'Save as Bookmark', action: onSaveBookmark },

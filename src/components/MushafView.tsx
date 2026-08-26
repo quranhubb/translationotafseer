@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight, BookOpen, PenTool, Pen } from 'lucide-react';
 import { ALL_PARA1_AYAHS } from '../data/quranProvider';
 import { Ayah } from '../types';
+import { AyahAnnotationCanvas } from './AyahAnnotationCanvas';
 
 interface MushafViewProps {
   onSelectAyah: (surahNumber: number, ayahNumber: number) => void;
@@ -9,14 +10,16 @@ interface MushafViewProps {
 
 export const MushafView: React.FC<MushafViewProps> = ({ onSelectAyah }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [isAnnotating, setIsAnnotating] = useState(false);
   const totalPages = 21; // Para 1 spans pages 1 to 21 in Madani Mushaf
 
+  const pageContainerRef = useRef<HTMLDivElement | null>(null);
   const pageAyahs = ALL_PARA1_AYAHS.filter((a) => a.pageNumber === currentPage);
 
   return (
-    <div className="px-3 pb-24 pt-2">
+    <div className="px-3 pb-24 pt-2 max-w-xl mx-auto">
       {/* Mushaf Header Navigation */}
-      <div className="bg-[#FDFCF8] rounded-2xl p-3.5 border border-[#E5E0D0] shadow-2xs flex items-center justify-between mb-4">
+      <div className="bg-[#FDFCF8] rounded-2xl p-3 border border-[#E5E0D0] shadow-2xs flex items-center justify-between mb-4">
         <button
           onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
           disabled={currentPage === 1}
@@ -32,17 +35,47 @@ export const MushafView: React.FC<MushafViewProps> = ({ onSelectAyah }) => {
           <p className="text-[11px] text-[#9A8D70] font-medium font-sans">Juz 1 • Alif Lam Meem (الم)</p>
         </div>
 
-        <button
-          onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-          disabled={currentPage === totalPages}
-          className="p-2 rounded-xl text-[#2D2D2D] hover:bg-[#F4F1E6] disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
+        <div className="flex items-center gap-1">
+          {/* Annotation Toggle button */}
+          <button
+            onClick={() => setIsAnnotating(!isAnnotating)}
+            className={`p-2 rounded-xl transition-all cursor-pointer flex items-center gap-1 ${
+              isAnnotating
+                ? 'bg-[#7D6B4B] text-white shadow-xs'
+                : 'text-[#7D6B4B] hover:bg-[#F4F1E6]'
+            }`}
+            title="Pencil & Highlighter (قلم و ہائی لائٹر)"
+          >
+            <Pen className="w-4 h-4" />
+            <span className="font-urdu text-xs hidden sm:inline">
+              {isAnnotating ? 'بند کریں' : 'قلم'}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            className="p-2 rounded-xl text-[#2D2D2D] hover:bg-[#F4F1E6] disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
 
       {/* Page Content in Traditional Mushaf Frame */}
-      <div className="bg-[#FDFCF8] rounded-2xl border-2 border-[#7D6B4B]/30 shadow-md p-6 relative">
+      <div
+        ref={pageContainerRef}
+        className="bg-[#FDFCF8] rounded-2xl border-2 border-[#7D6B4B]/30 shadow-md p-6 relative overflow-hidden"
+      >
+        {/* Interactive Drawing & Highlighting Canvas */}
+        <AyahAnnotationCanvas
+          surahNumber={999}
+          ayahNumber={currentPage}
+          containerRef={pageContainerRef}
+          isActive={isAnnotating}
+          onClose={() => setIsAnnotating(false)}
+        />
+
         {/* Decorative corner borders */}
         <div className="absolute top-2.5 left-2.5 w-4 h-4 border-t-2 border-l-2 border-[#7D6B4B]/60 rounded-tl" />
         <div className="absolute top-2.5 right-2.5 w-4 h-4 border-t-2 border-r-2 border-[#7D6B4B]/60 rounded-tr" />
@@ -69,7 +102,11 @@ export const MushafView: React.FC<MushafViewProps> = ({ onSelectAyah }) => {
           {pageAyahs.map((a) => (
             <span
               key={a.id}
-              onClick={() => onSelectAyah(a.surahNumber, a.ayahNumber)}
+              onClick={() => {
+                if (!isAnnotating) {
+                  onSelectAyah(a.surahNumber, a.ayahNumber);
+                }
+              }}
               className="inline hover:bg-[#EAE5D5] hover:text-[#7D6B4B] cursor-pointer rounded px-1 transition-colors group"
               title={`Tap to view Tafseer: ${a.surahNameEnglish} ${a.ayahNumber}`}
             >
@@ -95,3 +132,4 @@ export const MushafView: React.FC<MushafViewProps> = ({ onSelectAyah }) => {
     </div>
   );
 };
+
