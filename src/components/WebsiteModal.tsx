@@ -1,5 +1,6 @@
 import React from 'react';
 import { Monitor, X, ExternalLink, Globe, BookOpen, Heart } from 'lucide-react';
+import appLogo from '../assets/images/maarif_quran_logo_transparent.png';
 
 interface WebsiteModalProps {
   isOpen: boolean;
@@ -37,8 +38,15 @@ export const WebsiteModal: React.FC<WebsiteModalProps> = ({ isOpen, onClose }) =
       <div className="bg-[#FDFCF8] w-full max-w-lg rounded-2xl shadow-2xl border border-[#E5E0D0] flex flex-col max-h-[85vh] animate-in fade-in zoom-in-95 duration-150 overflow-hidden">
         {/* Header */}
         <div className="p-4 border-b border-[#E5E0D0] flex items-center justify-between bg-[#F4F1E6]">
-          <div className="flex items-center gap-2 text-[#7D6B4B]">
-            <Monitor className="w-5 h-5" />
+          <div className="flex items-center gap-2.5 text-[#7D6B4B]">
+            <div className="w-8 h-8 shrink-0 flex items-center justify-center">
+              <img
+                src={appLogo}
+                alt="App Logo"
+                className="w-full h-full object-contain drop-shadow-xs"
+                referrerPolicy="no-referrer"
+              />
+            </div>
             <h3 className="font-bold text-[#2D2D2D] text-base font-serif">Quranic Resources & Websites</h3>
           </div>
           <button onClick={onClose} className="p-1 text-[#9A8D70] hover:text-[#2D2D2D] cursor-pointer">

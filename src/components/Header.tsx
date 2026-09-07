@@ -9,13 +9,13 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onOpenSettings, onOpenOverflow }) => {
   return (
-    <header id="main-header" className="bg-[#7D6B4B] text-white px-4 py-2.5 shadow-sm sticky top-0 z-30 flex items-center justify-between border-b border-[#63553C]">
-      <div className="flex items-center gap-2.5">
-        <div className="w-11 h-11 shrink-0 flex items-center justify-center">
+    <header id="main-header" className="bg-[#7D6B4B] text-white px-4 py-2 shadow-sm sticky top-0 z-30 flex items-center justify-between border-b border-[#63553C]">
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 shrink-0 flex items-center justify-center">
           <img
             src={appLogo}
-            alt="Maarif ul Quran App Logo"
-            className="w-full h-full object-contain drop-shadow-md"
+            alt="Maarif ul Quran Logo"
+            className="w-full h-full object-contain drop-shadow-md hover:scale-105 transition-transform duration-200"
             referrerPolicy="no-referrer"
           />
         </div>

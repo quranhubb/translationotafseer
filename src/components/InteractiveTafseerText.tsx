@@ -14,6 +14,41 @@ export const InteractiveTafseerText: React.FC<InteractiveTafseerTextProps> = ({ 
     setRevealedQuestions((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
 
+  const renderFormattedChunk = (chunk: string, keyPrefix: string) => {
+    const lines = chunk.split('\n');
+    return lines.map((line, lIdx) => {
+      const trimmed = line.trim();
+      if (!trimmed) {
+        return <div key={`${keyPrefix}-${lIdx}`} className="h-2" />;
+      }
+      if (trimmed.startsWith('### ')) {
+        return (
+          <h4
+            key={`${keyPrefix}-${lIdx}`}
+            className="text-base sm:text-lg font-bold text-[#7D6B4B] my-2.5 pb-1 border-b border-[#E5E0D0]/60"
+          >
+            {trimmed.replace(/^###\s+/, '')}
+          </h4>
+        );
+      }
+      const parts = line.split(/(\*\*.*?\*\*)/g);
+      return (
+        <p key={`${keyPrefix}-${lIdx}`} className="leading-relaxed my-1.5">
+          {parts.map((part, pIdx) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+              return (
+                <strong key={pIdx} className="font-bold text-[#204025]">
+                  {part.slice(2, -2)}
+                </strong>
+              );
+            }
+            return part;
+          })}
+        </p>
+      );
+    });
+  };
+
   // Regular expression to match inline interactive questions:
   // [QUESTION: ... | ANSWER: ...] or [سوال: ... | جواب: ...]
   const questionRegex = /\[(?:QUESTION|سوال):\s*(.+?)\s*\|\s*(?:ANSWER|جواب):\s*(.+?)\]/g;
@@ -32,9 +67,9 @@ export const InteractiveTafseerText: React.FC<InteractiveTafseerTextProps> = ({ 
     if (matchStart > lastIndex) {
       const textChunk = content.substring(lastIndex, matchStart);
       elements.push(
-        <span key={`text-${lastIndex}`} className="whitespace-pre-line leading-relaxed">
-          {textChunk}
-        </span>
+        <div key={`text-${lastIndex}`}>
+          {renderFormattedChunk(textChunk, `c-${lastIndex}`)}
+        </div>
       );
     }
 
@@ -119,9 +154,9 @@ export const InteractiveTafseerText: React.FC<InteractiveTafseerTextProps> = ({ 
   // Push any remaining text after the last match
   if (lastIndex < content.length) {
     elements.push(
-      <span key={`text-final`} className="whitespace-pre-line leading-relaxed">
-        {content.substring(lastIndex)}
-      </span>
+      <div key="text-final">
+        {renderFormattedChunk(content.substring(lastIndex), 'c-final')}
+      </div>
     );
   }
 
