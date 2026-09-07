@@ -1,7 +1,7 @@
 import React from 'react';
 import { Folder, Menu, BookOpen, Layers, Bookmark } from 'lucide-react';
 
-export type MainTabType = 'collections' | 'parah' | 'quran' | 'mushaf' | 'bookmarks';
+export type MainTabType = 'parah' | 'quran' | 'mushaf' | 'bookmarks' | 'collections';
 
 interface BottomNavBarProps {
   activeTab: MainTabType;
@@ -10,11 +10,11 @@ interface BottomNavBarProps {
 
 export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onChangeTab }) => {
   const navItems = [
-    { id: 'collections', label: 'Collections', icon: Folder },
-    { id: 'parah', label: 'Parah', icon: Menu },
-    { id: 'quran', label: 'Quran', icon: BookOpen },
+    { id: 'parah', label: 'Paras (Juz)', icon: Menu },
+    { id: 'quran', label: 'Surahs', icon: BookOpen },
     { id: 'mushaf', label: 'Mushaf', icon: Layers },
     { id: 'bookmarks', label: 'Bookmarks', icon: Bookmark },
+    { id: 'collections', label: 'Collections', icon: Folder },
   ];
 
   return (

@@ -51,7 +51,7 @@ export const NotesModal: React.FC<NotesModalProps> = ({
         <div className="p-4 border-b border-[#E5E0D0] flex items-center justify-between bg-[#F4F1E6]">
           <div className="flex items-center gap-2 text-[#7D6B4B]">
             <Edit3 className="w-5 h-5" />
-            <h3 className="font-bold text-[#2D2D2D] text-base font-serif">Tafseer & Ayah Notes (نوٹس)</h3>
+            <h3 className="font-bold text-[#2D2D2D] text-base font-serif">Tafseer & Ayah Notes</h3>
           </div>
           <div className="flex items-center gap-2 font-sans">
             {!isAdding && (

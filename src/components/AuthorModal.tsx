@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { UserCheck, X, BookOpen, Award, CheckCircle2 } from 'lucide-react';
 import { AUTHOR_DATA } from '../data/author';
-import appLogo from '../assets/images/maarif_quran_logo_1787749243934.jpg';
+import appLogo from '../assets/images/maarif_quran_logo_transparent.png';
 
 interface AuthorModalProps {
   isOpen: boolean;
@@ -19,11 +19,11 @@ export const AuthorModal: React.FC<AuthorModalProps> = ({ isOpen, onClose }) => 
         {/* Header */}
         <div className="p-4 border-b border-[#E5E0D0] flex items-center justify-between bg-[#F4F1E6]">
           <div className="flex items-center gap-2.5 text-[#7D6B4B]">
-            <div className="w-8 h-8 rounded-lg overflow-hidden border border-[#DCD7C9] shrink-0 shadow-2xs">
+            <div className="w-10 h-10 shrink-0 flex items-center justify-center">
               <img
                 src={appLogo}
                 alt="App Logo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain drop-shadow-sm"
                 referrerPolicy="no-referrer"
               />
             </div>

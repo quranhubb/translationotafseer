@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, X, ArrowRight, BookOpen } from 'lucide-react';
-import { ALL_PARA1_AYAHS } from '../data/quranProvider';
+import { ALL_AVAILABLE_AYAHS } from '../data/quranProvider';
 import { Ayah } from '../types';
 
 interface SearchModalProps {
@@ -16,7 +16,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSel
   if (!isOpen) return null;
 
   const results: Ayah[] = query.trim()
-    ? ALL_PARA1_AYAHS.filter((ayah) => {
+    ? ALL_AVAILABLE_AYAHS.filter((ayah) => {
         const q = query.toLowerCase().trim();
         if (searchTarget === 'arabic') return ayah.arabic.includes(q);
         if (searchTarget === 'urdu') return ayah.translationUr.includes(q);
@@ -47,7 +47,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSel
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-bold text-[#2D2D2D] text-base flex items-center gap-1.5 font-serif">
               <Search className="w-5 h-5 text-[#7D6B4B]" />
-              <span>Search Para 1 (تلاش)</span>
+              <span>Search Para 1</span>
             </h3>
             <button onClick={onClose} className="p-1 text-[#9A8D70] hover:text-[#2D2D2D] cursor-pointer">
               <X className="w-5 h-5" />
@@ -78,10 +78,10 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSel
           <div className="flex gap-1.5 mt-2.5 overflow-x-auto scrollbar-none py-0.5 font-sans">
             {[
               { id: 'all', label: 'All Fields' },
-              { id: 'urdu', label: 'Urdu (ترجمہ)' },
-              { id: 'english', label: 'English' },
-              { id: 'arabic', label: 'Arabic (عربی)' },
-              { id: 'tafseer', label: 'Tafseer (تفسیر)' },
+              { id: 'urdu', label: 'Urdu Translation' },
+              { id: 'english', label: 'English Translation' },
+              { id: 'arabic', label: 'Arabic Text' },
+              { id: 'tafseer', label: 'Tafseer' },
             ].map((f) => (
               <button
                 key={f.id}
@@ -122,12 +122,12 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSel
                     {ayah.arabic}
                   </p>
 
-                  <p className="font-urdu text-xs text-[#4A4A4A] text-right dir-rtl line-clamp-2 leading-relaxed">
-                    {ayah.translationUr}
+                  <p className="text-xs text-[#2D2D2D] font-medium font-sans mb-1 line-clamp-2">
+                    {ayah.translationEn}
                   </p>
 
-                  <p className="text-xs text-[#5A5A5A] mt-1 line-clamp-1 font-sans">
-                    {ayah.translationEn}
+                  <p className="font-urdu text-xs text-[#63553C] text-right dir-rtl line-clamp-1 leading-relaxed">
+                    {ayah.translationUr}
                   </p>
                 </div>
               ))

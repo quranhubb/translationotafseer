@@ -16,8 +16,8 @@ export const DEFAULT_SETTINGS: UserSettings = {
   arabicFontFamily: 'Amiri',
   showWordByWord: true,
   wordByWordLang: 'en', // 'en' | 'ur' | 'both'
-  primaryTranslation: 'both', // 'ur' | 'en' | 'both'
-  tafseerLang: 'both', // 'ur' | 'en' | 'both'
+  primaryTranslation: 'en', // 'ur' | 'en' | 'both'
+  tafseerLang: 'en', // 'ur' | 'en' | 'both'
   audioReciter: 'Alafasy_128kbps',
   playbackSpeed: 1,
   autoPlayNext: true,
@@ -56,7 +56,7 @@ export function getBookmarks(): Bookmark[] {
       ayahNumber: 5,
       surahName: 'Al-Faatiha',
       arabicPreview: 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ط',
-      translationPreview: 'ہم صرف تیری ہی عبادت کرتے ہیں اور صرف تجھ ہی سے مدد مانگتے ہیں۔',
+      translationPreview: 'It is You we worship and You we ask for help.',
       createdAt: Date.now() - 3600000,
     },
     {
@@ -65,7 +65,7 @@ export function getBookmarks(): Bookmark[] {
       ayahNumber: 2,
       surahName: 'Al-Baqara',
       arabicPreview: 'ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ',
-      translationPreview: 'یہ وہ کتاب ہے جس میں کوئی شک نہیں، پرہیزگاروں کے لیے ہدایت ہے۔',
+      translationPreview: 'This is the Book about which there is no doubt, a guidance for those conscious of Allah.',
       createdAt: Date.now() - 7200000,
     }
   ];

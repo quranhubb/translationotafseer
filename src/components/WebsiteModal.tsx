@@ -77,8 +77,8 @@ export const WebsiteModal: React.FC<WebsiteModalProps> = ({ isOpen, onClose }) =
           </div>
 
           <div className="mt-4 p-3 bg-[#F4F1E6] rounded-xl border border-[#E5E0D0] text-center">
-            <p className="font-urdu text-xs text-[#7D6B4B] font-bold">
-              صدقہ جاریہ: قرآن پاک کی تعلیمات کو عام کریں اور زیادہ سے زیادہ لوگوں تک پہنچائیں۔
+            <p className="font-sans text-xs text-[#7D6B4B] font-semibold">
+              Sadaqah Jariyah: Share the timeless wisdom of the Holy Quran and Tafseer with family and friends.
             </p>
           </div>
         </div>

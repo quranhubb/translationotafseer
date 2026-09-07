@@ -75,7 +75,7 @@ export const BackupModal: React.FC<BackupModalProps> = ({
         <div className="p-4 border-b border-[#E5E0D0] flex items-center justify-between bg-[#F4F1E6]">
           <div className="flex items-center gap-2 text-[#7D6B4B]">
             <Download className="w-5 h-5" />
-            <h3 className="font-bold text-[#2D2D2D] text-base font-serif">Backup & Restore (بیک اپ)</h3>
+            <h3 className="font-bold text-[#2D2D2D] text-base font-serif">Backup & Restore</h3>
           </div>
           <button onClick={onClose} className="p-1 text-[#9A8D70] hover:text-[#2D2D2D] cursor-pointer">
             <X className="w-5 h-5" />

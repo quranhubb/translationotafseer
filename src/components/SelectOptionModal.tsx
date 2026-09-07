@@ -35,7 +35,7 @@ export const SelectOptionModal: React.FC<SelectOptionModalProps> = ({
   if (!isOpen || !ayah) return null;
 
   const options = [
-    { label: '✏️ Pencil & Highlighter (قلم و ہائی لائٹر)', action: onOpenAnnotation || (() => {}) },
+    { label: '✏️ Pencil, Highlighter & Eraser', action: onOpenAnnotation || (() => {}) },
     { label: 'Set Manual Last Read', action: onSetManualLastRead },
     { label: 'Add to Collection', action: onAddToCollection },
     { label: 'Save as Bookmark', action: onSaveBookmark },

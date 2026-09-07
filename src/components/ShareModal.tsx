@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Share2, X, Copy, Check, MessageCircle, Send } from 'lucide-react';
 import { Ayah } from '../types';
+import appLogo from '../assets/images/maarif_quran_logo_transparent.png';
 
 interface ShareModalProps {
   isOpen: boolean;
@@ -32,8 +33,15 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, ayah })
     <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-3">
       <div className="bg-[#FDFCF8] w-full max-w-sm rounded-2xl shadow-2xl border border-[#E5E0D0] p-5 animate-in fade-in zoom-in-95 duration-150">
         <div className="flex items-center justify-between pb-3 border-b border-[#E5E0D0] mb-3">
-          <div className="flex items-center gap-2 text-[#7D6B4B]">
-            <Share2 className="w-5 h-5" />
+          <div className="flex items-center gap-2.5 text-[#7D6B4B]">
+            <div className="w-8 h-8 shrink-0 flex items-center justify-center">
+              <img
+                src={appLogo}
+                alt="App Logo"
+                className="w-full h-full object-contain drop-shadow-xs"
+                referrerPolicy="no-referrer"
+              />
+            </div>
             <h3 className="font-bold text-[#2D2D2D] text-base font-serif">
               {ayah ? 'Share Ayah & Tafseer' : 'Share Maarif ul Quran'}
             </h3>

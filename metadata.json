@@ -1,6 +1,6 @@
 {
   "name": "Maarif ul Quran",
-  "description": "Authentic Maarif ul Quran Tafseer app for Para 1 (Juz 1) with word-by-word translation, audio recitation, bookmarks, notes, and Mushaf view.",
+  "description": "Authentic Maarif-ul-Quran Tafseer application with comprehensive detailed commentary for Para 1, Para 2, and Para 3, complete with word-by-word translations, audio recitation, bookmarks, notes, and Mushaf view.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

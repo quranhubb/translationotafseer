@@ -246,6 +246,95 @@ const CURATED_QA_MAP: Record<string, AyahQA[]> = {
       questionEn: 'Which two powerful means of seeking help are prescribed during trials?',
       answerEn: 'Patience (Sabr) and Prayer (Salah).'
     }
+  ],
+  // Para 2 Key Verses Q&A
+  '2:142': [
+    {
+      questionUr: 'تحویلِ قبلہ کے حکم پر نادان اور معترض لوگوں نے کیا اعتراض کیا؟',
+      answerUr: 'انہوں نے کہا کہ مسلمانوں کو بیت المقدس سے کعبۃ اللہ کی طرف کس چیز نے پھیرا؟ اللہ نے جواب دیا کہ مشرق اور مغرب سب اللہ ہی کے ہیں۔',
+      questionEn: 'What objection did the critics raise concerning the change of the Qiblah?',
+      answerEn: 'They questioned why Muslims shifted orientation from Jerusalem to the Kaaba. Allah answered that the East and the West belong solely to Him.'
+    }
+  ],
+  '2:143': [
+    {
+      questionUr: 'امتِ مسلمہ کو "امۃً وسطاً" (درمیانی/بہترین امت) کیوں بنایا گیا؟',
+      answerUr: 'تاکہ مسلمان تمام انسانوں پر حق اور عدل کے گواہ بنیں اور رسول اللہ ﷺ مسلمانوں پر گواہ ہوں۔',
+      questionEn: 'Why is the Muslim Ummah designated as "a middle community" (Ummatan Wasata)?',
+      answerEn: 'To be balanced witnesses of truth and justice over mankind, and the Messenger will be a witness over them.'
+    }
+  ],
+  '2:152': [
+    {
+      questionUr: '"فاذکرونی أذکرکم" کا کیا مبارک وعدہ ہے؟',
+      answerUr: 'تم میرا ذکر اور میری یاد کرو، میں تمہیں (اپنی رحمت، برکت اور انعامات کے ساتھ) یاد رکھوں گا، اور میرا شکر ادا کرو اور ناشکری نہ کرو۔',
+      questionEn: 'What is the divine promise in "Remember Me; I will remember you"?',
+      answerEn: 'Allah promises that if servants remember Him through obedience and gratitude, He will encompass them in His grace, blessings, and protection.'
+    }
+  ],
+  '2:153': [
+    {
+      questionUr: 'مؤمنین کو ہر مشکل میں کن دو ہتھیاروں سے نصرت مانگنے کی تلقین ہے؟',
+      answerUr: 'صبر اور نماز کے ساتھ، کیونکہ اللہ تعالیٰ صبر کرنے والوں کے ساتھ ہے۔',
+      questionEn: 'What two spiritual pillars are believers told to seek assistance with?',
+      answerEn: 'Patience (Sabr) and Prayer (Salah), for Allah is with those who are patient.'
+    }
+  ],
+  '2:155': [
+    {
+      questionUr: 'اللہ تعالیٰ اپنے بندوں کو کن کن چیزوں سے آزماتا ہے اور بشارت کن کے لیے ہے؟',
+      answerUr: 'خوف، بھوک، مال، جان اور پھلوں کی کمی کے ذریعے، اور خوشخبری صبر کرنے والوں کے لیے ہے۔',
+      questionEn: 'What worldly trials are mentioned, and who is promised glad tidings?',
+      answerEn: 'Trials of fear, hunger, loss of wealth, lives, and fruits; glad tidings are promised to the steadfast and patient.'
+    }
+  ],
+  '2:177': [
+    {
+      questionUr: 'آیتِ بر (آیت ۱۷۷) میں حقیقی نیکی (البر) کی کیا تعریف کی گئی ہے؟',
+      answerUr: 'صرف مشرق یا مغرب کی طرف منہ کر لینا اصل نیکی نہیں، بلکہ اصل نیکی اللہ، آخرت، فرشتوں، کتاب اور انبیاء پر ایمان لانا، مال کو رشتہ داروں اور مسکینوں پر خرچ کرنا، نماز قائم کرنا، زکوٰۃ دینا، عہد پورا کرنا اور تنگی و تکلیف میں صبر کرنا ہے۔',
+      questionEn: 'What is the comprehensive definition of true righteousness in Ayah 177?',
+      answerEn: 'True piety is not merely ritual direction, but profound faith in Allah, the Last Day, angels, scripture, giving wealth in charity, establishing prayer, fulfilling promises, and displaying patience during hardship.'
+    }
+  ],
+  '2:183': [
+    {
+      questionUr: 'رمضان المبارک کے روزے فرض کرنے کا بنیادی مقصد کیا بیان کیا گیا ہے؟',
+      answerUr: '"لعلکم تتقون" تاکہ تمہارے اندر تقویٰ، پرہیزگاری اور گناہوں سے بچنے کی روحانی قوت پیدا ہو۔',
+      questionEn: 'What is the primary purpose of fasting prescribed in Ramadan?',
+      answerEn: '"That you may attain Taqwa"—to develop God-consciousness, self-discipline, and piety.'
+    }
+  ],
+  '2:186': [
+    {
+      questionUr: 'دعا مانگنے والوں کے بارے میں اللہ تعالیٰ نے کیا قربت اور تسلی فرمائی؟',
+      answerUr: 'فرمایا: "جب میرے بندے میرے بارے میں پوچھیں تو میں ان کے بہت قریب ہوں، پکارنے والے کی پکار کا جواب دیتا ہوں جب وہ مجھ سے مانگتا ہے۔"',
+      questionEn: 'What intimacy and reassurance does Allah give regarding supplications?',
+      answerEn: '"When My servants ask concerning Me, indeed I am near. I respond to the invocation of the supplicant when he calls upon Me."'
+    }
+  ],
+  '2:201': [
+    {
+      questionUr: 'قرآن مجید کی سب سے جامع دعا "ربنا آتنا فی الدنیا حسنۃ..." میں کیا مانگا گیا ہے؟',
+      answerUr: 'اے ہمارے رب! ہمیں دنیا میں بھی ہر قسم کی بھلائی عطا فرما، اور آخرت میں بھی بھلائی عطا فرما، اور ہمیں دوزخ کے عذاب سے بچا۔',
+      questionEn: 'What is requested in the comprehensive Quranic Dua "Rabbana atina fid-dunya hasanah..."?',
+      answerEn: 'For goodness and well-being in this earthly life, supreme goodness in the Hereafter, and protection from the torment of the Fire.'
+    }
+  ],
+  '2:214': [
+    {
+      questionUr: 'آیت نمبر ۲۱۴ میں مؤمنین کو سابقہ امتوں کی قربانیوں کی کیا مثال دی گئی؟',
+      answerUr: 'ان پر شدید تنگی اور مصائب آئے اور وہ ہلا مارے گئے یہاں تک کہ انہوں نے نصرتِ الٰہی مانگی، اور جواب ملا کہ بے شک اللہ کی مدد قریب ہے۔',
+      questionEn: 'What historical trial is cited in Ayah 214 regarding entering Paradise?',
+      answerEn: 'Past believers endured extreme hardships and were shaken before divine victory arrived; reminding us that Allah\'s help is always near.'
+    }
+  ],
+  '2:249': [
+    {
+      questionUr: 'طالوت کے سچے ساتھیوں نے جالوت کے لشکر کو دیکھ کر کیا سنہری بات کہی؟',
+      answerUr: '"کم من فئۃ قلیلۃ غلبت فئۃ کثیرۃ بإذن اللہ" کتنی ہی چھوٹی جماعتیں اللہ کے حکم سے بڑی جماعتوں پر غالب آ جاتی ہیں، اور اللہ صبر کرنے والوں کے ساتھ ہے۔',
+      questionEn: 'What memorable declaration did Saul\'s faithful companions make against Goliath\'s army?',
+      answerEn: '"How often a small group has overcome a large group by permission of Allah. And Allah is with the patient."'
+    }
   ]
 };
 

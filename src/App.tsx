@@ -38,8 +38,8 @@ import { ALL_PARA1_AYAHS } from './data/quranProvider';
 import { CheckCircle2 } from 'lucide-react';
 
 export default function App() {
-  // Navigation State
-  const [activeTab, setActiveTab] = useState<MainTabType>('quran');
+  // Navigation State - Parah first as default
+  const [activeTab, setActiveTab] = useState<MainTabType>('parah');
   const [activeReader, setActiveReader] = useState<{ surahNumber: number; ayahNumber: number } | null>(null);
 
   // Storage State
@@ -259,6 +259,7 @@ export default function App() {
             }}
             onOpenSettings={() => setShowSettingsModal(true)}
             onSaveBookmark={handleAddBookmark}
+            onUpdateSettings={handleUpdateSettings}
           />
         ) : (
           /* Main Dashboard / Tab View */
@@ -287,14 +288,20 @@ export default function App() {
               }}
             />
 
-            {/* Tab Views */}
+            {/* Tab Views: Step 1 (Parah) -> Step 2 (Surahs) -> Step 3 (Ayah Reader with Translation & Tafseer) */}
             <div className="flex-1">
-              {activeTab === 'quran' && (
-                <SurahList onSelectSurah={handleSelectSurah} />
+              {activeTab === 'parah' && (
+                <ParahList
+                  onOpenAyah={handleOpenAyah}
+                  onSelectSurah={handleSelectSurah}
+                />
               )}
 
-              {activeTab === 'parah' && (
-                <ParahList onOpenAyah={handleOpenAyah} />
+              {activeTab === 'quran' && (
+                <SurahList
+                  onSelectSurah={handleSelectSurah}
+                  onGoToParas={() => setActiveTab('parah')}
+                />
               )}
 
               {activeTab === 'mushaf' && (

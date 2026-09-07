@@ -18,7 +18,7 @@ export const BookmarksView: React.FC<BookmarksViewProps> = ({
       <div className="flex items-center justify-between mb-3 px-1">
         <h2 className="text-base font-bold text-[#2D2D2D] flex items-center gap-1.5 font-serif">
           <BookmarkIcon className="w-4.5 h-4.5 text-[#7D6B4B]" />
-          <span>Saved Bookmarks (نشان زدہ آیات)</span>
+          <span>Saved Bookmarks</span>
         </h2>
         <span className="text-xs bg-[#F4F1E6] text-[#7D6B4B] font-bold px-2 py-0.5 rounded-full border border-[#E5E0D0] font-sans">
           {bookmarks.length} saved

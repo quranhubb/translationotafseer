@@ -37,7 +37,7 @@ export const CollectionsView: React.FC<CollectionsViewProps> = ({
       <div className="flex items-center justify-between mb-3 px-1">
         <h2 className="text-base font-bold text-[#2D2D2D] flex items-center gap-1.5 font-serif">
           <Folder className="w-4.5 h-4.5 text-[#7D6B4B]" />
-          <span>My Collections (مجموعات)</span>
+          <span>My Collections</span>
         </h2>
         <button
           onClick={() => setShowAddModal(true)}

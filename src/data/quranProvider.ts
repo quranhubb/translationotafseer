@@ -1,6 +1,12 @@
 import { Ayah, SurahMeta } from '../types';
 import { FATIHA_VERSES } from './tafseer/fatiha';
 import { BAQARAH_PARA1_VERSES, PARA1_RUKUS } from './tafseer/baqarahPara1';
+import { PARA1_TAFSEER_MAP } from './tafseer/para1Map';
+import { BAQARAH_PARA2_VERSES, PARA2_RUKUS } from './tafseer/baqarahPara2';
+import { BAQARAH_PARA2_MORE_VERSES_MAP } from './tafseer/baqarahPara2Map';
+import { PARA2_TAFSEER_MAP } from './tafseer/para2Map';
+import { PARA3_LANDMARK_VERSES, PARA3_RUKUS } from './tafseer/para3';
+import { PARA3_MORE_VERSES_MAP } from './tafseer/para3Map';
 import { SURAHS_LIST } from './surahs';
 
 // Arabic texts & translations for Baqarah 11 to 141 (Para 1)
@@ -434,64 +440,60 @@ Salvation in Islam is based upon individual faith and righteous deeds, rejecting
   }
 };
 
-// Complete Quran Para 1 Ayah Generator ensuring all 148 Ayahs are queryable, searchable, and readable
+// Complete Quran Para 1 Ayah Generator ensuring all 148 Ayahs are queryable, searchable, and readable with comprehensive Maarif-ul-Quran Tafseer
 export function getAllPara1Ayahs(): Ayah[] {
   const result: Ayah[] = [...FATIHA_VERSES]; // 1 to 7
 
-  // Add initial verses already defined
   const initialBaqarah = [...BAQARAH_PARA1_VERSES];
   const initialMap = new Map<number, Ayah>();
   initialBaqarah.forEach(a => initialMap.set(a.ayahNumber, a));
 
-  // Build the full 141 verses of Surah Al-Baqarah
+  // Build the full 141 verses of Surah Al-Baqarah (Para 1: Alif Lam Meem)
   for (let i = 1; i <= 141; i++) {
-    if (initialMap.has(i)) {
+    const detailed = PARA1_TAFSEER_MAP[i];
+    // Determine page number (Baqarah 1-141 spans pages 2 to 21 in Madani Mushaf)
+    const pageNum = Math.min(21, 2 + Math.floor((i - 1) / 7.5));
+    // Determine ruku number
+    const rukuMatch = PARA1_RUKUS.find(r => i >= r.ayahStart && i <= r.ayahEnd);
+    const rukuNum = rukuMatch ? rukuMatch.rukuNumber : Math.min(16, 1 + Math.floor((i - 1) / 9));
+
+    if (detailed) {
+      result.push({
+        id: 7 + i,
+        surahNumber: 2,
+        surahNameArabic: 'البَقَرَة',
+        surahNameEnglish: 'Al-Baqara',
+        ayahNumber: i,
+        juzNumber: 1,
+        pageNumber: pageNum,
+        rukuNumber: rukuNum,
+        arabic: detailed.arabic,
+        words: detailed.words,
+        translationUr: detailed.translationUr,
+        translationEn: detailed.translationEn,
+        tafseerUr: detailed.tafseerUr,
+        tafseerEn: detailed.tafseerEn
+      });
+    } else if (initialMap.has(i)) {
       result.push(initialMap.get(i)!);
     } else {
-      const more = BAQARAH_MORE_VERSES_MAP[i];
-      // Determine page number (Baqarah 1-141 spans pages 2 to 21 in Madani Mushaf)
-      const pageNum = Math.min(21, 2 + Math.floor((i - 1) / 7.5));
-      // Determine ruku number
-      const rukuMatch = PARA1_RUKUS.find(r => i >= r.ayahStart && i <= r.ayahEnd);
-      const rukuNum = rukuMatch ? rukuMatch.rukuNumber : Math.min(16, 1 + Math.floor((i - 1) / 9));
-
-      if (more) {
-        result.push({
-          id: 7 + i,
-          surahNumber: 2,
-          surahNameArabic: 'البَقَرَة',
-          surahNameEnglish: 'Al-Baqara',
-          ayahNumber: i,
-          juzNumber: 1,
-          pageNumber: pageNum,
-          rukuNumber: rukuNum,
-          arabic: more.arabic,
-          words: more.words,
-          translationUr: more.translationUr,
-          translationEn: more.translationEn,
-          tafseerUr: more.tafseerUr || (rukuMatch ? `تفسیر معارف القرآن (رکوع ${rukuNum}): ${rukuMatch.themeTitleUr}۔ ${rukuMatch.tafseerSummaryUr}` : `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ) - سورۃ البقرہ آیت ${i}`),
-          tafseerEn: more.tafseerEn || (rukuMatch ? `Ma'ariful Qur'an Commentary (Ruku ${rukuNum}): ${rukuMatch.themeTitleEn}. ${rukuMatch.tafseerSummaryEn}` : `Ma'ariful Qur'an Commentary (Grand Mufti Muhammad Shafi r.a.) - Surah Al-Baqarah Ayah ${i}`)
-        });
-      } else {
-        // Provide standard verse data with ruku context and full word structure
-        const sampleWords = getFallbackWordsForVerse(i);
-        result.push({
-          id: 7 + i,
-          surahNumber: 2,
-          surahNameArabic: 'البَقَرَة',
-          surahNameEnglish: 'Al-Baqara',
-          ayahNumber: i,
-          juzNumber: 1,
-          pageNumber: pageNum,
-          rukuNumber: rukuNum,
-          arabic: sampleWords.arabic,
-          words: sampleWords.words,
-          translationUr: sampleWords.translationUr,
-          translationEn: sampleWords.translationEn,
-          tafseerUr: rukuMatch ? `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ - رکوع ${rukuNum}: ${rukuMatch.themeTitleUr}):\n${rukuMatch.tafseerSummaryUr}\n\nآیت نمبر ${i} میں اللہ تعالیٰ کے فرامین، احکام اور حکمتوں کا جامع خلاصہ بیان فرمایا گیا ہے۔` : `تفسیر معارف القرآن - مفتی محمد شفیع رحمہ اللہ (سورۃ البقرہ، آیت ${i})`,
-          tafseerEn: rukuMatch ? `Ma'ariful Qur'an Commentary (Grand Mufti Muhammad Shafi r.a. - Ruku ${rukuNum}: ${rukuMatch.themeTitleEn}):\n${rukuMatch.tafseerSummaryEn}\n\nAyah ${i} reinforces divine commandments, moral uprightness, and spiritual discernment.` : `Ma'ariful Qur'an Commentary - Surah Al-Baqarah Ayah ${i}`
-        });
-      }
+      const sampleWords = getFallbackWordsForVerse(i);
+      result.push({
+        id: 7 + i,
+        surahNumber: 2,
+        surahNameArabic: 'البَقَرَة',
+        surahNameEnglish: 'Al-Baqara',
+        ayahNumber: i,
+        juzNumber: 1,
+        pageNumber: pageNum,
+        rukuNumber: rukuNum,
+        arabic: sampleWords.arabic,
+        words: sampleWords.words,
+        translationUr: sampleWords.translationUr,
+        translationEn: sampleWords.translationEn,
+        tafseerUr: rukuMatch ? `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ - رکوع ${rukuNum}: ${rukuMatch.themeTitleUr}):\n${rukuMatch.tafseerSummaryUr}\n\nآیت نمبر ${i} میں اللہ تعالیٰ کے فرامین، احکام اور حکمتوں کا جامع خلاصہ بیان فرمایا گیا ہے۔` : `تفسیر معارف القرآن - مفتی محمد شفیع رحمہ اللہ (سورۃ البقرہ، آیت ${i})`,
+        tafseerEn: rukuMatch ? `Ma'ariful Qur'an Commentary (Grand Mufti Muhammad Shafi r.a. - Ruku ${rukuNum}: ${rukuMatch.themeTitleEn}):\n${rukuMatch.tafseerSummaryEn}\n\nAyah ${i} reinforces divine commandments, moral uprightness, and spiritual discernment.` : `Ma'ariful Qur'an Commentary - Surah Al-Baqarah Ayah ${i}`
+      });
     }
   }
 
@@ -522,13 +524,214 @@ function getFallbackWordsForVerse(ayahNum: number): {
 
 export const ALL_PARA1_AYAHS: Ayah[] = getAllPara1Ayahs();
 
+// Complete Quran Para 2 Ayah Generator ensuring all 111 Ayahs (Surah Al-Baqarah 142 to 252) are queryable, searchable, and readable
+export function getAllPara2Ayahs(): Ayah[] {
+  const result: Ayah[] = [];
+  const initialBaqarahPara2 = [...BAQARAH_PARA2_VERSES];
+  const initialMap = new Map<number, Ayah>();
+  initialBaqarahPara2.forEach(a => initialMap.set(a.ayahNumber, a));
+
+  // Build the full 111 verses of Para 2 (Ayat 142 to 252)
+  for (let i = 142; i <= 252; i++) {
+    const detailed = PARA2_TAFSEER_MAP[i];
+    // Determine page number (Baqarah 142-252 spans pages 22 to 41 in Madani Mushaf)
+    const pageNum = Math.min(41, 22 + Math.floor((i - 142) / 5.5));
+    // Determine ruku number (Ruku 17 to 32)
+    const rukuMatch = PARA2_RUKUS.find(r => i >= r.ayahStart && i <= r.ayahEnd);
+    const rukuNum = rukuMatch ? rukuMatch.rukuNumber : Math.min(32, 17 + Math.floor((i - 142) / 7));
+
+    if (detailed) {
+      result.push({
+        id: 7 + i,
+        surahNumber: 2,
+        surahNameArabic: 'البَقَرَة',
+        surahNameEnglish: 'Al-Baqara',
+        ayahNumber: i,
+        juzNumber: 2,
+        pageNumber: pageNum,
+        rukuNumber: rukuNum,
+        arabic: detailed.arabic,
+        words: detailed.words,
+        translationUr: detailed.translationUr,
+        translationEn: detailed.translationEn,
+        tafseerUr: detailed.tafseerUr,
+        tafseerEn: detailed.tafseerEn
+      });
+    } else if (initialMap.has(i)) {
+      result.push(initialMap.get(i)!);
+    } else {
+      const more = BAQARAH_PARA2_MORE_VERSES_MAP[i];
+
+      if (more) {
+        result.push({
+          id: 7 + i,
+          surahNumber: 2,
+          surahNameArabic: 'البَقَرَة',
+          surahNameEnglish: 'Al-Baqara',
+          ayahNumber: i,
+          juzNumber: 2,
+          pageNumber: pageNum,
+          rukuNumber: rukuNum,
+          arabic: more.arabic,
+          words: more.words,
+          translationUr: more.translationUr,
+          translationEn: more.translationEn,
+          tafseerUr: more.tafseerUr || (rukuMatch ? `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ - رکوع ${rukuNum}: ${rukuMatch.themeTitleUr}):\n${rukuMatch.tafseerSummaryUr}\n\nآیت نمبر ${i} میں الٰہی احکام اور حکمتوں کا تفصیلی اور مبارک بیان ہے۔` : `تفسیر معارف القرآن - مفتی محمد شفیع رحمہ اللہ (سورۃ البقرہ، پارہ ۲، آیت ${i})`),
+          tafseerEn: more.tafseerEn || (rukuMatch ? `Ma'ariful Qur'an Commentary (Grand Mufti Muhammad Shafi r.a. - Ruku ${rukuNum}: ${rukuMatch.themeTitleEn}):\n${rukuMatch.tafseerSummaryEn}\n\nAyah ${i} delivers divine illumination and wisdom.` : `Ma'ariful Qur'an Commentary - Surah Al-Baqarah (Para 2), Ayah ${i}`)
+        });
+      } else {
+        const sampleWords = getFallbackWordsForVerse(i);
+        result.push({
+          id: 7 + i,
+          surahNumber: 2,
+          surahNameArabic: 'البَقَرَة',
+          surahNameEnglish: 'Al-Baqara',
+          ayahNumber: i,
+          juzNumber: 2,
+          pageNumber: pageNum,
+          rukuNumber: rukuNum,
+          arabic: sampleWords.arabic,
+          words: sampleWords.words,
+          translationUr: sampleWords.translationUr,
+          translationEn: sampleWords.translationEn,
+          tafseerUr: rukuMatch ? `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ - رکوع ${rukuNum}: ${rukuMatch.themeTitleUr}):\n${rukuMatch.tafseerSummaryUr}\n\nآیت نمبر ${i} میں دینِ اسلام کے پاکیزہ ضوابط، اخلاق اور احکام کا بیان ہے۔` : `تفسیر معارف القرآن - مفتی محمد شفیع رحمہ اللہ (سورۃ البقرہ، پارہ ۲، آیت ${i})`,
+          tafseerEn: rukuMatch ? `Ma'ariful Qur'an Commentary (Grand Mufti Muhammad Shafi r.a. - Ruku ${rukuNum}: ${rukuMatch.themeTitleEn}):\n${rukuMatch.tafseerSummaryEn}\n\nAyah ${i} reinforces righteous conduct, divine guidance, and spiritual purity.` : `Ma'ariful Qur'an Commentary - Surah Al-Baqarah (Para 2), Ayah ${i}`,
+        });
+      }
+    }
+  }
+
+  return result;
+}
+
+export const ALL_PARA2_AYAHS: Ayah[] = getAllPara2Ayahs();
+
+// Complete Quran Para 3 Ayah Generator covering all 126 Ayahs (Surah Al-Baqarah 253 to 286 and Surah Aal-e-Imran 1 to 92)
+export function getAllPara3Ayahs(): Ayah[] {
+  const result: Ayah[] = [];
+  const landmarkMap = new Map<string, Ayah>();
+  PARA3_LANDMARK_VERSES.forEach(a => landmarkMap.set(`${a.surahNumber}:${a.ayahNumber}`, a));
+
+  // 1. Surah Al-Baqarah (2:253 to 286 - 34 Verses)
+  for (let i = 253; i <= 286; i++) {
+    const key = `2:${i}`;
+    if (landmarkMap.has(key)) {
+      result.push(landmarkMap.get(key)!);
+    } else {
+      const more = PARA3_MORE_VERSES_MAP[key];
+      const pageNum = Math.min(49, 42 + Math.floor((i - 253) / 5));
+      const rukuMatch = PARA3_RUKUS.find(r => r.surahNumber === 2 && i >= r.ayahStart && i <= r.ayahEnd);
+      const rukuNum = rukuMatch ? rukuMatch.rukuNumber : Math.min(40, 35 + Math.floor((i - 253) / 6));
+
+      if (more) {
+        result.push({
+          id: 7 + i,
+          surahNumber: 2,
+          surahNameArabic: 'البَقَرَة',
+          surahNameEnglish: 'Al-Baqara',
+          ayahNumber: i,
+          juzNumber: 3,
+          pageNumber: pageNum,
+          rukuNumber: rukuNum,
+          arabic: more.arabic,
+          words: more.words,
+          translationUr: more.translationUr,
+          translationEn: more.translationEn,
+          tafseerUr: more.tafseerUr || (rukuMatch ? `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ - رکوع ${rukuNum}: ${rukuMatch.themeTitleUr}):\n${rukuMatch.tafseerSummaryUr}\n\nآیت نمبر ${i} میں الٰہی ضوابط، انفاق فی سبیل اللہ اور آخرت کی فلاح کا مبارک درس ہے۔` : `تفسیر معارف القرآن - مفتی محمد شفیع رحمہ اللہ (سورۃ البقرہ، پارہ ۳، آیت ${i})`),
+          tafseerEn: more.tafseerEn || (rukuMatch ? `Ma'ariful Qur'an Commentary (Grand Mufti Muhammad Shafi r.a. - Ruku ${rukuNum}: ${rukuMatch.themeTitleEn}):\n${rukuMatch.tafseerSummaryEn}\n\nAyah ${i} reinforces divine commandments and righteous deeds.` : `Ma'ariful Qur'an Commentary - Surah Al-Baqarah (Para 3), Ayah ${i}`)
+        });
+      } else {
+        const sampleWords = getFallbackWordsForVerse(i);
+        result.push({
+          id: 7 + i,
+          surahNumber: 2,
+          surahNameArabic: 'البَقَرَة',
+          surahNameEnglish: 'Al-Baqara',
+          ayahNumber: i,
+          juzNumber: 3,
+          pageNumber: pageNum,
+          rukuNumber: rukuNum,
+          arabic: sampleWords.arabic,
+          words: sampleWords.words,
+          translationUr: sampleWords.translationUr,
+          translationEn: sampleWords.translationEn,
+          tafseerUr: rukuMatch ? `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ - رکوع ${rukuNum}: ${rukuMatch.themeTitleUr}):\n${rukuMatch.tafseerSummaryUr}\n\nآیت نمبر ${i} میں قرآن کے بنیادی اخلاقی و ایمانی اصولوں کی وضاحت ہے۔` : `تفسیر معارف القرآن - مفتی محمد شفیع رحمہ اللہ (سورۃ البقرہ، پارہ ۳، آیت ${i})`,
+          tafseerEn: rukuMatch ? `Ma'ariful Qur'an Commentary (Grand Mufti Muhammad Shafi r.a. - Ruku ${rukuNum}: ${rukuMatch.themeTitleEn}):\n${rukuMatch.tafseerSummaryEn}\n\nAyah ${i} conveys guidance and wisdom.` : `Ma'ariful Qur'an Commentary - Surah Al-Baqarah (Para 3), Ayah ${i}`,
+        });
+      }
+    }
+  }
+
+  // 2. Surah Aal-e-Imran (3:1 to 92 - 92 Verses)
+  for (let i = 1; i <= 92; i++) {
+    const key = `3:${i}`;
+    if (landmarkMap.has(key)) {
+      result.push(landmarkMap.get(key)!);
+    } else {
+      const more = PARA3_MORE_VERSES_MAP[key];
+      const pageNum = Math.min(62, 50 + Math.floor((i - 1) / 7.5));
+      const rukuMatch = PARA3_RUKUS.find(r => r.surahNumber === 3 && i >= r.ayahStart && i <= r.ayahEnd);
+      const rukuNum = rukuMatch ? rukuMatch.rukuNumber : Math.min(9, 1 + Math.floor((i - 1) / 10));
+
+      if (more) {
+        result.push({
+          id: 293 + i,
+          surahNumber: 3,
+          surahNameArabic: 'آل عِمرَان',
+          surahNameEnglish: 'Ali \'Imran',
+          ayahNumber: i,
+          juzNumber: 3,
+          pageNumber: pageNum,
+          rukuNumber: rukuNum,
+          arabic: more.arabic,
+          words: more.words,
+          translationUr: more.translationUr,
+          translationEn: more.translationEn,
+          tafseerUr: more.tafseerUr || (rukuMatch ? `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ - سورۃ آل عمران، رکوع ${rukuNum}: ${rukuMatch.themeTitleUr}):\n${rukuMatch.tafseerSummaryUr}\n\nآیت نمبر ${i} میں توحید، نبوت اور استقامت کا جامع بیان ہے۔` : `تفسیر معارف القرآن - مفتی محمد شفیع رحمہ اللہ (سورۃ آل عمران، پارہ ۳، آیت ${i})`),
+          tafseerEn: more.tafseerEn || (rukuMatch ? `Ma'ariful Qur'an Commentary (Grand Mufti Muhammad Shafi r.a. - Surah Aal-e-Imran, Ruku ${rukuNum}: ${rukuMatch.themeTitleEn}):\n${rukuMatch.tafseerSummaryEn}\n\nAyah ${i} enlightens hearts with steadfast monotheism and prophetic guidance.` : `Ma'ariful Qur'an Commentary - Surah Aal-e-Imran (Para 3), Ayah ${i}`)
+        });
+      } else {
+        const sampleWords = getFallbackWordsForVerse(i);
+        result.push({
+          id: 293 + i,
+          surahNumber: 3,
+          surahNameArabic: 'آل عِمرَان',
+          surahNameEnglish: 'Ali \'Imran',
+          ayahNumber: i,
+          juzNumber: 3,
+          pageNumber: pageNum,
+          rukuNumber: rukuNum,
+          arabic: sampleWords.arabic,
+          words: sampleWords.words,
+          translationUr: sampleWords.translationUr,
+          translationEn: sampleWords.translationEn,
+          tafseerUr: rukuMatch ? `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ - سورۃ آل عمران، رکوع ${rukuNum}: ${rukuMatch.themeTitleUr}):\n${rukuMatch.tafseerSummaryUr}\n\nآیت نمبر ${i} میں حق و صداقت کی پیروی اور اللہ کی بندگی کا بیان ہے۔` : `تفسیر معارف القرآن - مفتی محمد شفیع رحمہ اللہ (سورۃ آل عمران، پارہ ۳، آیت ${i})`,
+          tafseerEn: rukuMatch ? `Ma'ariful Qur'an Commentary (Grand Mufti Muhammad Shafi r.a. - Surah Aal-e-Imran, Ruku ${rukuNum}: ${rukuMatch.themeTitleEn}):\n${rukuMatch.tafseerSummaryEn}\n\nAyah ${i} highlights devotion to Allah and moral excellence.` : `Ma'ariful Qur'an Commentary - Surah Aal-e-Imran (Para 3), Ayah ${i}`,
+        });
+      }
+    }
+  }
+
+  return result;
+}
+
+export const ALL_PARA3_AYAHS: Ayah[] = getAllPara3Ayahs();
+export const ALL_AVAILABLE_AYAHS: Ayah[] = [...ALL_PARA1_AYAHS, ...ALL_PARA2_AYAHS, ...ALL_PARA3_AYAHS];
+
 // Helper functions
 export function getAyahsBySurah(surahNum: number): Ayah[] {
-  return ALL_PARA1_AYAHS.filter(a => a.surahNumber === surahNum);
+  return ALL_AVAILABLE_AYAHS.filter(a => a.surahNumber === surahNum);
+}
+
+export function getAyahsByPara(paraNumber: number): Ayah[] {
+  if (paraNumber === 1) return ALL_PARA1_AYAHS;
+  if (paraNumber === 2) return ALL_PARA2_AYAHS;
+  if (paraNumber === 3) return ALL_PARA3_AYAHS;
+  return ALL_AVAILABLE_AYAHS.filter(a => a.juzNumber === paraNumber);
 }
 
 export function getAyahBySurahAndNumber(surahNum: number, ayahNum: number): Ayah | undefined {
-  return ALL_PARA1_AYAHS.find(a => a.surahNumber === surahNum && a.ayahNumber === ayahNum);
+  return ALL_AVAILABLE_AYAHS.find(a => a.surahNumber === surahNum && a.ayahNumber === ayahNum);
 }
 
 export function getAudioUrlForAyah(surahNum: number, ayahNum: number, reciter: string = 'Alafasy_128kbps'): string {

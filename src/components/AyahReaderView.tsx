@@ -6,32 +6,24 @@ import {
   List,
   Play,
   Pause,
-  MoreVertical,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   Volume2,
   Copy,
   Check,
   Bookmark as BookmarkIcon,
-  Maximize,
-  Minimize,
-  Sliders,
-  HelpCircle,
-  CheckCircle2,
   Sparkles,
-  CheckSquare,
-  Compass,
-  AlertCircle,
   Pen,
-  Highlighter,
-  Eraser,
-  PenTool
+  PenTool,
+  Sliders
 } from 'lucide-react';
 import { Ayah, UserSettings } from '../types';
-import { ALL_PARA1_AYAHS, getAudioUrlForAyah } from '../data/quranProvider';
-import { getAyahQA, getAyahActionPoints } from '../data/ayahStudyData';
+import { ALL_AVAILABLE_AYAHS, ALL_PARA1_AYAHS, getAudioUrlForAyah } from '../data/quranProvider';
 import { saveLastRead } from '../utils/storage';
 import { AyahAnnotationCanvas } from './AyahAnnotationCanvas';
+import { InteractiveTafseerText } from './InteractiveTafseerText';
 
 interface AyahReaderViewProps {
   currentSurahNumber: number;
@@ -43,6 +35,7 @@ interface AyahReaderViewProps {
   onOpenMushaf: () => void;
   onOpenSettings: () => void;
   onSaveBookmark: (ayah: Ayah) => void;
+  onUpdateSettings?: (newSettings: Partial<UserSettings>) => void;
 }
 
 export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
@@ -55,19 +48,18 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
   onOpenMushaf,
   onOpenSettings,
   onSaveBookmark,
+  onUpdateSettings,
 }) => {
   const currentAyah =
-    ALL_PARA1_AYAHS.find(
+    ALL_AVAILABLE_AYAHS.find(
       (a) => a.surahNumber === currentSurahNumber && a.ayahNumber === currentAyahNumber
-    ) || ALL_PARA1_AYAHS[0];
+    ) || ALL_AVAILABLE_AYAHS[0];
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audioProgress, setAudioProgress] = useState(0);
-  const [audioDuration, setAudioDuration] = useState(0);
   const [copied, setCopied] = useState(false);
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const [isAnnotating, setIsAnnotating] = useState(false);
   const [hasSavedAnnotations, setHasSavedAnnotations] = useState(false);
+  const [showNextAyahPrompt, setShowNextAyahPrompt] = useState(true);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const tabsScrollRef = useRef<HTMLDivElement | null>(null);
@@ -113,19 +105,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
     audio.playbackRate = settings.playbackSpeed || 1;
     audioRef.current = audio;
 
-    audio.onloadedmetadata = () => {
-      setAudioDuration(audio.duration || 0);
-    };
-
-    audio.ontimeupdate = () => {
-      if (audio.duration) {
-        setAudioProgress((audio.currentTime / audio.duration) * 100);
-      }
-    };
-
     audio.onended = () => {
       setIsPlaying(false);
-      setAudioProgress(0);
       if (settings.autoPlayNext) {
         handleNextAyah();
       }
@@ -151,27 +132,27 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
   };
 
   const handlePrevAyah = () => {
-    const currentIndex = ALL_PARA1_AYAHS.findIndex(
+    const currentIndex = ALL_AVAILABLE_AYAHS.findIndex(
       (a) => a.surahNumber === currentAyah.surahNumber && a.ayahNumber === currentAyah.ayahNumber
     );
     if (currentIndex > 0) {
-      const prev = ALL_PARA1_AYAHS[currentIndex - 1];
+      const prev = ALL_AVAILABLE_AYAHS[currentIndex - 1];
       onSelectAyah(prev.surahNumber, prev.ayahNumber);
     }
   };
 
   const handleNextAyah = () => {
-    const currentIndex = ALL_PARA1_AYAHS.findIndex(
+    const currentIndex = ALL_AVAILABLE_AYAHS.findIndex(
       (a) => a.surahNumber === currentAyah.surahNumber && a.ayahNumber === currentAyah.ayahNumber
     );
-    if (currentIndex < ALL_PARA1_AYAHS.length - 1) {
-      const next = ALL_PARA1_AYAHS[currentIndex + 1];
+    if (currentIndex < ALL_AVAILABLE_AYAHS.length - 1) {
+      const next = ALL_AVAILABLE_AYAHS[currentIndex + 1];
       onSelectAyah(next.surahNumber, next.ayahNumber);
     }
   };
 
-  // Surah Ayah tabs ribbon (e.g. الفاتحة 4, الفاتحة 5, الفاتحة 6)
-  const surahAyahs = ALL_PARA1_AYAHS.filter((a) => a.surahNumber === currentAyah.surahNumber);
+  // Surah Ayah tabs ribbon
+  const surahAyahs = ALL_AVAILABLE_AYAHS.filter((a) => a.surahNumber === currentAyah.surahNumber);
 
   // Scroll active tab into view
   useEffect(() => {
@@ -184,26 +165,16 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
   }, [currentAyah.ayahNumber]);
 
   const handleCopyText = () => {
-    const text = `${currentAyah.arabic}\n\n${currentAyah.translationUr}\n\n${currentAyah.translationEn}\n\n[Maarif ul Quran - ${currentAyah.surahNameEnglish} ${currentAyah.surahNumber}:${currentAyah.ayahNumber}]`;
+    const text = `${currentAyah.arabic}\n\n${currentAyah.translationEn}\n\n[Maarif-ul-Quran - ${currentAyah.surahNameEnglish} ${currentAyah.surahNumber}:${currentAyah.ayahNumber}]`;
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleToggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(() => {});
-      setIsFullscreen(true);
-    } else {
-      document.exitFullscreen().catch(() => {});
-      setIsFullscreen(false);
-    }
-  };
-
   return (
     <div
       id="ayah-reader-screen"
-      className={`min-h-screen pb-28 ${
+      className={`min-h-screen pb-24 ${
         settings.theme === 'sepia'
           ? 'bg-[#FCF9F1] text-[#2D2D2D]'
           : settings.theme === 'dark'
@@ -218,7 +189,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
             <button
               id="btn-reader-back"
               onClick={onBack}
-              className="p-1.5 rounded-full hover:bg-[#63553C] active:bg-[#524631] text-white cursor-pointer"
+              className="p-2 rounded-full hover:bg-[#63553C] active:bg-[#524631] text-white cursor-pointer"
               aria-label="Back"
             >
               <ArrowLeft className="w-5 h-5" />
@@ -238,7 +209,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                   ? 'bg-[#524631] text-amber-300 ring-2 ring-[#EDE9DE]'
                   : 'hover:bg-[#63553C] text-white'
               }`}
-              title="Pencil, Highlighter & Eraser / قلم، ہائی لائٹر اور ربڑ"
+              title="Pencil, Highlighter & Eraser"
             >
               <PenTool className="w-4.5 h-4.5" />
               {hasSavedAnnotations && !isAnnotating && (
@@ -288,14 +259,14 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
               {isPlaying ? <Pause className="w-4.5 h-4.5 fill-current" /> : <Play className="w-4.5 h-4.5 fill-current" />}
             </button>
 
-            {/* More menu */}
+            {/* Settings */}
             <button
-              id="btn-reader-more"
+              id="btn-reader-settings"
               onClick={onOpenSettings}
               className="p-2 rounded-full hover:bg-[#63553C] active:bg-[#524631] text-white cursor-pointer"
               title="Settings"
             >
-              <MoreVertical className="w-4.5 h-4.5" />
+              <Sliders className="w-4.5 h-4.5" />
             </button>
           </div>
         </div>
@@ -342,7 +313,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
             }
           }}
         >
-          {/* Interactive Annotation Canvas Overlay & Dock */}
+          {/* Annotation Canvas */}
           <AyahAnnotationCanvas
             surahNumber={currentAyah.surahNumber}
             ayahNumber={currentAyah.ayahNumber}
@@ -368,11 +339,11 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                     ? 'bg-amber-100 text-amber-900 border border-amber-300 font-semibold'
                     : 'bg-[#F4F1E6] hover:bg-[#EAE5D5] text-[#7D6B4B] border border-[#E5E0D0]'
                 }`}
-                title="Pencil, Highlighter & Eraser (قلم و ہائی لائٹر)"
+                title="Pencil, Highlighter & Eraser"
               >
                 <Pen className="w-3.5 h-3.5" />
-                <span className="font-urdu text-[11.5px]">
-                  {isAnnotating ? 'ڈرا بند کریں' : hasSavedAnnotations ? 'نوٹس موجود ہیں' : 'قلم و ہائی لائٹر'}
+                <span className="font-sans text-[11px] font-semibold">
+                  {isAnnotating ? 'Close Draw' : hasSavedAnnotations ? 'Notes Active' : 'Pen & Highlight'}
                 </span>
               </button>
 
@@ -381,7 +352,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                 className="p-1 text-[#9A8D70] hover:text-[#7D6B4B] transition-colors cursor-pointer"
                 title="Copy Ayah"
               >
-                {copied ? <Check className="w-4 h-4 text-[#7D6B4B]" /> : <Copy className="w-4 h-4" />}
+                {copied ? <Check className="w-4 h-4 text-[#7D6B4B]" /> : <Copy className="w-4 h-4 text-[#7D6B4B]" />}
               </button>
               <button
                 onClick={() => onSaveBookmark(currentAyah)}
@@ -419,23 +390,86 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           {settings.showWordByWord && currentAyah.words && currentAyah.words.length > 0 && (
             <div
               id="word-by-word-section"
-              className="my-4 p-4 bg-[#F4F1E6]/80 rounded-xl border border-[#E5E0D0]"
+              className="my-4 p-3.5 sm:p-4 bg-[#F4F1E6]/90 rounded-2xl border border-[#E5E0D0] shadow-2xs"
             >
-              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3.5 dir-rtl text-center">
+              {/* Header with Quick Language Switch */}
+              <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-[#E5E0D0]">
+                <div className="flex items-center gap-1.5">
+                  <BookOpen className="w-3.5 h-3.5 text-[#7D6B4B]" />
+                  <span className="font-bold text-xs uppercase tracking-wider text-[#7D6B4B] font-sans">
+                    Word-by-Word Meaning
+                  </span>
+                </div>
+                {onUpdateSettings && (
+                  <div className="flex items-center gap-1 bg-[#EBE6D6] p-0.5 rounded-lg text-[10px] font-sans font-semibold">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onUpdateSettings({ wordByWordLang: 'en' });
+                      }}
+                      className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
+                        settings.wordByWordLang === 'en'
+                          ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                          : 'text-[#63553C] hover:text-[#2D2D2D]'
+                      }`}
+                    >
+                      English
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onUpdateSettings({ wordByWordLang: 'both' });
+                      }}
+                      className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
+                        settings.wordByWordLang === 'both'
+                          ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                          : 'text-[#63553C] hover:text-[#2D2D2D]'
+                      }`}
+                    >
+                      Both
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onUpdateSettings({ wordByWordLang: 'ur' });
+                      }}
+                      className={`px-2 py-0.5 rounded-md transition-all cursor-pointer font-urdu ${
+                        settings.wordByWordLang === 'ur'
+                          ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                          : 'text-[#63553C] hover:text-[#2D2D2D]'
+                      }`}
+                    >
+                      Urdu
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* Grid of Word Cards */}
+              <div className="flex flex-wrap items-stretch justify-center gap-2 sm:gap-2.5 dir-rtl text-center">
                 {currentAyah.words.map((w, idx) => (
-                  <div key={idx} className="flex flex-col items-center min-w-[50px]">
+                  <div
+                    key={idx}
+                    className="flex flex-col items-center justify-between p-2 sm:p-2.5 rounded-xl bg-[#FDFCF8] border border-[#E5E0D0] min-w-[70px] max-w-[120px] shadow-2xs hover:bg-[#FAF8F2] hover:border-[#7D6B4B]/50 transition-all group"
+                  >
                     {/* Arabic word */}
-                    <span className="font-arabic text-lg font-bold text-[#8B2626] tracking-wide dir-rtl">
+                    <span className="font-arabic text-lg sm:text-xl font-bold text-[#8B2626] tracking-wide dir-rtl py-0.5 group-hover:scale-105 transition-transform">
                       {w.arabic}
                     </span>
-                    {/* Meaning underneath */}
+
+                    {/* English Word Translation */}
                     {(settings.wordByWordLang === 'en' || settings.wordByWordLang === 'both') && (
-                      <span className="text-[12px] font-medium text-[#2D2D2D] leading-tight mt-0.5 dir-ltr font-sans">
+                      <span className="text-[11.5px] sm:text-[12px] font-semibold text-[#2D2D2D] leading-tight dir-ltr font-sans mt-0.5 px-0.5 text-center">
                         {w.translationEn}
                       </span>
                     )}
+
+                    {/* Urdu Word Translation */}
                     {(settings.wordByWordLang === 'ur' || settings.wordByWordLang === 'both') && (
-                      <span className="font-urdu text-[11px] font-semibold text-[#7D6B4B] leading-tight mt-0.5 dir-rtl">
+                      <span className="font-urdu text-[11px] sm:text-[12px] font-bold text-[#7D6B4B] leading-tight dir-rtl mt-0.5 px-0.5 text-center">
                         {w.translationUr}
                       </span>
                     )}
@@ -445,19 +479,87 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
             </div>
           )}
 
-          {/* 4. Full Verse Translation (English & Urdu) */}
+          {/* 4. Full Verse Translation in English & Urdu */}
           <div className="space-y-3 my-4">
-            {/* English Translation */}
+            {/* Translation Header Bar with Quick Switch */}
+            <div className="flex items-center justify-between pb-1 text-xs text-[#7D6B4B] font-sans font-bold">
+              <span className="uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Verse Translation</span>
+              </span>
+              {onUpdateSettings && (
+                <div className="flex items-center gap-1 bg-[#EBE6D6] p-0.5 rounded-lg text-[10px] font-sans font-semibold">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onUpdateSettings({ primaryTranslation: 'en' });
+                    }}
+                    className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
+                      settings.primaryTranslation === 'en'
+                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onUpdateSettings({ primaryTranslation: 'both' });
+                    }}
+                    className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
+                      settings.primaryTranslation === 'both'
+                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                    }`}
+                  >
+                    Both
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onUpdateSettings({ primaryTranslation: 'ur' });
+                    }}
+                    className={`px-2 py-0.5 rounded-md transition-all cursor-pointer font-urdu ${
+                      settings.primaryTranslation === 'ur'
+                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                    }`}
+                  >
+                    Urdu
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* English Full Translation */}
             {(settings.primaryTranslation === 'en' || settings.primaryTranslation === 'both') && (
-              <div className="text-[#4A4A4A] text-[15px] leading-relaxed font-sans font-medium">
-                <p>{currentAyah.translationEn}</p>
+              <div className="p-3.5 bg-[#FDFCF8] rounded-xl border border-[#E5E0D0] text-left dir-ltr shadow-2xs">
+                <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-[#E5E0D0]/60">
+                  <span className="text-[10px] bg-[#63553C] text-white px-2 py-0.5 rounded font-sans font-bold uppercase tracking-wider">
+                    English Translation (Sahih International)
+                  </span>
+                </div>
+                <p className="text-[#2D2D2D] text-[15px] sm:text-[15.5px] leading-relaxed font-sans font-medium select-text">
+                  {currentAyah.translationEn}
+                </p>
               </div>
             )}
 
-            {/* Urdu Translation */}
+            {/* Urdu Full Translation */}
             {(settings.primaryTranslation === 'ur' || settings.primaryTranslation === 'both') && (
-              <div className="text-right dir-rtl font-urdu text-[16px] text-[#2D2D2D] leading-[2.1] font-semibold pt-2 border-t border-[#E5E0D0]">
-                <p>{currentAyah.translationUr}</p>
+              <div className="p-3.5 bg-[#FDFCF8] rounded-xl border border-[#E5E0D0] text-right dir-rtl shadow-2xs">
+                <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-[#E5E0D0]/60">
+                  <span className="text-[11px] bg-[#7D6B4B] text-white px-2 py-0.5 rounded font-urdu font-bold">
+                    اردو ترجمہ (مفتی تقی عثمانی / مولانا جالندھری)
+                  </span>
+                </div>
+                <p className="font-urdu text-[16px] sm:text-[17px] text-[#2D2D2D] leading-[2.2] font-semibold select-text">
+                  {currentAyah.translationUr}
+                </p>
               </div>
             )}
           </div>
@@ -468,176 +570,91 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
               <h3 className="text-xs font-bold uppercase tracking-widest font-sans text-[#7D6B4B]">
                 Tafsir Highlights (Maarif-ul-Quran)
               </h3>
+              {onUpdateSettings && (
+                <div className="flex items-center gap-1 bg-[#EBE6D6] p-0.5 rounded-lg text-[10px] font-sans font-semibold">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onUpdateSettings({ tafseerLang: 'en' });
+                    }}
+                    className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
+                      settings.tafseerLang === 'en'
+                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onUpdateSettings({ tafseerLang: 'both' });
+                    }}
+                    className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
+                      settings.tafseerLang === 'both'
+                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                    }`}
+                  >
+                    Both
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onUpdateSettings({ tafseerLang: 'ur' });
+                    }}
+                    className={`px-2 py-0.5 rounded-md transition-all cursor-pointer font-urdu ${
+                      settings.tafseerLang === 'ur'
+                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                    }`}
+                  >
+                    Urdu
+                  </button>
+                </div>
+              )}
             </div>
-
-            {/* Urdu Tafseer */}
-            {(settings.tafseerLang === 'ur' || settings.tafseerLang === 'both') && (
-              <div className="font-urdu text-right dir-rtl text-[15px] leading-[2.3] text-[#4A4A4A] bg-[#F4F1E6]/60 p-4 rounded-xl border border-[#E5E0D0] whitespace-pre-line">
-                {currentAyah.tafseerUr}
-              </div>
-            )}
 
             {/* English Tafseer */}
             {(settings.tafseerLang === 'en' || settings.tafseerLang === 'both') && (
-              <div className="mt-3 text-left text-sm leading-relaxed text-[#4A4A4A] bg-[#F4F1E6]/60 p-4 rounded-xl border border-[#E5E0D0] whitespace-pre-line font-sans">
-                {currentAyah.tafseerEn}
+              <div className="text-left text-sm leading-relaxed text-[#2D2D2D] bg-[#F4F1E6]/70 p-4 rounded-xl border border-[#E5E0D0] font-sans shadow-2xs">
+                <div className="text-[10px] bg-[#63553C] text-white px-2 py-0.5 rounded font-sans font-bold uppercase tracking-wider inline-block mb-2.5">
+                  Easy Learning Tafseer & Stories (English)
+                </div>
+                <InteractiveTafseerText content={currentAyah.tafseerEn} isUrdu={false} />
+              </div>
+            )}
+
+            {/* Urdu Tafseer */}
+            {(settings.tafseerLang === 'ur' || settings.tafseerLang === 'both') && (
+              <div className="mt-3 font-urdu text-right dir-rtl text-[15px] leading-[2.3] text-[#4A4A4A] bg-[#F4F1E6]/60 p-4 rounded-xl border border-[#E5E0D0] shadow-2xs">
+                <div className="text-[11px] bg-[#7D6B4B] text-white px-2 py-0.5 rounded font-urdu font-bold inline-block mb-2">
+                  آسان اور سبق آموز تفسیر و فہمِ قرآن (اردو)
+                </div>
+                <InteractiveTafseerText content={currentAyah.tafseerUr} isUrdu={true} />
               </div>
             )}
           </div>
-
-          {/* 6. Easy Questions & Answers (فہمِ تفسیر - آسان سوال و جواب) */}
-          {(() => {
-            const qaList = getAyahQA(currentAyah.surahNumber, currentAyah.ayahNumber, currentAyah);
-            if (!qaList || qaList.length === 0) return null;
-            return (
-              <div id="ayah-qa-section" className="mt-5 pt-4 border-t border-dashed border-[#DCD7C9]">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-1.5">
-                    <span className="p-1 rounded-md bg-[#7D6B4B]/15 text-[#7D6B4B]">
-                      <HelpCircle className="w-4 h-4" />
-                    </span>
-                    <h3 className="text-xs font-bold uppercase tracking-wider font-sans text-[#7D6B4B]">
-                      تفسیر کے آسان سوال و جواب (Q&A)
-                    </h3>
-                  </div>
-                  <span className="text-[11px] font-urdu font-medium text-[#9A8D70] bg-[#F4F1E6] px-2 py-0.5 rounded-md border border-[#E5E0D0]">
-                    فہمِ قرآن
-                  </span>
-                </div>
-
-                <div className="space-y-3">
-                  {qaList.map((qaItem, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-[#F4F1E6]/50 rounded-xl p-3.5 border border-[#E5E0D0] transition-colors"
-                    >
-                      {/* Question */}
-                      <div className="flex items-start gap-2 text-right dir-rtl mb-2">
-                        <span className="bg-[#7D6B4B] text-white text-[11px] font-bold px-1.5 py-0.5 rounded shrink-0 font-urdu mt-0.5">
-                          سوال {idx + 1}:
-                        </span>
-                        <p className="font-urdu text-[15px] font-bold text-[#2D2D2D] leading-[1.9]">
-                          {qaItem.questionUr}
-                        </p>
-                      </div>
-
-                      {/* Answer */}
-                      <div className="flex items-start gap-2 text-right dir-rtl bg-white/70 p-3 rounded-lg border border-[#E5E0D0]/80">
-                        <span className="bg-[#524631] text-[#FCF9F1] text-[11px] font-bold px-1.5 py-0.5 rounded shrink-0 font-urdu mt-0.5">
-                          جواب:
-                        </span>
-                        <p className="font-urdu text-[14.5px] text-[#4A4A4A] leading-[2.1]">
-                          {qaItem.answerUr}
-                        </p>
-                      </div>
-
-                      {/* English QA if enabled in settings */}
-                      {(settings.primaryTranslation === 'en' || settings.tafseerLang === 'en' || settings.tafseerLang === 'both') && qaItem.questionEn && (
-                        <div className="mt-2.5 pt-2 border-t border-[#E5E0D0]/60 text-left font-sans text-xs space-y-1">
-                          <p className="font-semibold text-[#2D2D2D]">
-                            <span className="text-[#7D6B4B]">Q{idx + 1}: </span>{qaItem.questionEn}
-                          </p>
-                          <p className="text-[#555] pl-4 border-l-2 border-[#7D6B4B]/40 leading-relaxed">
-                            {qaItem.answerEn}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })()}
-
-          {/* 7. Practical Guidance & Injunctions (عملی ہدایات و احکام - ہمیں کیا عمل کرنا چاہیے؟) */}
-          {(() => {
-            const actionList = getAyahActionPoints(currentAyah.surahNumber, currentAyah.ayahNumber, currentAyah);
-            if (!actionList || actionList.length === 0) return null;
-            return (
-              <div id="ayah-actions-section" className="mt-5 pt-4 border-t border-dashed border-[#DCD7C9]">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-1.5">
-                    <span className="p-1 rounded-md bg-[#7D6B4B]/15 text-[#7D6B4B]">
-                      <Sparkles className="w-4 h-4" />
-                    </span>
-                    <h3 className="text-xs font-bold uppercase tracking-wider font-sans text-[#7D6B4B]">
-                      عملی ہدایات و احکام (ہمیں کیا عمل کرنا چاہیے؟)
-                    </h3>
-                  </div>
-                  <span className="text-[11px] font-urdu font-medium text-[#7D6B4B] bg-[#7D6B4B]/10 px-2 py-0.5 rounded-md border border-[#7D6B4B]/20">
-                    حکمِ الٰہی و عملی سبق
-                  </span>
-                </div>
-
-                <div className="space-y-2.5">
-                  {actionList.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-start gap-2.5 p-3 rounded-xl bg-[#FDFCF8] border border-[#E5E0D0] text-right dir-rtl shadow-2xs"
-                    >
-                      <div className="mt-1 shrink-0">
-                        {item.category === 'prohibition' ? (
-                          <AlertCircle className="w-4 h-4 text-[#8B2626]" />
-                        ) : item.category === 'dua' ? (
-                          <Compass className="w-4 h-4 text-[#7D6B4B]" />
-                        ) : (
-                          <CheckCircle2 className="w-4 h-4 text-[#436436]" />
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-1.5 mb-1 justify-start">
-                          <span
-                            className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full font-urdu ${
-                              item.category === 'prohibition'
-                                ? 'bg-red-100 text-red-800'
-                                : item.category === 'dua'
-                                ? 'bg-amber-100 text-amber-900'
-                                : item.category === 'command'
-                                ? 'bg-emerald-100 text-emerald-900'
-                                : 'bg-[#EAE5D5] text-[#524631]'
-                            }`}
-                          >
-                            {item.category === 'prohibition'
-                              ? 'ممانعت / بچنے کا حکم'
-                              : item.category === 'dua'
-                              ? 'دعائیہ ہدایت'
-                              : item.category === 'command'
-                              ? 'حکمِ الٰہی'
-                              : 'عملی سبق'}
-                          </span>
-                        </div>
-                        <p className="font-urdu text-[14.5px] leading-[2.1] text-[#2D2D2D] font-medium">
-                          {item.actionUr}
-                        </p>
-                        {(settings.primaryTranslation === 'en' || settings.tafseerLang === 'en' || settings.tafseerLang === 'both') && item.actionEn && (
-                          <p className="mt-1 text-left font-sans text-xs text-[#555] dir-ltr leading-relaxed border-t border-[#E5E0D0]/50 pt-1">
-                            {item.actionEn}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })()}
         </div>
 
-        {/* Navigation buttons: Prev Ayah / Next Ayah */}
-        <div className="flex items-center justify-between gap-3 pt-1">
+        {/* Previous / Next Navigation Buttons */}
+        <div className="flex items-center justify-between gap-3 pt-2">
           <button
             id="btn-prev-ayah"
             onClick={handlePrevAyah}
-            className="flex-1 bg-[#FDFCF8] hover:bg-[#F4F1E6] text-[#2D2D2D] font-bold py-2.5 px-4 rounded-xl border border-[#E5E0D0] shadow-2xs flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer font-sans"
+            className="flex-1 bg-[#FDFCF8] hover:bg-[#F4F1E6] text-[#2D2D2D] font-bold py-3 px-4 rounded-xl border border-[#E5E0D0] shadow-xs flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer font-sans"
           >
-            <ChevronLeft className="w-4.5 h-4.5 text-[#7D6B4B]" />
-            <span className="text-xs">Previous Ayah</span>
+            <ChevronLeft className="w-5 h-5 text-[#7D6B4B]" />
+            <span>Previous Verse</span>
           </button>
 
           <button
             id="btn-reader-quick-options"
             onClick={() => onOpenSelectOption(currentAyah)}
-            className="bg-[#7D6B4B] hover:bg-[#63553C] text-white p-2.5 rounded-xl shadow-2xs flex items-center justify-center active:scale-95 transition-all cursor-pointer"
+            className="bg-[#7D6B4B] hover:bg-[#63553C] text-white p-3 rounded-xl shadow-xs flex items-center justify-center active:scale-95 transition-all cursor-pointer"
             title="Options"
           >
             <List className="w-5 h-5" />
@@ -646,51 +663,93 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           <button
             id="btn-next-ayah"
             onClick={handleNextAyah}
-            className="flex-1 bg-[#FDFCF8] hover:bg-[#F4F1E6] text-[#2D2D2D] font-bold py-2.5 px-4 rounded-xl border border-[#E5E0D0] shadow-2xs flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer font-sans"
+            className="flex-1 bg-[#FDFCF8] hover:bg-[#F4F1E6] text-[#2D2D2D] font-bold py-3 px-4 rounded-xl border border-[#E5E0D0] shadow-xs flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer font-sans"
           >
-            <span className="text-xs">Next Ayah</span>
-            <ChevronRight className="w-4.5 h-4.5 text-[#7D6B4B]" />
+            <span>Next Verse</span>
+            <ChevronRight className="w-5 h-5 text-[#7D6B4B]" />
           </button>
         </div>
       </div>
 
-      {/* Floating Audio Sticky Control Bar */}
+      {/* Floating Audio Sticky Bar */}
       {isPlaying && (
-        <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#2D2D2D] text-[#FCF9F1] px-4 py-2.5 z-40 shadow-2xl flex items-center justify-between rounded-t-2xl border-t border-[#7D6B4B] animate-in slide-in-from-bottom duration-200">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-[#7D6B4B] flex items-center justify-center animate-pulse">
-              <Volume2 className="w-4 h-4 text-white" />
+        <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#2D2D2D] text-[#FCF9F1] px-3.5 py-2 z-40 shadow-2xl flex items-center justify-between rounded-t-xl border-t border-[#7D6B4B]">
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-full bg-[#7D6B4B] flex items-center justify-center animate-pulse">
+              <Volume2 className="w-3.5 h-3.5 text-white" />
             </div>
             <div>
-              <p className="text-xs font-bold text-white font-sans">
-                Recitation: {currentAyah.surahNameEnglish} {currentAyah.ayahNumber}
+              <p className="text-xs font-bold text-white font-sans leading-tight">
+                {currentAyah.surahNameEnglish} {currentAyah.ayahNumber}
               </p>
-              <p className="text-[10px] text-[#9A8D70] font-sans">Mishary Rashid Alafasy</p>
+              <p className="text-[9.5px] text-[#9A8D70] font-sans">Alafasy</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <button
               onClick={handlePrevAyah}
-              className="p-1.5 text-[#EDE9DE] hover:text-white active:scale-95 cursor-pointer"
+              className="p-1 text-[#EDE9DE] hover:text-white cursor-pointer"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={togglePlayAudio}
-              className="w-9 h-9 rounded-full bg-[#7D6B4B] hover:bg-[#63553C] text-white flex items-center justify-center active:scale-95 transition-all cursor-pointer"
+              className="w-7 h-7 rounded-full bg-[#7D6B4B] hover:bg-[#63553C] text-white flex items-center justify-center cursor-pointer"
             >
-              {isPlaying ? <Pause className="w-4.5 h-4.5 fill-current" /> : <Play className="w-4.5 h-4.5 fill-current ml-0.5" />}
+              {isPlaying ? <Pause className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current ml-0.5" />}
             </button>
             <button
               onClick={handleNextAyah}
-              className="p-1.5 text-[#EDE9DE] hover:text-white active:scale-95 cursor-pointer"
+              className="p-1 text-[#EDE9DE] hover:text-white cursor-pointer"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4" />
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Step-by-Step Tafseer Review Confirmation Modal Popup */}
+      {showNextAyahPrompt && currentAyah.surahNumber === 2 && currentAyah.ayahNumber <= 141 && currentAyah.ayahNumber > 1 && (
+        <div className="fixed inset-0 bg-black/45 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+          <div className="bg-[#FCF9F1] border-2 border-[#7D6B4B] rounded-2xl max-w-md w-full p-5 shadow-2xl text-center space-y-4 animate-in fade-in zoom-in duration-200">
+            <div className="w-12 h-12 rounded-full bg-[#7D6B4B]/15 text-[#7D6B4B] flex items-center justify-center mx-auto shadow-inner">
+              <Sparkles className="w-6 h-6" />
+            </div>
+            <div className="space-y-1.5">
+              <span className="text-[11px] font-bold text-[#7D6B4B] uppercase tracking-wider bg-[#EAE5D5] px-3 py-1 rounded-full font-sans">
+                پارہ ۱ مفصل جائزہ (آیت {currentAyah.ayahNumber})
+              </span>
+              <h3 className="text-base font-bold font-urdu text-[#2D2D2D] pt-1">
+                آیت {currentAyah.ayahNumber} کی تفصیلی تفسیر و جامع ترجمہ مکمل ہو چکا ہے
+              </h3>
+              <p className="text-sm font-urdu text-[#63553C] leading-relaxed">
+                کیا اگلی آیت (آیت {currentAyah.ayahNumber - 1}) کی تفصیلی تفسیر اور مفصل ترجمہ بھی اسی طرح تیار کریں؟
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowNextAyahPrompt(true);
+                  onSelectAyah(2, currentAyah.ayahNumber - 1);
+                }}
+                className="flex-1 bg-[#7D6B4B] hover:bg-[#63553C] text-white font-bold py-2.5 px-3 rounded-xl shadow-md transition-all font-urdu text-sm cursor-pointer active:scale-98"
+              >
+                جی ہاں، اگلی آیت ({currentAyah.ayahNumber - 1}) کریں
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowNextAyahPrompt(false)}
+                className="flex-1 bg-[#EDE8D8] hover:bg-[#DFD9C7] text-[#4A3F2C] font-semibold py-2.5 px-3 rounded-xl transition-all font-urdu text-sm cursor-pointer"
+              >
+                فی الحال اسی کا مطالعہ کریں
+              </button>
+            </div>
           </div>
         </div>
       )}
     </div>
   );
 };
+

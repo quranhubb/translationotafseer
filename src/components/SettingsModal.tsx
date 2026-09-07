@@ -75,7 +75,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 onChange={(e) => onUpdateSettings({ arabicFontFamily: e.target.value as any })}
                 className="w-full px-3 py-2 bg-white border border-[#E5E0D0] rounded-xl text-xs font-medium text-[#2D2D2D] focus:outline-none focus:ring-1 focus:ring-[#7D6B4B]"
               >
-                <option value="Amiri">Amiri (Uthmani Naskh - عثماني)</option>
+                <option value="Amiri">Amiri (Uthmani Naskh)</option>
                 <option value="Scheherazade New">Scheherazade New (Traditional)</option>
                 <option value="Noto Naskh Arabic">Noto Naskh Arabic (Standard)</option>
                 <option value="Amiri Quran">Amiri Quran (Majestic Calligraphic)</option>
@@ -108,7 +108,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 <div className="grid grid-cols-3 gap-2">
                   {[
                     { id: 'en', label: 'English' },
-                    { id: 'ur', label: 'Urdu (اردو)' },
+                    { id: 'ur', label: 'Urdu' },
                     { id: 'both', label: 'Both' },
                   ].map((lang) => (
                     <button
@@ -193,7 +193,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           <div className="pt-4 space-y-3">
             <h4 className="font-bold text-xs uppercase tracking-widest text-[#7D6B4B] flex items-center gap-1.5 font-sans">
               <Volume2 className="w-4 h-4" />
-              <span>Audio Recitation (قاری)</span>
+              <span>Audio Recitation</span>
             </h4>
 
             <div>
@@ -203,15 +203,15 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 onChange={(e) => onUpdateSettings({ audioReciter: e.target.value })}
                 className="w-full px-3 py-2 bg-white border border-[#E5E0D0] rounded-xl text-xs font-medium text-[#2D2D2D] focus:outline-none focus:ring-1 focus:ring-[#7D6B4B]"
               >
-                <option value="Alafasy_128kbps">Mishary Rashid Alafasy (مشاري راشد العفاسي)</option>
+                <option value="Alafasy_128kbps">Mishary Rashid Alafasy</option>
                 <option value="Abdul_Basit_Murattal_192kbps">
-                  Abdul Basit Murattal (عبد الباسط عبد الصمد)
+                  Abdul Basit Murattal
                 </option>
                 <option value="Abdurrahmaan_As-Sudais_192kbps">
-                  Abdur-Rahman As-Sudais (عبد الرحمن السديس)
+                  Abdur-Rahman As-Sudais
                 </option>
                 <option value="Abu_Bakr_Ash-Shaatree_128kbps">
-                  Abu Bakr Ash-Shatri (أبو بكر الشاطري)
+                  Abu Bakr Ash-Shatri
                 </option>
               </select>
             </div>

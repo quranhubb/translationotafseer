@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, BookOpen, PenTool, Pen } from 'lucide-react';
-import { ALL_PARA1_AYAHS } from '../data/quranProvider';
+import { ALL_AVAILABLE_AYAHS } from '../data/quranProvider';
 import { Ayah } from '../types';
 import { AyahAnnotationCanvas } from './AyahAnnotationCanvas';
 
@@ -11,10 +11,12 @@ interface MushafViewProps {
 export const MushafView: React.FC<MushafViewProps> = ({ onSelectAyah }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isAnnotating, setIsAnnotating] = useState(false);
-  const totalPages = 21; // Para 1 spans pages 1 to 21 in Madani Mushaf
+  const totalPages = 41; // Para 1 spans pages 1-21, Para 2 spans pages 22-41
 
   const pageContainerRef = useRef<HTMLDivElement | null>(null);
-  const pageAyahs = ALL_PARA1_AYAHS.filter((a) => a.pageNumber === currentPage);
+  const pageAyahs = ALL_AVAILABLE_AYAHS.filter((a) => a.pageNumber === currentPage);
+  const currentJuz = currentPage <= 21 ? 1 : 2;
+  const currentJuzName = currentJuz === 1 ? 'Juz 1 • Alif Lam Meem (الم)' : 'Juz 2 • Sayaqool (سَيَقُولُ)';
 
   return (
     <div className="px-3 pb-24 pt-2 max-w-xl mx-auto">
@@ -32,7 +34,7 @@ export const MushafView: React.FC<MushafViewProps> = ({ onSelectAyah }) => {
           <span className="text-xs font-bold text-[#7D6B4B] uppercase tracking-widest block font-sans">
             Mushaf Page {currentPage} / {totalPages}
           </span>
-          <p className="text-[11px] text-[#9A8D70] font-medium font-sans">Juz 1 • Alif Lam Meem (الم)</p>
+          <p className="text-[11px] text-[#9A8D70] font-medium font-sans">{currentJuzName}</p>
         </div>
 
         <div className="flex items-center gap-1">
@@ -44,11 +46,11 @@ export const MushafView: React.FC<MushafViewProps> = ({ onSelectAyah }) => {
                 ? 'bg-[#7D6B4B] text-white shadow-xs'
                 : 'text-[#7D6B4B] hover:bg-[#F4F1E6]'
             }`}
-            title="Pencil & Highlighter (قلم و ہائی لائٹر)"
+            title="Pencil, Highlighter & Eraser"
           >
             <Pen className="w-4 h-4" />
-            <span className="font-urdu text-xs hidden sm:inline">
-              {isAnnotating ? 'بند کریں' : 'قلم'}
+            <span className="font-sans text-xs hidden sm:inline font-semibold">
+              {isAnnotating ? 'Close' : 'Annotate'}
             </span>
           </button>
 
@@ -127,7 +129,7 @@ export const MushafView: React.FC<MushafViewProps> = ({ onSelectAyah }) => {
 
       {/* Helper instruction */}
       <p className="text-center text-xs text-[#9A8D70] mt-3 font-sans">
-        💡 کسی بھی آیت پر کلک کریں تاکہ اس کا لفظی ترجمہ اور مفصل تفسیر کھل جائے۔
+        💡 Tap any Ayah to view its translation, word-by-word meaning, and detailed Tafseer.
       </p>
     </div>
   );

@@ -332,7 +332,7 @@ export const AyahAnnotationCanvas: React.FC<AyahAnnotationCanvasProps> = ({
 
   const handleClearAll = () => {
     if (strokes.length === 0) return;
-    if (window.confirm('کیا آپ تمام پنسل و ہائی لائٹر کے نشانات مٹانا چاہتے ہیں؟')) {
+    if (window.confirm('Do you want to clear all pencil and highlighter annotations for this Ayah?')) {
       setStrokes([]);
       setRedoStack([]);
       saveStrokes([]);
@@ -381,10 +381,10 @@ export const AyahAnnotationCanvas: React.FC<AyahAnnotationCanvasProps> = ({
                     ? 'bg-[#7D6B4B] text-white shadow-xs'
                     : 'text-[#C5BEB0] hover:text-white hover:bg-white/10'
                 }`}
-                title="Pencil / قلم (Pen)"
+                title="Pencil"
               >
                 <Pen className="w-4 h-4" />
-                <span className="hidden sm:inline font-urdu text-[13px]">پنسل</span>
+                <span className="hidden sm:inline font-sans text-xs">Pencil</span>
               </button>
 
               {/* Highlighter Button */}
@@ -399,10 +399,10 @@ export const AyahAnnotationCanvas: React.FC<AyahAnnotationCanvasProps> = ({
                     ? 'bg-[#B45309] text-white shadow-xs'
                     : 'text-[#C5BEB0] hover:text-white hover:bg-white/10'
                 }`}
-                title="Highlighter / ہائی لائٹر"
+                title="Highlighter"
               >
                 <Highlighter className="w-4 h-4" />
-                <span className="hidden sm:inline font-urdu text-[13px]">ہائی لائٹر</span>
+                <span className="hidden sm:inline font-sans text-xs">Highlighter</span>
               </button>
 
               {/* Eraser Button */}
@@ -417,10 +417,10 @@ export const AyahAnnotationCanvas: React.FC<AyahAnnotationCanvasProps> = ({
                     ? 'bg-rose-700 text-white shadow-xs'
                     : 'text-[#C5BEB0] hover:text-white hover:bg-white/10'
                 }`}
-                title="Eraser / ربڑ (صاف کریں)"
+                title="Eraser"
               >
                 <Eraser className="w-4 h-4" />
-                <span className="hidden sm:inline font-urdu text-[13px]">ربڑ</span>
+                <span className="hidden sm:inline font-sans text-xs">Eraser</span>
               </button>
             </div>
 
@@ -459,7 +459,7 @@ export const AyahAnnotationCanvas: React.FC<AyahAnnotationCanvasProps> = ({
               ) : (
                 /* Eraser size selector */
                 <div className="flex items-center gap-1 bg-[#1E1C18] px-2 py-1 rounded-xl border border-[#4A4A4A] text-xs">
-                  <span className="text-[11px] text-[#9A8D70] font-urdu">سائز:</span>
+                  <span className="text-[11px] text-[#9A8D70] font-sans">Size:</span>
                   {[16, 26, 40].map((sz) => (
                     <button
                       key={sz}
@@ -481,7 +481,7 @@ export const AyahAnnotationCanvas: React.FC<AyahAnnotationCanvasProps> = ({
                 onClick={handleUndo}
                 disabled={strokes.length === 0}
                 className="p-2 rounded-xl text-[#EDE9DE] hover:bg-white/10 disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer"
-                title="Undo / پچھلا عمل"
+                title="Undo"
               >
                 <Undo2 className="w-4 h-4" />
               </button>
@@ -490,7 +490,7 @@ export const AyahAnnotationCanvas: React.FC<AyahAnnotationCanvasProps> = ({
                 onClick={handleRedo}
                 disabled={redoStack.length === 0}
                 className="p-2 rounded-xl text-[#EDE9DE] hover:bg-white/10 disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer"
-                title="Redo / اگلا عمل"
+                title="Redo"
               >
                 <Redo2 className="w-4 h-4" />
               </button>
@@ -499,7 +499,7 @@ export const AyahAnnotationCanvas: React.FC<AyahAnnotationCanvasProps> = ({
                 onClick={handleClearAll}
                 disabled={strokes.length === 0}
                 className="p-2 rounded-xl text-rose-300 hover:text-rose-200 hover:bg-rose-950/40 disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer"
-                title="Clear All / سب مٹائیں"
+                title="Clear All"
               >
                 <Trash2 className="w-4 h-4" />
               </button>
@@ -522,21 +522,21 @@ export const AyahAnnotationCanvas: React.FC<AyahAnnotationCanvasProps> = ({
                 className="ml-1 bg-[#7D6B4B] hover:bg-[#63553C] text-white px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 shadow-sm active:scale-95 transition-all cursor-pointer font-sans"
               >
                 <Check className="w-4 h-4" />
-                <span className="font-urdu text-xs">مکمل</span>
+                <span className="font-sans text-xs">Done</span>
               </button>
             </div>
           </div>
 
-          {/* Quick Urdu helper tip */}
-          <div className="mt-1 pt-1 border-t border-[#444] flex items-center justify-between text-[11px] text-[#A09885] px-1 font-urdu">
+          {/* Quick English helper tip */}
+          <div className="mt-1 pt-1 border-t border-[#444] flex items-center justify-between text-[11px] text-[#A09885] px-1 font-sans">
             <span>
               {currentTool === 'pencil'
-                ? '✏️ پنسل سے آیت یا ترجمہ پر نشان اور نوٹس لگائیں'
+                ? '✏️ Draw notes, underline verses or write reflections'
                 : currentTool === 'highlighter'
-                ? '🖍️ ہائی لائٹر سے اہم الفاظ اور نکات کو نمایاں کریں'
-                : '🧹 ربڑ سے نشانات کو باآسانی صاف کریں'}
+                ? '🖍️ Highlight important words and Tafseer points'
+                : '🧹 Erase pencil or highlighter annotations'}
             </span>
-            <span className="text-[10px] text-[#7D6B4B] font-sans">Auto-saved</span>
+            <span className="text-[10px] text-[#C2B294] font-sans">Auto-saved</span>
           </div>
         </div>
       )}

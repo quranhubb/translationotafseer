@@ -30,7 +30,7 @@ export const GoToAyahModal: React.FC<GoToAyahModalProps> = ({ isOpen, onClose, o
         <div className="flex items-center justify-between pb-3 border-b border-[#E5E0D0] mb-4">
           <div className="flex items-center gap-2 text-[#7D6B4B]">
             <Send className="w-5 h-5" />
-            <h3 className="font-bold text-[#2D2D2D] text-base font-serif">Go to Ayah (آیت کا انتخاب)</h3>
+            <h3 className="font-bold text-[#2D2D2D] text-base font-serif">Go to Ayah</h3>
           </div>
           <button onClick={onClose} className="text-[#9A8D70] hover:text-[#2D2D2D] p-1 cursor-pointer">
             <X className="w-5 h-5" />
@@ -40,7 +40,7 @@ export const GoToAyahModal: React.FC<GoToAyahModalProps> = ({ isOpen, onClose, o
         <form onSubmit={handleGo} className="space-y-4 font-sans">
           <div>
             <label className="block text-xs font-bold text-[#4A4A4A] mb-1.5">
-              Select Surah (سورت)
+              Select Surah
             </label>
             <select
               value={selectedSurah}
@@ -51,8 +51,8 @@ export const GoToAyahModal: React.FC<GoToAyahModalProps> = ({ isOpen, onClose, o
               }}
               className="w-full px-3 py-2.5 bg-white border border-[#E5E0D0] rounded-xl text-sm font-medium text-[#2D2D2D] focus:ring-2 focus:ring-[#7D6B4B] focus:outline-none"
             >
-              <option value={1}>1. Al-Faatiha (الفاتحة) - Verses 1 to 7</option>
-              <option value={2}>2. Al-Baqara (البقرة) - Para 1: Verses 1 to 141</option>
+              <option value={1}>1. Al-Faatiha - Verses 1 to 7</option>
+              <option value={2}>2. Al-Baqara - Para 1: Verses 1 to 141</option>
             </select>
           </div>
 
