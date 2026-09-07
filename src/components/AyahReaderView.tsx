@@ -179,17 +179,17 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           ? 'bg-[#FCF9F1] text-[#2D2D2D]'
           : settings.theme === 'dark'
           ? 'bg-[#1E1C18] text-[#EDE9DE]'
-          : 'bg-[#FCF9F1] text-[#2D2D2D]'
+          : 'bg-[#FCFAF5] text-[#1D2A20]'
       }`}
     >
-      {/* Top Header Bar matching Professional Polish theme */}
-      <div className="bg-[#7D6B4B] text-white sticky top-0 z-30 shadow-sm border-b border-[#63553C]">
+      {/* Top Header Bar matching Emerald Green & Radiant Gold theme */}
+      <div className="bg-[#154734] text-white sticky top-0 z-30 shadow-sm border-b border-[#0F3626]">
         <div className="px-3 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-1">
             <button
               id="btn-reader-back"
               onClick={onBack}
-              className="p-2 rounded-full hover:bg-[#63553C] active:bg-[#524631] text-white cursor-pointer"
+              className="p-2 rounded-full hover:bg-[#1A523C] active:bg-[#0F3626] text-white cursor-pointer"
               aria-label="Back"
             >
               <ArrowLeft className="w-5 h-5" />
@@ -206,14 +206,14 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
               onClick={() => setIsAnnotating(!isAnnotating)}
               className={`p-2 rounded-full transition-all cursor-pointer relative ${
                 isAnnotating
-                  ? 'bg-[#524631] text-amber-300 ring-2 ring-[#EDE9DE]'
-                  : 'hover:bg-[#63553C] text-white'
+                  ? 'bg-[#0F3626] text-amber-300 ring-2 ring-[#C5A059]'
+                  : 'hover:bg-[#1A523C] text-white'
               }`}
               title="Pencil, Highlighter & Eraser"
             >
               <PenTool className="w-4.5 h-4.5" />
               {hasSavedAnnotations && !isAnnotating && (
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 ring-1 ring-[#7D6B4B]" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 ring-1 ring-[#154734]" />
               )}
             </button>
 
@@ -221,7 +221,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
             <button
               id="btn-reader-share"
               onClick={() => onOpenSelectOption(currentAyah)}
-              className="p-2 rounded-full hover:bg-[#63553C] active:bg-[#524631] text-white cursor-pointer"
+              className="p-2 rounded-full hover:bg-[#1A523C] active:bg-[#0F3626] text-white cursor-pointer"
               title="Share & Options"
             >
               <Share2 className="w-4.5 h-4.5" />
@@ -231,7 +231,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
             <button
               id="btn-reader-mushaf"
               onClick={onOpenMushaf}
-              className="p-2 rounded-full hover:bg-[#63553C] active:bg-[#524631] text-white cursor-pointer"
+              className="p-2 rounded-full hover:bg-[#1A523C] active:bg-[#0F3626] text-white cursor-pointer"
               title="Mushaf Mode"
             >
               <BookOpen className="w-4.5 h-4.5" />
@@ -241,7 +241,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
             <button
               id="btn-reader-options"
               onClick={() => onOpenSelectOption(currentAyah)}
-              className="p-2 rounded-full hover:bg-[#63553C] active:bg-[#524631] text-white cursor-pointer"
+              className="p-2 rounded-full hover:bg-[#1A523C] active:bg-[#0F3626] text-white cursor-pointer"
               title="Ayah Options"
             >
               <List className="w-4.5 h-4.5" />
@@ -252,7 +252,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
               id="btn-reader-play"
               onClick={togglePlayAudio}
               className={`p-2 rounded-full text-white transition-all cursor-pointer ${
-                isPlaying ? 'bg-[#524631]' : 'hover:bg-[#63553C]'
+                isPlaying ? 'bg-[#0F3626] ring-1 ring-[#C5A059]' : 'hover:bg-[#1A523C]'
               }`}
               title={isPlaying ? 'Pause Recitation' : 'Play Recitation'}
             >
@@ -263,7 +263,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
             <button
               id="btn-reader-settings"
               onClick={onOpenSettings}
-              className="p-2 rounded-full hover:bg-[#63553C] active:bg-[#524631] text-white cursor-pointer"
+              className="p-2 rounded-full hover:bg-[#1A523C] active:bg-[#0F3626] text-white cursor-pointer"
               title="Settings"
             >
               <Sliders className="w-4.5 h-4.5" />
@@ -274,7 +274,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
         {/* Horizontal Ayah Pager / Tabs ribbon */}
         <div
           ref={tabsScrollRef}
-          className="flex items-center overflow-x-auto scrollbar-none px-2 border-t border-[#63553C] bg-[#63553C] text-xs font-medium text-[#EDE9DE]"
+          className="flex items-center overflow-x-auto scrollbar-none px-2 border-t border-[#0F3626] bg-[#0F3626] text-xs font-medium text-[#F3E7C4]"
         >
           {surahAyahs.map((a) => {
             const isSelected = a.ayahNumber === currentAyah.ayahNumber;
@@ -284,8 +284,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                 onClick={() => onSelectAyah(a.surahNumber, a.ayahNumber)}
                 className={`py-2 px-3.5 whitespace-nowrap transition-all font-arabic text-sm cursor-pointer ${
                   isSelected
-                    ? 'active-tab text-white font-bold border-b-2 border-[#FCF9F1] bg-[#524631]'
-                    : 'text-[#EDE9DE]/80 hover:text-white hover:bg-[#524631]/40'
+                    ? 'active-tab text-white font-bold border-b-2 border-[#C5A059] bg-[#154734]'
+                    : 'text-[#F3E7C4]/80 hover:text-white hover:bg-[#154734]/50'
                 }`}
               >
                 {a.surahNameArabic} {a.ayahNumber}
@@ -302,10 +302,10 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           id="main-ayah-card"
           className={`rounded-2xl shadow-xs border p-5 transition-all relative overflow-hidden ${
             settings.theme === 'sepia'
-              ? 'bg-[#FDFCF8] border-[#E5E0D0]'
+              ? 'bg-[#FFFFFF] border-[#E6DFC9]'
               : settings.theme === 'dark'
               ? 'bg-[#262420] border-[#3D3A34] text-[#EDE9DE]'
-              : 'bg-[#FDFCF8] border-[#E5E0D0]'
+              : 'bg-[#FFFFFF] border-[#E6DFC9]'
           }`}
           onClick={() => {
             if (!isAnnotating) {
@@ -323,8 +323,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           />
 
           {/* Quick Ayah Actions bar */}
-          <div className="flex items-center justify-between pb-3 border-b border-[#E5E0D0] text-xs text-[#9A8D70] font-sans relative z-10">
-            <span className="font-semibold text-[#7D6B4B] flex items-center gap-1">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E6DFC9] text-xs text-[#68796C] font-sans relative z-10">
+            <span className="font-semibold text-[#154734] flex items-center gap-1">
               <span>Para 1</span> • <span>Ruku {currentAyah.rukuNumber}</span> • <span>Page {currentAyah.pageNumber}</span>
             </span>
             <div className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
@@ -334,10 +334,10 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                 onClick={() => setIsAnnotating(!isAnnotating)}
                 className={`px-2.5 py-1 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
                   isAnnotating
-                    ? 'bg-[#7D6B4B] text-white shadow-2xs'
+                    ? 'bg-[#154734] text-white shadow-2xs'
                     : hasSavedAnnotations
                     ? 'bg-amber-100 text-amber-900 border border-amber-300 font-semibold'
-                    : 'bg-[#F4F1E6] hover:bg-[#EAE5D5] text-[#7D6B4B] border border-[#E5E0D0]'
+                    : 'bg-[#F5EFE2] hover:bg-[#ECE4D0] text-[#154734] border border-[#E6DFC9]'
                 }`}
                 title="Pencil, Highlighter & Eraser"
               >
@@ -349,14 +349,14 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
 
               <button
                 onClick={handleCopyText}
-                className="p-1 text-[#9A8D70] hover:text-[#7D6B4B] transition-colors cursor-pointer"
+                className="p-1 text-[#68796C] hover:text-[#154734] transition-colors cursor-pointer"
                 title="Copy Ayah"
               >
-                {copied ? <Check className="w-4 h-4 text-[#7D6B4B]" /> : <Copy className="w-4 h-4 text-[#7D6B4B]" />}
+                {copied ? <Check className="w-4 h-4 text-[#154734]" /> : <Copy className="w-4 h-4 text-[#154734]" />}
               </button>
               <button
                 onClick={() => onSaveBookmark(currentAyah)}
-                className="p-1 text-[#9A8D70] hover:text-[#7D6B4B] transition-colors cursor-pointer"
+                className="p-1 text-[#68796C] hover:text-[#154734] transition-colors cursor-pointer"
                 title="Bookmark Ayah"
               >
                 <BookmarkIcon className="w-4 h-4" />
@@ -368,7 +368,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           <div className="my-5 text-center px-1">
             <p
               id="ayah-arabic-text"
-              className="font-quran leading-[2.4] text-[#2D2D2D] font-bold dir-rtl select-text"
+              className="font-quran leading-[2.4] text-[#1D2A20] font-bold dir-rtl select-text"
               style={{
                 fontSize: `${settings.arabicFontSize || 28}px`,
                 fontFamily: settings.arabicFontFamily || 'Amiri',
@@ -380,8 +380,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
 
           {/* 2. Ayah Number Divider line */}
           <div className="relative flex items-center justify-center my-4">
-            <div className="border-t border-[#E5E0D0] w-full" />
-            <div className="absolute bg-[#7D6B4B] text-white px-3.5 py-0.5 text-xs font-bold rounded-full font-sans tracking-widest uppercase shadow-2xs">
+            <div className="border-t border-[#E6DFC9] w-full" />
+            <div className="absolute bg-[#154734] text-[#F3E7C4] px-3.5 py-0.5 text-xs font-bold rounded-full font-sans tracking-widest uppercase shadow-2xs border border-[#0F3626]">
               Verse {currentAyah.ayahNumber}
             </div>
           </div>
@@ -390,18 +390,18 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           {settings.showWordByWord && currentAyah.words && currentAyah.words.length > 0 && (
             <div
               id="word-by-word-section"
-              className="my-4 p-3.5 sm:p-4 bg-[#F4F1E6]/90 rounded-2xl border border-[#E5E0D0] shadow-2xs"
+              className="my-4 p-3.5 sm:p-4 bg-[#F5EFE2]/90 rounded-2xl border border-[#E6DFC9] shadow-2xs"
             >
               {/* Header with Quick Language Switch */}
-              <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-[#E5E0D0]">
+              <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-[#E6DFC9]">
                 <div className="flex items-center gap-1.5">
-                  <BookOpen className="w-3.5 h-3.5 text-[#7D6B4B]" />
-                  <span className="font-bold text-xs uppercase tracking-wider text-[#7D6B4B] font-sans">
+                  <BookOpen className="w-3.5 h-3.5 text-[#154734]" />
+                  <span className="font-bold text-xs uppercase tracking-wider text-[#154734] font-sans">
                     Word-by-Word Meaning
                   </span>
                 </div>
                 {onUpdateSettings && (
-                  <div className="flex items-center gap-1 bg-[#EBE6D6] p-0.5 rounded-lg text-[10px] font-sans font-semibold">
+                  <div className="flex items-center gap-1 bg-[#ECE4D0] p-0.5 rounded-lg text-[10px] font-sans font-semibold">
                     <button
                       type="button"
                       onClick={(e) => {
@@ -410,8 +410,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                       }}
                       className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
                         settings.wordByWordLang === 'en'
-                          ? 'bg-[#7D6B4B] text-white shadow-2xs'
-                          : 'text-[#63553C] hover:text-[#2D2D2D]'
+                          ? 'bg-[#154734] text-white shadow-2xs'
+                          : 'text-[#154734] hover:text-[#1D2A20]'
                       }`}
                     >
                       English
@@ -424,8 +424,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                       }}
                       className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
                         settings.wordByWordLang === 'both'
-                          ? 'bg-[#7D6B4B] text-white shadow-2xs'
-                          : 'text-[#63553C] hover:text-[#2D2D2D]'
+                          ? 'bg-[#154734] text-white shadow-2xs'
+                          : 'text-[#154734] hover:text-[#1D2A20]'
                       }`}
                     >
                       Both
@@ -438,8 +438,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                       }}
                       className={`px-2 py-0.5 rounded-md transition-all cursor-pointer font-urdu ${
                         settings.wordByWordLang === 'ur'
-                          ? 'bg-[#7D6B4B] text-white shadow-2xs'
-                          : 'text-[#63553C] hover:text-[#2D2D2D]'
+                          ? 'bg-[#154734] text-white shadow-2xs'
+                          : 'text-[#154734] hover:text-[#1D2A20]'
                       }`}
                     >
                       Urdu
@@ -453,7 +453,7 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                 {currentAyah.words.map((w, idx) => (
                   <div
                     key={idx}
-                    className="flex flex-col items-center justify-between p-2 sm:p-2.5 rounded-xl bg-[#FDFCF8] border border-[#E5E0D0] min-w-[70px] max-w-[120px] shadow-2xs hover:bg-[#FAF8F2] hover:border-[#7D6B4B]/50 transition-all group"
+                    className="flex flex-col items-center justify-between p-2 sm:p-2.5 rounded-xl bg-[#FFFFFF] border border-[#E6DFC9] min-w-[70px] max-w-[120px] shadow-2xs hover:bg-[#FAF7F0] hover:border-[#154734]/40 transition-all group"
                   >
                     {/* Arabic word */}
                     <span className="font-arabic text-lg sm:text-xl font-bold text-[#8B2626] tracking-wide dir-rtl py-0.5 group-hover:scale-105 transition-transform">
@@ -462,14 +462,14 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
 
                     {/* English Word Translation */}
                     {(settings.wordByWordLang === 'en' || settings.wordByWordLang === 'both') && (
-                      <span className="text-[11.5px] sm:text-[12px] font-semibold text-[#2D2D2D] leading-tight dir-ltr font-sans mt-0.5 px-0.5 text-center">
+                      <span className="text-[11.5px] sm:text-[12px] font-semibold text-[#1D2A20] leading-tight dir-ltr font-sans mt-0.5 px-0.5 text-center">
                         {w.translationEn}
                       </span>
                     )}
 
                     {/* Urdu Word Translation */}
                     {(settings.wordByWordLang === 'ur' || settings.wordByWordLang === 'both') && (
-                      <span className="font-urdu text-[11px] sm:text-[12px] font-bold text-[#7D6B4B] leading-tight dir-rtl mt-0.5 px-0.5 text-center">
+                      <span className="font-urdu text-[11px] sm:text-[12px] font-bold text-[#154734] leading-tight dir-rtl mt-0.5 px-0.5 text-center">
                         {w.translationUr}
                       </span>
                     )}
@@ -482,13 +482,13 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           {/* 4. Full Verse Translation in English & Urdu */}
           <div className="space-y-3 my-4">
             {/* Translation Header Bar with Quick Switch */}
-            <div className="flex items-center justify-between pb-1 text-xs text-[#7D6B4B] font-sans font-bold">
+            <div className="flex items-center justify-between pb-1 text-xs text-[#154734] font-sans font-bold">
               <span className="uppercase tracking-wider flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Verse Translation</span>
               </span>
               {onUpdateSettings && (
-                <div className="flex items-center gap-1 bg-[#EBE6D6] p-0.5 rounded-lg text-[10px] font-sans font-semibold">
+                <div className="flex items-center gap-1 bg-[#ECE4D0] p-0.5 rounded-lg text-[10px] font-sans font-semibold">
                   <button
                     type="button"
                     onClick={(e) => {
@@ -497,8 +497,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                     }}
                     className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
                       settings.primaryTranslation === 'en'
-                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
-                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                        ? 'bg-[#154734] text-white shadow-2xs'
+                        : 'text-[#154734] hover:text-[#1D2A20]'
                     }`}
                   >
                     English
@@ -511,8 +511,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                     }}
                     className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
                       settings.primaryTranslation === 'both'
-                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
-                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                        ? 'bg-[#154734] text-white shadow-2xs'
+                        : 'text-[#154734] hover:text-[#1D2A20]'
                     }`}
                   >
                     Both
@@ -525,8 +525,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                     }}
                     className={`px-2 py-0.5 rounded-md transition-all cursor-pointer font-urdu ${
                       settings.primaryTranslation === 'ur'
-                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
-                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                        ? 'bg-[#154734] text-white shadow-2xs'
+                        : 'text-[#154734] hover:text-[#1D2A20]'
                     }`}
                   >
                     Urdu
@@ -537,13 +537,13 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
 
             {/* English Full Translation */}
             {(settings.primaryTranslation === 'en' || settings.primaryTranslation === 'both') && (
-              <div className="p-3.5 bg-[#FDFCF8] rounded-xl border border-[#E5E0D0] text-left dir-ltr shadow-2xs">
-                <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-[#E5E0D0]/60">
-                  <span className="text-[10px] bg-[#63553C] text-white px-2 py-0.5 rounded font-sans font-bold uppercase tracking-wider">
+              <div className="p-3.5 bg-[#FFFFFF] rounded-xl border border-[#E6DFC9] text-left dir-ltr shadow-2xs">
+                <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-[#E6DFC9]/60">
+                  <span className="text-[10px] bg-[#B88E3E] text-white px-2 py-0.5 rounded font-sans font-bold uppercase tracking-wider">
                     English Translation (Sahih International)
                   </span>
                 </div>
-                <p className="text-[#2D2D2D] text-[15px] sm:text-[15.5px] leading-relaxed font-sans font-medium select-text">
+                <p className="text-[#1D2A20] text-[15px] sm:text-[15.5px] leading-relaxed font-sans font-medium select-text">
                   {currentAyah.translationEn}
                 </p>
               </div>
@@ -551,13 +551,13 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
 
             {/* Urdu Full Translation */}
             {(settings.primaryTranslation === 'ur' || settings.primaryTranslation === 'both') && (
-              <div className="p-3.5 bg-[#FDFCF8] rounded-xl border border-[#E5E0D0] text-right dir-rtl shadow-2xs">
-                <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-[#E5E0D0]/60">
-                  <span className="text-[11px] bg-[#7D6B4B] text-white px-2 py-0.5 rounded font-urdu font-bold">
+              <div className="p-3.5 bg-[#FFFFFF] rounded-xl border border-[#E6DFC9] text-right dir-rtl shadow-2xs">
+                <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-[#E6DFC9]/60">
+                  <span className="text-[11px] bg-[#154734] text-white px-2 py-0.5 rounded font-urdu font-bold">
                     اردو ترجمہ (مفتی تقی عثمانی / مولانا جالندھری)
                   </span>
                 </div>
-                <p className="font-urdu text-[16px] sm:text-[17px] text-[#2D2D2D] leading-[2.2] font-semibold select-text">
+                <p className="font-urdu text-[16px] sm:text-[17px] text-[#1D2A20] leading-[2.2] font-semibold select-text">
                   {currentAyah.translationUr}
                 </p>
               </div>
@@ -565,13 +565,13 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           </div>
 
           {/* 5. Tafseer Maarif-ul-Quran Section */}
-          <div className="mt-5 pt-4 border-t border-dashed border-[#DCD7C9]">
+          <div className="mt-5 pt-4 border-t border-dashed border-[#D5CDBC]">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-xs font-bold uppercase tracking-widest font-sans text-[#7D6B4B]">
+              <h3 className="text-xs font-bold uppercase tracking-widest font-sans text-[#154734]">
                 Tafsir Highlights (Maarif-ul-Quran)
               </h3>
               {onUpdateSettings && (
-                <div className="flex items-center gap-1 bg-[#EBE6D6] p-0.5 rounded-lg text-[10px] font-sans font-semibold">
+                <div className="flex items-center gap-1 bg-[#ECE4D0] p-0.5 rounded-lg text-[10px] font-sans font-semibold">
                   <button
                     type="button"
                     onClick={(e) => {
@@ -580,8 +580,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                     }}
                     className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
                       settings.tafseerLang === 'en'
-                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
-                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                        ? 'bg-[#154734] text-white shadow-2xs'
+                        : 'text-[#154734] hover:text-[#1D2A20]'
                     }`}
                   >
                     English
@@ -594,8 +594,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                     }}
                     className={`px-2 py-0.5 rounded-md transition-all cursor-pointer ${
                       settings.tafseerLang === 'both'
-                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
-                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                        ? 'bg-[#154734] text-white shadow-2xs'
+                        : 'text-[#154734] hover:text-[#1D2A20]'
                     }`}
                   >
                     Both
@@ -608,8 +608,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                     }}
                     className={`px-2 py-0.5 rounded-md transition-all cursor-pointer font-urdu ${
                       settings.tafseerLang === 'ur'
-                        ? 'bg-[#7D6B4B] text-white shadow-2xs'
-                        : 'text-[#63553C] hover:text-[#2D2D2D]'
+                        ? 'bg-[#154734] text-white shadow-2xs'
+                        : 'text-[#154734] hover:text-[#1D2A20]'
                     }`}
                   >
                     Urdu
@@ -620,8 +620,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
 
             {/* English Tafseer */}
             {(settings.tafseerLang === 'en' || settings.tafseerLang === 'both') && (
-              <div className="text-left text-sm leading-relaxed text-[#2D2D2D] bg-[#F4F1E6]/70 p-4 rounded-xl border border-[#E5E0D0] font-sans shadow-2xs">
-                <div className="text-[10px] bg-[#63553C] text-white px-2 py-0.5 rounded font-sans font-bold uppercase tracking-wider inline-block mb-2.5">
+              <div className="text-left text-sm leading-relaxed text-[#1D2A20] bg-[#FAF7F0] p-4 rounded-xl border border-[#E6DFC9] font-sans shadow-2xs">
+                <div className="text-[10px] bg-[#B88E3E] text-white px-2 py-0.5 rounded font-sans font-bold uppercase tracking-wider inline-block mb-2.5">
                   Easy Learning Tafseer & Stories (English)
                 </div>
                 <InteractiveTafseerText content={currentAyah.tafseerEn} isUrdu={false} />
@@ -630,8 +630,8 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
 
             {/* Urdu Tafseer */}
             {(settings.tafseerLang === 'ur' || settings.tafseerLang === 'both') && (
-              <div className="mt-3 font-urdu text-right dir-rtl text-[15px] leading-[2.3] text-[#4A4A4A] bg-[#F4F1E6]/60 p-4 rounded-xl border border-[#E5E0D0] shadow-2xs">
-                <div className="text-[11px] bg-[#7D6B4B] text-white px-2 py-0.5 rounded font-urdu font-bold inline-block mb-2">
+              <div className="mt-3 font-urdu text-right dir-rtl text-[15px] leading-[2.3] text-[#223528] bg-[#FAF7F0] p-4 rounded-xl border border-[#E6DFC9] shadow-2xs">
+                <div className="text-[11px] bg-[#154734] text-[#F3E7C4] px-2 py-0.5 rounded font-urdu font-bold inline-block mb-2 border border-[#0F3626]">
                   آسان اور سبق آموز تفسیر و فہمِ قرآن (اردو)
                 </div>
                 <InteractiveTafseerText content={currentAyah.tafseerUr} isUrdu={true} />
@@ -645,16 +645,16 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           <button
             id="btn-prev-ayah"
             onClick={handlePrevAyah}
-            className="flex-1 bg-[#FDFCF8] hover:bg-[#F4F1E6] text-[#2D2D2D] font-bold py-3 px-4 rounded-xl border border-[#E5E0D0] shadow-xs flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer font-sans"
+            className="flex-1 bg-[#FFFFFF] hover:bg-[#F5EFE2] text-[#1D2A20] font-bold py-3 px-4 rounded-xl border border-[#E6DFC9] shadow-xs flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer font-sans"
           >
-            <ChevronLeft className="w-5 h-5 text-[#7D6B4B]" />
+            <ChevronLeft className="w-5 h-5 text-[#154734]" />
             <span>Previous Verse</span>
           </button>
 
           <button
             id="btn-reader-quick-options"
             onClick={() => onOpenSelectOption(currentAyah)}
-            className="bg-[#7D6B4B] hover:bg-[#63553C] text-white p-3 rounded-xl shadow-xs flex items-center justify-center active:scale-95 transition-all cursor-pointer"
+            className="bg-[#154734] hover:bg-[#0F3626] text-white p-3 rounded-xl shadow-xs flex items-center justify-center active:scale-95 transition-all cursor-pointer"
             title="Options"
           >
             <List className="w-5 h-5" />
@@ -663,45 +663,45 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
           <button
             id="btn-next-ayah"
             onClick={handleNextAyah}
-            className="flex-1 bg-[#FDFCF8] hover:bg-[#F4F1E6] text-[#2D2D2D] font-bold py-3 px-4 rounded-xl border border-[#E5E0D0] shadow-xs flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer font-sans"
+            className="flex-1 bg-[#FFFFFF] hover:bg-[#F5EFE2] text-[#1D2A20] font-bold py-3 px-4 rounded-xl border border-[#E6DFC9] shadow-xs flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer font-sans"
           >
             <span>Next Verse</span>
-            <ChevronRight className="w-5 h-5 text-[#7D6B4B]" />
+            <ChevronRight className="w-5 h-5 text-[#154734]" />
           </button>
         </div>
       </div>
 
       {/* Floating Audio Sticky Bar */}
       {isPlaying && (
-        <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#2D2D2D] text-[#FCF9F1] px-3.5 py-2 z-40 shadow-2xl flex items-center justify-between rounded-t-xl border-t border-[#7D6B4B]">
+        <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#0F3626] text-[#FCFAF5] px-3.5 py-2 z-40 shadow-2xl flex items-center justify-between rounded-t-xl border-t border-[#C5A059]/40">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-full bg-[#7D6B4B] flex items-center justify-center animate-pulse">
-              <Volume2 className="w-3.5 h-3.5 text-white" />
+            <div className="w-7 h-7 rounded-full bg-[#154734] border border-[#C5A059]/50 flex items-center justify-center animate-pulse">
+              <Volume2 className="w-3.5 h-3.5 text-[#F3E7C4]" />
             </div>
             <div>
               <p className="text-xs font-bold text-white font-sans leading-tight">
                 {currentAyah.surahNameEnglish} {currentAyah.ayahNumber}
               </p>
-              <p className="text-[9.5px] text-[#9A8D70] font-sans">Alafasy</p>
+              <p className="text-[9.5px] text-[#C5A059] font-sans">Alafasy</p>
             </div>
           </div>
 
           <div className="flex items-center gap-1.5">
             <button
               onClick={handlePrevAyah}
-              className="p-1 text-[#EDE9DE] hover:text-white cursor-pointer"
+              className="p-1 text-[#F3E7C4] hover:text-white cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={togglePlayAudio}
-              className="w-7 h-7 rounded-full bg-[#7D6B4B] hover:bg-[#63553C] text-white flex items-center justify-center cursor-pointer"
+              className="w-7 h-7 rounded-full bg-[#154734] hover:bg-[#1A523C] text-[#F3E7C4] border border-[#C5A059]/50 flex items-center justify-center cursor-pointer"
             >
               {isPlaying ? <Pause className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current ml-0.5" />}
             </button>
             <button
               onClick={handleNextAyah}
-              className="p-1 text-[#EDE9DE] hover:text-white cursor-pointer"
+              className="p-1 text-[#F3E7C4] hover:text-white cursor-pointer"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -712,18 +712,18 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
       {/* Step-by-Step Tafseer Review Confirmation Modal Popup */}
       {showNextAyahPrompt && currentAyah.surahNumber === 2 && currentAyah.ayahNumber <= 141 && currentAyah.ayahNumber > 1 && (
         <div className="fixed inset-0 bg-black/45 backdrop-blur-xs z-50 flex items-center justify-center p-4">
-          <div className="bg-[#FCF9F1] border-2 border-[#7D6B4B] rounded-2xl max-w-md w-full p-5 shadow-2xl text-center space-y-4 animate-in fade-in zoom-in duration-200">
-            <div className="w-12 h-12 rounded-full bg-[#7D6B4B]/15 text-[#7D6B4B] flex items-center justify-center mx-auto shadow-inner">
-              <Sparkles className="w-6 h-6" />
+          <div className="bg-[#FCFAF5] border-2 border-[#154734] rounded-2xl max-w-md w-full p-5 shadow-2xl text-center space-y-4 animate-in fade-in zoom-in duration-200">
+            <div className="w-12 h-12 rounded-full bg-[#154734]/15 text-[#154734] flex items-center justify-center mx-auto shadow-inner border border-[#154734]/20">
+              <Sparkles className="w-6 h-6 text-[#C5A059]" />
             </div>
             <div className="space-y-1.5">
-              <span className="text-[11px] font-bold text-[#7D6B4B] uppercase tracking-wider bg-[#EAE5D5] px-3 py-1 rounded-full font-sans">
+              <span className="text-[11px] font-bold text-[#154734] uppercase tracking-wider bg-[#F5EFE2] border border-[#E6DFC9] px-3 py-1 rounded-full font-sans">
                 پارہ ۱ مفصل جائزہ (آیت {currentAyah.ayahNumber})
               </span>
-              <h3 className="text-base font-bold font-urdu text-[#2D2D2D] pt-1">
+              <h3 className="text-base font-bold font-urdu text-[#1D2A20] pt-1">
                 آیت {currentAyah.ayahNumber} کی تفصیلی تفسیر و جامع ترجمہ مکمل ہو چکا ہے
               </h3>
-              <p className="text-sm font-urdu text-[#63553C] leading-relaxed">
+              <p className="text-sm font-urdu text-[#68796C] leading-relaxed">
                 کیا اگلی آیت (آیت {currentAyah.ayahNumber - 1}) کی تفصیلی تفسیر اور مفصل ترجمہ بھی اسی طرح تیار کریں؟
               </p>
             </div>
@@ -734,14 +734,14 @@ export const AyahReaderView: React.FC<AyahReaderViewProps> = ({
                   setShowNextAyahPrompt(true);
                   onSelectAyah(2, currentAyah.ayahNumber - 1);
                 }}
-                className="flex-1 bg-[#7D6B4B] hover:bg-[#63553C] text-white font-bold py-2.5 px-3 rounded-xl shadow-md transition-all font-urdu text-sm cursor-pointer active:scale-98"
+                className="flex-1 bg-[#154734] hover:bg-[#0F3626] text-white font-bold py-2.5 px-3 rounded-xl shadow-md transition-all font-urdu text-sm cursor-pointer active:scale-98"
               >
                 جی ہاں، اگلی آیت ({currentAyah.ayahNumber - 1}) کریں
               </button>
               <button
                 type="button"
                 onClick={() => setShowNextAyahPrompt(false)}
-                className="flex-1 bg-[#EDE8D8] hover:bg-[#DFD9C7] text-[#4A3F2C] font-semibold py-2.5 px-3 rounded-xl transition-all font-urdu text-sm cursor-pointer"
+                className="flex-1 bg-[#ECE4D0] hover:bg-[#DFD5BE] text-[#1D2A20] font-semibold py-2.5 px-3 rounded-xl transition-all font-urdu text-sm cursor-pointer"
               >
                 فی الحال اسی کا مطالعہ کریں
               </button>

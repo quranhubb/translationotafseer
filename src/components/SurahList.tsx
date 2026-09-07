@@ -27,8 +27,8 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah, onGoToParas
   return (
     <div className="px-3 pb-24 pt-2">
       {/* 3-Step Guided Navigation Header */}
-      <div className="bg-gradient-to-r from-[#7D6B4B]/10 via-[#F4F1E6] to-[#7D6B4B]/10 rounded-2xl p-3 border border-[#7D6B4B]/30 shadow-2xs mb-3.5">
-        <div className="flex items-center justify-between text-xs font-bold text-[#7D6B4B] mb-1.5 pb-1 border-b border-[#7D6B4B]/20">
+      <div className="bg-gradient-to-r from-[#7D6B4B]/10 via-[#FCF9F1] to-[#7D6B4B]/10 rounded-2xl p-3 border border-[#7D6B4B]/20 shadow-2xs mb-3.5">
+        <div className="flex items-center justify-between text-xs font-bold text-[#7D6B4B] mb-1.5 pb-1 border-b border-[#7D6B4B]/15">
           <span className="flex items-center gap-1 font-sans text-xs">
             <BookOpen className="w-4 h-4 text-[#7D6B4B]" />
             <span>All 114 Surahs of the Holy Quran:</span>
@@ -47,17 +47,17 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah, onGoToParas
         <div className="grid grid-cols-3 gap-1.5 text-center font-sans text-xs">
           <div
             onClick={onGoToParas}
-            className="bg-[#FDFCF8] text-[#7D6B4B] border border-[#E5E0D0] py-1.5 px-1 rounded-lg font-medium cursor-pointer hover:bg-[#F4F1E6] flex flex-col items-center"
+            className="bg-[#FFFFFF] text-[#7D6B4B] border border-[#E5DFCE] py-1.5 px-1 rounded-lg font-medium cursor-pointer hover:bg-[#FAF7EE] flex flex-col items-center"
           >
-            <span className="text-[10px] text-[#9A8D70]">Step 1</span>
+            <span className="text-[10px] text-[#8C7D63]">Step 1</span>
             <span className="text-[11px]">1. Select Para</span>
           </div>
-          <div className="bg-[#7D6B4B] text-white py-1.5 px-1 rounded-lg font-bold shadow-2xs flex flex-col items-center">
-            <span className="text-[10px] opacity-90">Step 2</span>
+          <div className="bg-[#7D6B4B] text-white py-1.5 px-1 rounded-lg font-bold shadow-2xs flex flex-col items-center border border-[#63553C]">
+            <span className="text-[10px] text-[#F3E7C4]">Step 2</span>
             <span className="text-[11px]">2. Select Surah</span>
           </div>
-          <div className="bg-[#FDFCF8] text-[#7D6B4B] border border-[#E5E0D0] py-1.5 px-1 rounded-lg font-medium flex flex-col items-center">
-            <span className="text-[10px] text-[#9A8D70]">Step 3</span>
+          <div className="bg-[#FFFFFF] text-[#7D6B4B] border border-[#E5DFCE] py-1.5 px-1 rounded-lg font-medium flex flex-col items-center">
+            <span className="text-[10px] text-[#8C7D63]">Step 3</span>
             <span className="text-[11px]">3. Translation & Tafseer</span>
           </div>
         </div>
@@ -70,7 +70,7 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah, onGoToParas
           className={`flex-1 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer font-sans ${
             tabFilter === 'all'
               ? 'bg-[#7D6B4B] text-white shadow-2xs'
-              : 'bg-[#F4F1E6] text-[#7D6B4B] border border-[#E5E0D0] hover:bg-[#EAE5D5]'
+              : 'bg-[#F5EFE2] text-[#7D6B4B] border border-[#E5DFCE] hover:bg-[#ECE4D0]'
           }`}
         >
           All 114 Surahs
@@ -80,7 +80,7 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah, onGoToParas
           className={`flex-1 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer font-sans ${
             tabFilter === 'para1'
               ? 'bg-[#7D6B4B] text-white shadow-2xs'
-              : 'bg-[#F4F1E6] text-[#7D6B4B] border border-[#E5E0D0] hover:bg-[#EAE5D5]'
+              : 'bg-[#F5EFE2] text-[#7D6B4B] border border-[#E5DFCE] hover:bg-[#ECE4D0]'
           }`}
         >
           Para 1 & 2 Surahs (Full Tafseer)
@@ -98,12 +98,12 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah, onGoToParas
           value={filterText}
           onChange={(e) => setFilterText(e.target.value)}
           placeholder="Search Surah by name or number..."
-          className="w-full pl-10 pr-4 py-2.5 bg-[#FDFCF8] rounded-xl border border-[#E5E0D0] text-sm text-[#2D2D2D] placeholder-[#9A8D70] focus:outline-none focus:ring-2 focus:ring-[#7D6B4B] focus:border-transparent shadow-2xs font-sans"
+          className="w-full pl-10 pr-4 py-2.5 bg-[#FFFFFF] rounded-xl border border-[#E5DFCE] text-sm text-[#2D2D2D] placeholder-[#8C7D63] focus:outline-none focus:ring-2 focus:ring-[#7D6B4B] focus:border-transparent shadow-2xs font-sans"
         />
         {filterText && (
           <button
             onClick={() => setFilterText('')}
-            className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-xs text-[#9A8D70] hover:text-[#2D2D2D] cursor-pointer"
+            className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-xs text-[#8C7D63] hover:text-[#2D2D2D] cursor-pointer"
           >
             Clear
           </button>
@@ -119,7 +119,7 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah, onGoToParas
               key={surah.number}
               id={`surah-card-${surah.number}`}
               onClick={() => onSelectSurah(surah)}
-              className={`bg-[#FDFCF8] rounded-xl p-3.5 border border-[#E5E0D0] shadow-2xs flex items-center justify-between cursor-pointer hover:bg-[#F4F1E6] hover:border-[#7D6B4B]/40 active:scale-[0.99] transition-all group ${
+              className={`bg-[#FFFFFF] rounded-xl p-3.5 border border-[#E5DFCE] shadow-2xs flex items-center justify-between cursor-pointer hover:bg-[#FAF7EE] hover:border-[#7D6B4B]/50 active:scale-[0.99] transition-all group ${
                 isPara1Surah ? 'border-l-4 border-l-[#7D6B4B]' : 'opacity-90'
               }`}
             >
@@ -129,7 +129,7 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah, onGoToParas
                   className={`w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm border flex-shrink-0 shadow-2xs ${
                     isPara1Surah
                       ? 'bg-[#7D6B4B] text-white border-[#63553C]'
-                      : 'bg-[#F4F1E6] text-[#7D6B4B] border-[#E5E0D0]'
+                      : 'bg-[#F5EFE2] text-[#7D6B4B] border-[#E5DFCE]'
                   }`}
                 >
                   {surah.number}
@@ -142,12 +142,12 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah, onGoToParas
                       {surah.nameEnglish}
                     </h3>
                     {isPara1Surah && (
-                      <span className="text-[10px] bg-[#63553C] text-white px-2 py-0.2 rounded font-sans uppercase tracking-widest font-semibold">
+                      <span className="text-[10px] bg-[#B88E3E] text-white px-2 py-0.2 rounded font-sans uppercase tracking-widest font-semibold">
                         {surah.number === 1 ? 'Para 1' : 'Para 1 & 2'}
                       </span>
                     )}
                   </div>
-                  <p className="text-[11px] text-[#9A8D70] mt-0.5 font-sans">
+                  <p className="text-[11px] text-[#8C7D63] mt-0.5 font-sans">
                     {surah.revelationType} • {surah.totalVerses} Verses
                     {surah.number === 2 && ' (Para 1 & 2: 1-252 Full Tafseer)'}
                   </p>
@@ -169,7 +169,7 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah, onGoToParas
         })}
 
         {filteredSurahs.length === 0 && (
-          <div className="bg-[#FDFCF8] rounded-xl p-8 text-center text-[#9A8D70] border border-[#E5E0D0]">
+          <div className="bg-[#FFFFFF] rounded-xl p-8 text-center text-[#8C7D63] border border-[#E5DFCE]">
             <p className="text-sm font-medium">No Surah found matching "{filterText}"</p>
             <button
               onClick={() => {

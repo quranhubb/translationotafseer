@@ -20,7 +20,7 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onChangeT
   return (
     <div
       id="bottom-navigation-bar"
-      className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#F4F1E6] border-t border-[#E5E0D0] shadow-lg z-30 flex items-center justify-around py-1.5 px-2"
+      className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#FAF7EE] border-t border-[#E5DFCE] shadow-lg z-30 flex items-center justify-around py-1.5 px-2"
     >
       {navItems.map((item) => {
         const Icon = item.icon;
@@ -36,7 +36,7 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onChangeT
                 : 'text-[#9A8D70] hover:text-[#7D6B4B] font-medium'
             }`}
           >
-            <div className={`p-1 rounded-full transition-colors ${isActive ? 'bg-[#EAE5D5] text-[#7D6B4B]' : ''}`}>
+            <div className={`p-1 rounded-full transition-colors ${isActive ? 'bg-[#F0E9D8] text-[#7D6B4B]' : ''}`}>
               <Icon className={`w-5 h-5 ${isActive ? 'stroke-[2.5]' : 'stroke-[1.8]'}`} />
             </div>
             <span className="text-[11px] leading-tight tracking-tight mt-0.5 font-sans">

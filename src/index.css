@@ -17,34 +17,37 @@
     background-color: #FCF9F1;
   }
   .bg-theme-surface {
-    background-color: #F4F1E6;
+    background-color: #F4F0E2;
   }
   .bg-theme-card {
-    background-color: #FDFCF8;
+    background-color: #FFFFFF;
   }
   .text-theme-primary {
     color: #7D6B4B;
   }
+  .text-theme-gold {
+    color: #B88E3E;
+  }
   .text-theme-muted {
-    color: #9A8D70;
+    color: #8C7D63;
   }
   .border-theme-subtle {
-    border-color: #E5E0D0;
+    border-color: #E5DFCE;
   }
 }
 
-/* Custom scrollbar matching Professional Polish theme */
+/* Custom scrollbar matching Golden light theme */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F1E6;
+  background: #F4F0E2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #DCD7C9;
+  background: #D8CEB8;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9A8D70;
+  background: #B88E3E;
 }

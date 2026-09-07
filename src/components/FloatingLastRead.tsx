@@ -42,11 +42,11 @@ export const FloatingLastRead: React.FC<FloatingLastReadProps> = ({ onOpenAyah }
           <button
             id="btn-open-auto-last-read"
             onClick={handleOpenAuto}
-            className="flex items-center gap-2 bg-[#7D6B4B] hover:bg-[#63553C] text-white py-2 px-3.5 rounded-full shadow-lg text-xs font-semibold active:scale-95 transition-all border border-[#63553C] cursor-pointer"
+            className="flex items-center gap-2 bg-[#7D6B4B] hover:bg-[#63553C] text-white py-2 px-3.5 rounded-full shadow-lg text-xs font-semibold active:scale-95 transition-all border border-[#C5A059]/60 cursor-pointer"
           >
             <span>Open Automatic Last Read</span>
-            <div className="bg-white/20 rounded-full p-0.5">
-              <ArrowRightCircle className="w-4.5 h-4.5 text-white" />
+            <div className="bg-[#C5A059]/30 rounded-full p-0.5">
+              <ArrowRightCircle className="w-4.5 h-4.5 text-[#FDF6E2]" />
             </div>
           </button>
 
@@ -54,11 +54,11 @@ export const FloatingLastRead: React.FC<FloatingLastReadProps> = ({ onOpenAyah }
           <button
             id="btn-open-manual-last-read"
             onClick={handleOpenManual}
-            className="flex items-center gap-2 bg-[#7D6B4B] hover:bg-[#63553C] text-white py-2 px-3.5 rounded-full shadow-lg text-xs font-semibold active:scale-95 transition-all border border-[#63553C] cursor-pointer"
+            className="flex items-center gap-2 bg-[#7D6B4B] hover:bg-[#63553C] text-white py-2 px-3.5 rounded-full shadow-lg text-xs font-semibold active:scale-95 transition-all border border-[#C5A059]/60 cursor-pointer"
           >
             <span>Open Manual Last Read</span>
-            <div className="bg-white/20 rounded-full p-0.5">
-              <ArrowRightCircle className="w-4.5 h-4.5 text-white" />
+            <div className="bg-[#C5A059]/30 rounded-full p-0.5">
+              <ArrowRightCircle className="w-4.5 h-4.5 text-[#FDF6E2]" />
             </div>
           </button>
         </div>
@@ -69,9 +69,9 @@ export const FloatingLastRead: React.FC<FloatingLastReadProps> = ({ onOpenAyah }
         id="fab-last-read"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Last Read Menu"
-        className="w-12 h-12 rounded-full bg-[#7D6B4B] hover:bg-[#63553C] text-white shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-90 border-2 border-[#FCF9F1] cursor-pointer"
+        className="w-12 h-12 rounded-full bg-[#7D6B4B] hover:bg-[#63553C] text-white shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-90 border-2 border-[#FCF9F1] ring-2 ring-[#C5A059]/50 cursor-pointer"
       >
-        <Clock className={`w-5.5 h-5.5 transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`} />
+        <Clock className={`w-5.5 h-5.5 text-[#FDF6E2] transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`} />
       </button>
     </div>
   );

@@ -233,17 +233,17 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F1E6] text-[#2D2D2D] font-sans antialiased flex flex-col justify-between selection:bg-[#7D6B4B]/20">
+    <div className="min-h-screen bg-[#F6F3EB] text-[#1E2B22] font-sans antialiased flex flex-col justify-between selection:bg-[#154734]/15 selection:text-[#154734]">
       {/* Toast Notification Banner */}
       {toastMessage && (
-        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-[#2D2D2D] text-white px-4 py-2 rounded-xl text-xs font-semibold shadow-2xl flex items-center gap-2 border border-[#7D6B4B] animate-in fade-in slide-in-from-top-2 duration-200">
-          <CheckCircle2 className="w-4 h-4 text-[#C2B294]" />
+        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-[#123626] text-white px-4 py-2.5 rounded-xl text-xs font-semibold shadow-2xl flex items-center gap-2 border border-[#C5A059]/50 animate-in fade-in slide-in-from-top-2 duration-200">
+          <CheckCircle2 className="w-4 h-4 text-[#E8D19D]" />
           <span>{toastMessage}</span>
         </div>
       )}
 
       {/* Main Container - Responsive Mobile Max-Width */}
-      <div className="w-full max-w-md mx-auto bg-[#FCF9F1] min-h-screen shadow-2xl relative flex flex-col border-x border-[#E5E0D0]">
+      <div className="w-full max-w-md mx-auto bg-[#FCFAF5] min-h-screen shadow-2xl relative flex flex-col border-x border-[#E6DFC9]">
         {/* If Active Reader is open, display Reader View */}
         {activeReader ? (
           <AyahReaderView

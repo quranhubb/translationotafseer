@@ -70,62 +70,62 @@ export const BackupModal: React.FC<BackupModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-3">
-      <div className="bg-[#FDFCF8] w-full max-w-lg rounded-2xl shadow-2xl border border-[#E5E0D0] flex flex-col max-h-[85vh] animate-in fade-in zoom-in-95 duration-150 overflow-hidden">
+      <div className="bg-[#FFFFFF] w-full max-w-lg rounded-2xl shadow-2xl border border-[#E6DFC9] flex flex-col max-h-[85vh] animate-in fade-in zoom-in-95 duration-150 overflow-hidden">
         {/* Header */}
-        <div className="p-4 border-b border-[#E5E0D0] flex items-center justify-between bg-[#F4F1E6]">
-          <div className="flex items-center gap-2 text-[#7D6B4B]">
+        <div className="p-4 border-b border-[#E6DFC9] flex items-center justify-between bg-[#F5EFE2]">
+          <div className="flex items-center gap-2 text-[#154734]">
             <Download className="w-5 h-5" />
-            <h3 className="font-bold text-[#2D2D2D] text-base font-serif">Backup & Restore</h3>
+            <h3 className="font-bold text-[#1D2A20] text-base font-serif">Backup & Restore</h3>
           </div>
-          <button onClick={onClose} className="p-1 text-[#9A8D70] hover:text-[#2D2D2D] cursor-pointer">
+          <button onClick={onClose} className="p-1 text-[#68796C] hover:text-[#1D2A20] cursor-pointer">
             <X className="w-5 h-5" />
           </button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-5 space-y-5 font-sans">
           {/* Summary counts */}
-          <div className="grid grid-cols-3 gap-2 bg-[#F4F1E6] p-3 rounded-xl border border-[#E5E0D0] text-center text-xs">
+          <div className="grid grid-cols-3 gap-2 bg-[#F5EFE2] p-3 rounded-xl border border-[#E6DFC9] text-center text-xs">
             <div>
-              <span className="font-bold text-base text-[#7D6B4B] block">{bookmarks.length}</span>
-              <span className="text-[#5A5A5A] font-medium">Bookmarks</span>
+              <span className="font-bold text-base text-[#154734] block">{bookmarks.length}</span>
+              <span className="text-[#68796C] font-medium">Bookmarks</span>
             </div>
             <div>
-              <span className="font-bold text-base text-[#7D6B4B] block">{collections.length}</span>
-              <span className="text-[#5A5A5A] font-medium">Collections</span>
+              <span className="font-bold text-base text-[#154734] block">{collections.length}</span>
+              <span className="text-[#68796C] font-medium">Collections</span>
             </div>
             <div>
-              <span className="font-bold text-base text-[#7D6B4B] block">{notes.length}</span>
-              <span className="text-[#5A5A5A] font-medium">Notes</span>
+              <span className="font-bold text-base text-[#154734] block">{notes.length}</span>
+              <span className="text-[#68796C] font-medium">Notes</span>
             </div>
           </div>
 
           {/* Export Section */}
           <div className="space-y-2">
-            <h4 className="font-bold text-sm text-[#2D2D2D] font-serif">1. Export / Backup</h4>
-            <p className="text-xs text-[#9A8D70]">
+            <h4 className="font-bold text-sm text-[#1D2A20] font-serif">1. Export / Backup</h4>
+            <p className="text-xs text-[#68796C]">
               Download your bookmarks, custom collections, and personal notes as a JSON file.
             </p>
             <div className="flex gap-2 pt-1">
               <button
                 onClick={handleDownloadFile}
-                className="flex-1 bg-[#7D6B4B] hover:bg-[#63553C] text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-2xs active:scale-95 transition-all cursor-pointer"
+                className="flex-1 bg-[#154734] hover:bg-[#0F3626] text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-2xs active:scale-95 transition-all cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 <span>Download JSON File</span>
               </button>
               <button
                 onClick={handleCopyJson}
-                className="bg-white border border-[#E5E0D0] hover:bg-[#F4F1E6] text-[#2D2D2D] text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1 transition-all cursor-pointer"
+                className="bg-white border border-[#E6DFC9] hover:bg-[#F5EFE2] text-[#1D2A20] text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1 transition-all cursor-pointer"
               >
-                {copied ? <Check className="w-4 h-4 text-[#7D6B4B]" /> : <span>Copy Raw JSON</span>}
+                {copied ? <Check className="w-4 h-4 text-[#154734]" /> : <span>Copy Raw JSON</span>}
               </button>
             </div>
           </div>
 
           {/* Import Section */}
-          <div className="space-y-2 pt-3 border-t border-[#E5E0D0]">
-            <h4 className="font-bold text-sm text-[#2D2D2D] font-serif">2. Restore from Backup</h4>
-            <p className="text-xs text-[#9A8D70]">
+          <div className="space-y-2 pt-3 border-t border-[#E6DFC9]">
+            <h4 className="font-bold text-sm text-[#1D2A20] font-serif">2. Restore from Backup</h4>
+            <p className="text-xs text-[#68796C]">
               Paste the exported JSON data below to restore your notes and bookmarks.
             </p>
             <textarea
@@ -136,12 +136,12 @@ export const BackupModal: React.FC<BackupModalProps> = ({
                 setImportStatus(null);
               }}
               placeholder="Paste JSON backup payload here..."
-              className="w-full p-2.5 bg-white border border-[#E5E0D0] rounded-xl text-xs font-mono text-[#2D2D2D] focus:ring-2 focus:ring-[#7D6B4B] focus:outline-none"
+              className="w-full p-2.5 bg-white border border-[#E6DFC9] rounded-xl text-xs font-mono text-[#1D2A20] focus:ring-2 focus:ring-[#154734] focus:outline-none"
             />
             {importStatus && (
               <p
                 className={`text-xs font-medium ${
-                  importStatus.includes('successfully') ? 'text-[#7D6B4B]' : 'text-red-600'
+                  importStatus.includes('successfully') ? 'text-[#154734]' : 'text-red-600'
                 }`}
               >
                 {importStatus}
@@ -150,7 +150,7 @@ export const BackupModal: React.FC<BackupModalProps> = ({
             <button
               onClick={handleImport}
               disabled={!importJson.trim()}
-              className="w-full bg-[#2D2D2D] hover:bg-black text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 disabled:opacity-40 disabled:hover:bg-[#2D2D2D] transition-all cursor-pointer"
+              className="w-full bg-[#154734] hover:bg-[#0F3626] text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 disabled:opacity-40 disabled:hover:bg-[#154734] transition-all cursor-pointer"
             >
               <Upload className="w-4 h-4" />
               <span>Restore Backup</span>
