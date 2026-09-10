@@ -6,58 +6,125 @@ import { Para1AyahDetail } from './para1Map_part1';
 export const PARA1_VERSES_PART3: Record<number, Para1AyahDetail> = {
   41: {
     arabic: 'وَآمِنُوا بِمَا أَنزَلْتُ مُصَدِّقًا لِّمَا مَعَكُم وَلَا تَكُونُوا أَوَّلَ كَافِرٍ بِهِ ۖ وَلَا تَشْتَرُوا بِآيَاتِي ثَمَنًا قَلِيلًا وَإِيَّايَ فَاتَّقُونِ',
-    translationUr: 'اور ایمان لاؤ اس کتاب (قرآن) پر جو میں نے نازل کی ہے، جو تصدیق کرتی ہے اس کی جو تمہارے پاس ہے، اور تم ہی سب سے پہلے اس کا انکار کرنے والے نہ بنو، اور میری آیتوں کے بدلے تھوڑی قیمت (دنیاوی فائدہ) نہ خریدو، اور خاص مجھ ہی سے ڈرو۔',
-    translationEn: 'And believe in what I have sent down confirming that which is with you, and be not the first to disbelieve in it. And do not exchange My signs for a small price, and fear [only] Me.',
+    translationUr: 'اور ایمان لاؤ اس کتاب (قرآن) پر جو میں نے نازل کی ہے، جو تصدیق کرتی ہے اس کتاب کی جو تمہارے پاس ہے، اور تم ہی سب سے پہلے اس کا انکار کرنے والے نہ بنو، اور میری آیتوں کے بدلے دنیا کا تھوڑا سا فائدہ نہ خریدو، اور خاص مجھ ہی سے ڈرو۔',
+    translationEn: 'And believe in what I have sent down (the Quran) confirming that which is with you, and be not the first to disbelieve in it. And do not exchange My verses for a small price, and fear only Me.',
     words: [
       { arabic: 'وَآمِنُوا', transliteration: 'Wa aminoo', translationEn: 'And believe', translationUr: 'اور ایمان لاؤ' },
-      { arabic: 'بِمَا أَنزَلْتُ', transliteration: 'bima anzaltu', translationEn: 'in what I revealed', translationUr: 'اس پر جو میں نے نازل کیا' },
+      { arabic: 'بِمَا أَنزَلْتُ', transliteration: 'bima anzaltu', translationEn: 'in what I revealed (the Quran)', translationUr: 'اس پر جو میں نے نازل کیا (قرآن)' },
       { arabic: 'مُصَدِّقًا', transliteration: 'musaddiqan', translationEn: 'confirming', translationUr: 'تصدیق کرنے والی ہے' },
-      { arabic: 'لِّمَا مَعَكُمْ', transliteration: 'lima ma\'akum', translationEn: 'that which is with you', translationUr: 'اس کی جو تمہارے پاس ہے' },
-      { arabic: 'وَلَا تَكُونُوا', transliteration: 'wala takoonoo', translationEn: 'and do not be', translationUr: 'اور نہ بنو' },
+      { arabic: 'لِّمَا مَعَكُمْ', transliteration: 'lima ma\'akum', translationEn: 'that which is with you (Torah)', translationUr: 'اس کی جو تمہارے پاس ہے (تورات)' },
+      { arabic: 'وَلَا تَكُونُوا', transliteration: 'wala takoonoo', translationEn: 'and do not be', translationUr: 'اور تم نہ بنو' },
       { arabic: 'أَوَّلَ كَافِرٍ بِهِ', transliteration: 'awwala kafirin bihi', translationEn: 'the first disbeliever in it', translationUr: 'سب سے پہلے منکر اس کے' },
-      { arabic: 'وَلَا تَشْتَرُوا', transliteration: 'wala tashtaroo', translationEn: 'and do not sell', translationUr: 'اور نہ خریدو' },
-      { arabic: 'بِآيَاتِي ثَمَنًا قَلِيلًا', transliteration: 'bi-ayatee thamanan qaleelan', translationEn: 'My verses for a small price', translationUr: 'میری آیتوں کے بدلے تھوڑی قیمت' },
-      { arabic: 'وَإِيَّايَ فَاتَّقُونِ', transliteration: 'wa iyyaya fattaqoon', translationEn: 'and fear Me alone', translationUr: 'اور مجھ ہی سے ڈرو' }
+      { arabic: 'وَلَا تَشْتَرُوا', transliteration: 'wala tashtaroo', translationEn: 'and do not trade/sell', translationUr: 'اور نہ خریدو (نہ بدلو)' },
+      { arabic: 'بِآيَاتِي', transliteration: 'bi-ayatee', translationEn: 'My verses/signs', translationUr: 'میری آیتوں کے بدلے' },
+      { arabic: 'ثَمَنًا قَلِيلًا', transliteration: 'thamanan qaleelan', translationEn: 'for a small price', translationUr: 'تھوڑی سی قیمت (دنیاوی مفاد)' },
+      { arabic: 'وَإِيَّايَ فَاتَّقُونِ', transliteration: 'wa iyyaya fattaqoon', translationEn: 'and fear Me alone', translationUr: 'اور خاص مجھ ہی سے ڈرو' }
     ],
-    tafseerUr: `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ):
-علمائے یہود کو تنبیہ اور دنیا طلبی کی مذمت:
-۱. 'مُصَدِّقًا لِّمَا مَعَكُمْ':
-قرآن مجید تورات کی بنیادی تعلیمات، توحید اور اخلاقی اصولوں کی تصدیق کرتا ہے اور ان بشارتوں کو سچا ثابت کرتا ہے جو تورات میں نبی آخر الزماں ﷺ کے متعلق موجود تھیں۔ لہٰذا یہود کا فرض تھا کہ وہ سب سے پہلے ایمان لاتے کیونکہ ان کے پاس دلائل موجود تھے۔
+    tafseerUr: `📖 اس آیت مبارکہ میں اللہ تعالیٰ بنی اسرائیل (خاص طور پر ان کے علماء) کو بہت محبت اور خیرخواہی کے ساتھ سمجھا رہے ہیں کہ قرآن مجید کوئی اجنبی یا نئی بات لے کر نہیں آیا، بلکہ یہ تو تمہاری اپنی کتاب تورات کی تصدیق کر رہا ہے جس میں نبی آخر الزماں حضرت محمد مصطفیٰ ﷺ کی تشریف آوری کی روشن نشانیاں پہلے سے موجود تھیں۔
 
-۲. 'ثَمَنًا قَلِيلًا' (تھوڑی قیمت سے کیا مراد ہے؟):
-علمائے یہود عوام سے نذرانے، رشوتیں اور سرداری کے مفادات حاصل کرتے تھے۔ انہیں ڈر تھا کہ اگر وہ حضور ﷺ پر ایمان لے آئے تو ان کی چودہراہٹ اور آمدنی ختم ہو جائے گی۔ قرآن نے فرمایا کہ دنیا کی ساری دولت اور جاہ و جلال بھی دین اور ایمان کے مقابلے میں ایک 'حقیر قیمت' ہے، اسے بیچ کر آخرت کا ابدی عذاب مت خریدو۔`,
-    tafseerEn: `Ma'ariful Qur'an Comprehensive Commentary:
-Warning to the Rabbinate against Commercializing Faith:
-1. Confirming What You Possess:
-The Qur'an arrived not to abolish the core monotheistic heritage of the Torah, but to fulfill, confirm, and culminate its prophecies concerning Prophet Muhammad ﷺ. Given their scriptural literacy, the Jewish rabbinate should have been the first to champion the Prophet, rather than becoming vanguard leaders in denial.
+آئیے اس آیت مبارکہ کے ہر ہر لفظ کی آسان اور دلنشین وضاحت سمجھتے ہیں:
 
-2. Selling Divine Revelations for a Petty Price:
-The rabbis derived lucrative stipends, social veneration, and religious gifts from the unlettered masses. They feared that submitting to the Prophet would dissolve their clerical monopoly. The Qur'an admonishes that even if one gathered all the treasures of the earth in exchange for compromising divine truth, it remains a wretched, trivial bargain ('Thamanan Qaleela').`
+- وَآمِنُوا بِمَا أَنزَلْتُ (اور دل سے ایمان لاؤ اس کتاب پر جو میں نے نازل کی ہے):
+اللہ تعالیٰ نے دعوت دی کہ جو قرآن مجید میں نے اپنے پیارے نبی ﷺ پر نازل فرمایا ہے، اس پر سچے دل سے ایمان لے آؤ کیونکہ اس میں دونوں جہانوں کی کامیابی ہے۔
+
+- مُصَدِّقًا لِّمَا مَعَكُمْ (جو سچا ثابت کرتی ہے اس کتاب کو جو پہلے سے تمہارے پاس ہے):
+قرآن پاک تورات کی بنیادی تعلیم یعنی توحید، اعلیٰ اخلاق اور تورات میں لکھی گئی پیشین گوئیوں کی تصدیق کرتا ہے۔ جب تمہاری اپنی کتاب میں رسول اللہ ﷺ کے مبارک اوصاف لکھے ہیں، تو تمہیں تو سب سے آگے بڑھ کر ان کا استقبال کرنا چاہیے تھا!
+
+- وَلَا تَكُونُوا أَوَّلَ كَافِرٍ بِهِ (اور تم ہی سب سے پہلے اس کے منکر نہ بن بیٹھو):
+مدینہ منورہ اور اردگرد کے عام مشرک لوگ یہود کے علماء کی طرف دیکھتے تھے کہ وہ کیا فیصلہ کرتے ہیں۔ اللہ نے فرمایا کہ تم اہل علم ہو کر ہی سب سے پہلے انکار مت کرو، ورنہ تمہاری دیکھا دیکھی دوسرے لوگ بھی راہِ حق سے بھٹک جائیں گے اور ان کا گناہ بھی تمہارے کھاتے میں جائے گا۔
+
+- وَلَا تَشْتَرُوا بِآيَاتِي ثَمَنًا قَلِيلًا (اور میری آیتوں کے بدلے دنیا کا تھوڑا سا فائدہ مت خریدو):
+علمائے یہود کو یہ کھٹکا لگا ہوا تھا کہ اگر ہم نے نبی کریم ﷺ کی نبوت کو تسلیم کر لیا، تو ہماری مذہبی چودہراہٹ، سرداری، اور عوام سے ملنے والے نذرانے اور تحفے چھن جائیں گے۔ اللہ تعالیٰ نے فرمایا کہ دین، ایمان اور سچائی کے بدلے اگر دنیا کی ساری دولت بھی مل جائے تو وہ نہایت حقیر، بے حقیقت اور معمولی قیمت ہے۔
+
+- وَإِيَّايَ فَاتَّقُونِ (اور خاص مجھ ہی سے ڈرو):
+لوگوں کے طعنوں، نذرانے بند ہو جانے یا دنیاوی منصب کھو جانے کا کوئی خوف نہ کرو، بلکہ صرف اپنے رب کی ناراضگی اور آخرت کی جوابدہی سے ڈرو۔
+
+[سوال: قرآن مجید کو تورات کی "تصدیق کرنے والا" کیوں کہا گیا ہے؟ | جواب: کیونکہ قرآن تورات کی اصل تعلیم یعنی توحید و اخلاق کو سچا ثابت کرتا ہے اور تورات میں حضرت محمد ﷺ کی آمد کی دی گئی بشارتوں کی عملی تصدیق کرتا ہے!]
+
+[سوال: 'ثَمَنًا قَلِيلًا' (تھوڑی قیمت) سے کیا مراد ہے اور اس سے کیوں منع کیا گیا؟ | جواب: اس سے مراد دنیا کی عارضی دولت، نذرانے اور سرداری ہے؛ دین اور سچائی کو چھوڑ کر دنیا کا بڑا سے بڑا خزانہ بھی اللہ کے نزدیک بے حد معمولی اور بے وقعت ہے!]
+
+✨ دل کو چھو لینے والا سبق: دنیا کے چند روپوں، عہدے یا لوگوں کی خوشنودی کی خاطر کبھی حق بات کا سودا نہ کرو۔ جو انسان اللہ کے لیے حق پر ڈٹ جاتا ہے، اللہ اسے دنیا اور آخرت دونوں میں سچی عزت اور بے حساب رزق عطا فرماتا ہے!`,
+    tafseerEn: `📖 In this verse, Allah addresses the Children of Israel—particularly their learned scholars and religious authorities—with compassionate clarity: the Quran did not arrive to dismantle their heritage, but rather to fulfill and confirm the very prophecies inscribed in the Torah regarding the Final Messenger ﷺ.
+
+Let us explore the gentle and clear word-by-word meaning:
+
+- وَآمِنُوا بِمَا أَنزَلْتُ (Wa aminoo bima anzaltu - And believe in what I have revealed):
+A direct divine invitation to embrace the Holy Quran, revealed as a universal light and mercy for all humanity.
+
+- مُصَدِّقًا لِّمَا مَعَكُمْ (Musaddiqan lima ma'akum - Confirming that which is already with you):
+The Quran authenticates the fundamental monotheistic core and moral virtues of the Torah, turning scriptural prophecies into lived reality. Having known these signs, the scholars of the Torah possessed the greatest responsibility to recognize the Prophet ﷺ.
+
+- وَلَا تَكُونُوا أَوَّلَ كَافِرٍ بِهِ (Wala takoonoo awwala kafirin bihi - And be not the first to disbelieve in it):
+The pagan tribes of Arabia looked toward the literate rabbis for guidance. Allah warns them: do not abuse your scholarship by becoming the vanguard leaders in denial, leading ordinary people astray.
+
+- وَلَا تَشْتَرُوا بِآيَاتِي ثَمَنًا قَلِيلًا (Wala tashtaroo bi-ayatee thamanan qaleela - And do not trade My verses for a petty price):
+The rabbinic elite feared losing religious dominance, clerical fees, and worldly prestige if they embraced Islam. Allah reminds them that exchanging eternal divine truth for fleeting worldly gains is a tragic and worthless bargain.
+
+- وَإِيَّايَ فَاتَّقُونِ (Wa iyyaya fattaqoon - And fear Me alone):
+Do not fear losing social standing, tribal favor, or financial stipends—revere Allah alone and be mindful of your standing before Him on the Day of Judgment.
+
+[QUESTION: Why is the Quran described as 'confirming' the previous Scripture? | ANSWER: Because it authenticates the pure monotheism of the Torah and fulfills the scriptural prophecies regarding the advent of Prophet Muhammad ﷺ!]
+
+[QUESTION: What is meant by 'a petty price' (thamanan qaleela)? | ANSWER: Fleeting worldly wealth, social prestige, and religious stipends. Exchanging divine truth for any worldly benefit—no matter how vast—is a wretched bargain!]
+
+✨ Life's Vital Takeaway: Never compromise integrity, conscience, or divine truth for worldly gain, public approval, or fear of loss. Stand firmly with the truth, and Allah will honor you in both worlds!`
   },
   42: {
     arabic: 'وَلَا تَلْبِسُوا الْحَقَّ بِالْبَاطِلِ وَتَكْتُمُوا الْحَقَّ وَأَنتُمْ تَعْلَمُونَ',
-    translationUr: 'اور حق کو باطل کے ساتھ خلط ملط نہ کرو اور نہ جان بوجھ کر سچائی کو چھپاؤ۔',
+    translationUr: 'اور سچ کو جھوٹ کے ساتھ خلط ملط نہ کرو، اور نہ جان بوجھ کر سچائی کو چھپاؤ جبکہ تم خود خوب جانتے ہو۔',
     translationEn: 'And do not mix the truth with falsehood or conceal the truth while you know [it].',
     words: [
-      { arabic: 'وَلَا تَلْبِسُوا', transliteration: 'Wala talbisoo', translationEn: 'And do not mix', translationUr: 'اور نہ خلط ملط کرو' },
-      { arabic: 'الْحَقَّ بِالْبَاطِلِ', transliteration: 'al-haqqa bil-batil', translationEn: 'the truth with falsehood', translationUr: 'حق کو باطل کے ساتھ' },
-      { arabic: 'وَتَكْتُمُوا الْحَقَّ', transliteration: 'wa taktumoo al-haqq', translationEn: 'and do not conceal truth', translationUr: 'اور نہ چھپاؤ حق کو' },
-      { arabic: 'وَأَنتُمْ تَعْلَمُونَ', transliteration: 'wa antum ta\'lamoon', translationEn: 'while you know', translationUr: 'حالانکہ تم جانتے ہو' }
+      { arabic: 'وَلَا تَلْبِسُوا', transliteration: 'Wala talbisoo', translationEn: 'And do not mix / cloak', translationUr: 'اور نہ خلط ملط کرو (نہ ملاؤ)' },
+      { arabic: 'الْحَقَّ بِالْبَاطِلِ', transliteration: 'al-haqqa bil-batil', translationEn: 'the truth with falsehood', translationUr: 'سچ کو جھوٹ کے ساتھ' },
+      { arabic: 'وَتَكْتُمُوا الْحَقَّ', transliteration: 'wa taktumoo al-haqq', translationEn: 'and do not conceal truth', translationUr: 'اور نہ چھپاؤ سچائی کو' },
+      { arabic: 'وَأَنتُمْ تَعْلَمُونَ', transliteration: 'wa antum ta\'lamoon', translationEn: 'while you know', translationUr: 'حالانکہ تم خود جانتے ہو' }
     ],
-    tafseerUr: `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ):
-حق پوشی اور فکری ملاوٹ کی ممانعت:
-علمائے یہود نے دو بڑے گھناؤنے جرائم کیے جن سے یہاں سختی کے ساتھ منع فرمایا گیا:
-۱. 'لبسِ حق بالباطل': تورات کے الہامی کلام میں اپنی طرف سے من گھڑت فتوے اور باطل تاویلات ملا کر عوام کے سامنے پیش کرتے تھے تاکہ اصل اور نقل کا فرق مٹ جائے۔
-۲. 'کتمانِ حق': حضور اقدس ﷺ کے اوصافِ مبارکہ اور نبوت کی نشانیوں پر مشتمل آیات کو چھپا لیتے تھے تاکہ عوام کو پتا نہ چلے۔ جان بوجھ کر حق کو چھپانا سب سے بڑی خیانت ہے۔`,
-    tafseerEn: `Ma'ariful Qur'an Comprehensive Commentary:
-Prohibition of Scriptural Distortion and Concealment:
-The verse identifies two catastrophic intellectual corruptions:
-1. Confounding Truth with Falsehood (Talbees): Interpolating sectarian human fabrications into divine scripture so that ordinary believers could not distinguish divine revelation from rabbinic distortion.
-2. Concealment of Divine Truth (Kitman): Actively hiding Torah passages describing the unmistakable physical and moral hallmarks of the Prophet Muhammad ﷺ. Consciously concealing divine truth out of sectarian envy is spiritual suicide.`
+    tafseerUr: `📖 اس آیت میں اللہ تعالیٰ نے دو بڑی بددیانتیوں اور بیماریوں سے سختی کے ساتھ منع فرمایا ہے، جن میں علمائے یہود مبتلا ہو چکے تھے: ایک سچ میں جھوٹ کی ملاوٹ کرنا اور دوسرا سچ کو بالکل ہی چھپا لینا۔
+
+آئیے اس آیت مبارکہ کے ہر ہر لفظ کی آسان اور دلنشین وضاحت سمجھتے ہیں:
+
+- وَلَا تَلْبِسُوا (اور مت پہناؤ / آپس میں مت ملاؤ):
+عربی میں 'لَبْس' کا لفظ لباس سے بنا ہے، یعنی کسی چیز پر ایسا نقاب چڑھا دینا کہ اصل چیز چھپ جائے۔ یہاں مراد یہ ہے کہ سچ کے اوپر جھوٹ کا غلاف مت چڑھاؤ تاکہ سادہ لوح لوگ دھوکے میں نہ آئیں۔
+
+- الْحَقَّ بِالْبَاطِلِ (سچ کو جھوٹ کے ساتھ):
+علمائے یہود تورات کے اصل احکامات کے ساتھ اپنی طرف سے خود ساختہ تاویلیں، من گھڑت باتیں اور اپنی پسند کے فتوے ملا کر پیش کرتے تھے، تاکہ عوام کو پتا ہی نہ چلے کہ کتنا اللہ کا کلام ہے اور کتنا انسانوں کا گھڑا ہوا۔
+
+- وَتَكْتُمُوا الْحَقَّ (اور سچائی کو جان بوجھ کر مت چھپاؤ):
+'کِتمان' کا مطلب ہے کسی حقیقت پر پردہ ڈال کر دبا دینا۔ وہ تورات میں حضرت محمد مصطفیٰ ﷺ کی صفات اور واضح نشانیوں کو اپنے عام پیروکاروں سے چھپاتے تھے تاکہ لوگ اسلام کی طرف مائل نہ ہو جائیں۔
+
+- وَأَنتُمْ تَعْلَمُونَ (حالانکہ تم خود دل سے خوب جانتے ہو):
+تم کوئی ناواقف، ان پڑھ یا نادان نہیں ہو، تم نے تورات میں حقیقت کو بار بار پڑھا اور پرکھا ہے۔ نادان سے غلطی ہو جائے تو معافی کا امکان ہوتا ہے، لیکن پڑھے لکھے انسان کا جان بوجھ کر سچ چھپانا اور دھوکہ دینا بدترین خیانت ہے!
+
+[سوال: اس آیت میں علمائے یہود کے کن دو بڑے فکری جرائم سے روکا گیا ہے؟ | جواب: پہلا جرم 'لبسِ حق بالباطل' یعنی سچ میں اپنے جھوٹے فتوے ملانا، اور دوسرا جرم 'کتمانِ حق' یعنی نبی کریم ﷺ کے اوصاف اور سچائی کو جان بوجھ کر چھپانا!]
+
+[سوال: 'وَأَنتُمْ تَعْلَمُونَ' (حالانکہ تم جانتے ہو) کا اسلوب کیا ظاہر کرتا ہے؟ | جواب: یہ ظاہر کرتا ہے کہ علم کے باوجود سچ کو چھپانا اور جھوٹ بولنا نادانی کے گناہ سے کہیں زیادہ سنگین جرم ہے، کیونکہ علم انسان پر حق پھیلانے کی ذمہ داری عائد کرتا ہے!]
+
+✨ دل کو چھو لینے والا سبق: علم کی سب سے بڑی امانت سچائی کو بغیر کسی ملاوٹ کے بیان کرنا ہے۔ اپنے فائدے، ضد یا تعصب کی خاطر کبھی سچ کو مت چھپاؤ اور نہ ہی سچ میں جھوٹ کا زہر مکس کرو!`,
+    tafseerEn: `📖 This verse addresses two dangerous intellectual corruptions that afflict scholars and communities: cloaking truth with human distortion, and actively concealing known truths.
+
+Let us explore the gentle and clear word-by-word meaning:
+
+- وَلَا تَلْبِسُوا (Wala talbisoo - And do not cloak / confuse):
+Rooted in the imagery of a garment ('Libas') that conceals the body underneath. The command warns against draping falsehood over sacred truth so that ordinary believers become confused and misled.
+
+- الْحَقَّ بِالْبَاطِلِ (Al-haqqa bil-batil - The truth with falsehood):
+The rabbis mixed self-serving interpretations and fabrications into the divine Torah, obscuring the boundary between God's word and human opinion.
+
+- وَتَكْتُمُوا الْحَقَّ (Wa taktumoo al-haqq - And do not conceal the truth):
+'Kitman' means deliberately suppressing or hiding vital facts. They concealed scriptural passages describing Prophet Muhammad ﷺ to prevent their congregations from turning toward Islam.
+
+- وَأَنتُمْ تَعْلَمُونَ (Wa antum ta'lamoon - While you knowingly know):
+You are not unlettered or ignorant; you possess scriptural knowledge. Erring out of ignorance is forgivable, but calculatingly suppressing divine truth while knowing it is an egregious moral betrayal!
+
+[QUESTION: Which two scriptural violations are prohibited in this verse? | ANSWER: 1. Blending divine truth with fabricated falsehood (Talbees), and 2. Deliberately concealing known scriptural prophecies and guidance (Kitman)!]
+
+[QUESTION: Why does Allah emphasize 'while you know'? | ANSWER: Because knowingly withholding or altering the truth is far more blameworthy than doing so out of ignorance; knowledge carries the sacred duty of honesty!]
+
+✨ Life's Vital Takeaway: The sacred trust of knowledge is to speak the unadulterated truth. Never dilute truth with spin, and never suppress facts for fear of discomfort or personal loss!`
   },
   43: {
     arabic: 'وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَارْكَعُوا مَعَ الرَّاكِعِينَ',
-    translationUr: 'اور نماز قائم کرو اور زکوٰۃ ادا کرو اور رکوع کرنے والوں کے ساتھ مل کر رکوع کرو (باجماعت نماز پڑھو)۔',
+    translationUr: 'اور نماز قائم کرو، اور زکوٰۃ ادا کرو، اور رکوع کرنے والوں کے ساتھ مل کر رکوع کرو (باجماعت نماز پڑھو)۔',
     translationEn: 'And establish prayer and give zakah and bow with those who bow [in worship and obedience].',
     words: [
       { arabic: 'وَأَقِيمُوا الصَّلَاةَ', transliteration: 'Wa aqeemoo as-salah', translationEn: 'And establish prayer', translationUr: 'اور قائم کرو نماز کو' },
@@ -65,83 +132,169 @@ The verse identifies two catastrophic intellectual corruptions:
       { arabic: 'وَارْكَعُوا', transliteration: 'warka\'oo', translationEn: 'and bow down', translationUr: 'اور رکوع کرو' },
       { arabic: 'مَعَ الرَّاكِعِينَ', transliteration: 'ma\'ar-raki\'een', translationEn: 'with those who bow', translationUr: 'رکوع کرنے والوں کے ساتھ' }
     ],
-    tafseerUr: `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ):
-نماز، زکوٰۃ اور باجماعت نماز کی اہمیت:
-۱. ایمان کے بعد دو اہم ترین ارکان:
-نماز بدنی عبادت کا خلاصہ ہے اور زکوٰۃ مالی ایثار کا ستون ہے۔ بنی اسرائیل کو حکم دیا گیا کہ پرانے تکبر کو توڑ کر رسول اللہ ﷺ کی لائی ہوئی شریعت کے مطابق نماز اور زکوٰۃ ادا کرو۔
+    tafseerUr: `📖 ایمان لانے کے بعد انسان کی روحانی، اخلاقی اور سماجی زندگی کو سنوارنے کے لیے اللہ تعالیٰ نے دینِ اسلام کے دو بنیادی ستونوں کا حکم فرمایا: بدنی عبادت میں نماز اور مالی عبادت میں زکوٰۃ!
 
-۲. 'وَارْكَعُوا مَعَ الرَّاكِعِينَ' (باجماعت نماز کا تاکیدی حکم):
-یہودیوں کی نماز میں ہمارے رکوع جیسا رکوع نہیں تھا، اس لیے مسلمانوں کی طرح رکوع کرنے کا حکم دے کر دراصل اسلام میں باجماعت نماز کا پابند بنایا گیا۔ اس سے ثابت ہوا کہ مسجد میں باجماعت نماز ادا کرنا سنتِ مؤکدہ قریب بوجوب ہے اور باہمی اتحاد کا سب سے بڑا مرکز ہے۔`,
-    tafseerEn: `Ma'ariful Qur'an Comprehensive Commentary:
-The Foundational Pillars and Congregational Solidarity:
-1. Bedrock of Islamic Practice:
-Salah refines the soul through intimate communion with Allah, while Zakah purges human wealth of greed and provides a social safety net. Bani Isra'il were summoned to abandon tribal pride and embrace these ordinances under the final dispensation.
+آئیے اس آیت مبارکہ کے ہر ہر لفظ کی آسان اور دلنشین وضاحت سمجھتے ہیں:
 
-2. Congregational Prayer ('Ruku' with the Bowing):
-The Jewish liturgy lacked the physical Ruku' (bowing) prescribed in Islamic prayer. Commanding them to "bow with those who bow" was a clear instruction to join the Muslim congregation in the Mosque, emphasizing the paramount status of collective prayer and social equality in Islam.`
+- وَأَقِيمُوا الصَّلَاةَ (اور نماز کو قائم کرو):
+صرف نماز 'پڑھ لینا' نہیں بلکہ 'قائم کرنا' فرمایا گیا۔ اس کا آسان مفہوم یہ ہے کہ نماز کو اس کے تمام آداب، وقت کی پابندی، صحیح وضو، اور دل میں اللہ کی یاد اور خشوع کے ساتھ ہمیشہ زندہ رکھا جائے۔ نماز بندے کا اپنے خالق سے سب سے پیارا اور براہِ راست تعلق ہے۔
+
+- وَآتُوا الزَّكَاةَ (اور خوش دلی سے زکوٰۃ ادا کرو):
+اپنے مال میں سے غریبوں، یتیموں، بیواؤں اور محتاجوں کا مقررہ حق ادا کرو۔ زکوٰۃ انسان کے دل سے کنجوسی، خود غرضی اور مال کی ہوس کو دھو ڈالتی ہے اور معاشرے میں رحم دلی اور برابری پیدا کرتی ہے۔
+
+- وَارْكَعُوا (اور عاجزی سے جھک جاؤ / رکوع کرو):
+رکوع کا مطلب ہے سر جھکانا اور عاجزی کا اظہار کرنا۔ یہود کی نماز میں مسلمانوں جیسا رکوع موجود نہیں تھا، اس لیے اللہ نے انہیں حکم دیا کہ اپنے پرانے تکبر کو چھوڑو اور اسلامی طریقے سے اللہ کے سامنے جھکو۔
+
+- مَعَ الرَّاكِعِينَ (جھکنے والوں کے ساتھ مل کر):
+مسلمانوں کے ساتھ مسجد میں کندھے سے کندھا ملا کر باجماعت نماز ادا کرو۔ باجماعت نماز سے دل کا غرور مٹتا ہے، امیر اور غریب ایک ہی صف میں کھڑے ہوتے ہیں، اور مسلمانوں میں محبت و اتحاد قائم ہوتا ہے۔
+
+[سوال: قرآن مجید میں نماز کے لیے 'اقامت' (قائم کرنے) کا لفظ کیوں استعمال کیا گیا ہے؟ | جواب: کیونکہ اقامت کا مطلب ہے نماز کو محض رسم کے طور پر جلدی جلدی ادا نہ کرنا، بلکہ اس کے تمام ارکان، آداب، خشوع اور صحیح اوقات کی پابندی کے ساتھ زندگی میں زندہ رکھنا!]
+
+[سوال: 'وَارْكَعُوا مَعَ الرَّاكِعِينَ' سے ہمیں کیا اہم سبق ملتا ہے؟ | جواب: اس سے مسجد میں باجماعت نماز ادا کرنے، تکبر ختم کر کے عاجزی اختیار کرنے، اور امت کے اتحاد کی پرزور تاکید ملتی ہے!]
+
+✨ دل کو چھو لینے والا سبق: نماز انسان کا رشتہ اللہ سے جوڑتی ہے اور زکوٰۃ انسان کا رشتہ معاشرے کے کمزور لوگوں سے جوڑتی ہے۔ جب بندہ مسجد میں باجماعت سجدہ ریز ہوتا ہے تو تمام دنیاوی فرق مٹ جاتے ہیں اور روح میں سکون اتر آتا ہے!`,
+    tafseerEn: `📖 Following the call to sincere faith, Allah establishes the twin pillars of personal spirituality and collective solidarity: Prayer (bodily devotion) and Zakah (financial purification).
+
+Let us explore the gentle and clear word-by-word meaning:
+
+- وَأَقِيمُوا الصَّلَاةَ (Wa aqeemoo as-salah - And establish prayer):
+Notice that the Quran commands us to 'establish' prayer, not merely recite words. To establish prayer means observing it punctually with proper bodily posture, inner reverence (Khushu'), and continuous lifelong devotion. Prayer is the direct communion between the soul and its Creator.
+
+- وَآتُوا الزَّكَاةَ (Wa aatoo az-zakah - And give Zakah):
+Freely giving the prescribed charity to the poor, orphans, and needy. Zakah purifies wealth, uproots greed and selfishness from the human heart, and weaves a resilient safety net for society.
+
+- وَارْكَعُوا (Warka'oo - And bow down):
+Ruku' signifies physical humility and reverent submission. The Jewish liturgy did not feature the Islamic form of bowing; they were commanded to bow before Allah under the final prophetic guidance.
+
+- مَعَ الرَّاكِعِينَ (Ma'ar-raki'een - With those who bow):
+Join the Muslim congregation in the mosque shoulder to shoulder. Congregational prayer levels all social hierarchies—princes and laborers stand united as humble servants before their Lord.
+
+[QUESTION: What does it mean to 'establish' prayer rather than simply 'perform' it? | ANSWER: It means performing prayer regularly, at its proper times, with physical tranquility, sincere spiritual presence, and proper etiquette!]
+
+[QUESTION: What is the significance of 'bow with those who bow'? | ANSWER: It emphasizes the paramount importance of congregational prayer in the mosque, fostering brotherhood, humility, and equality among believers!]
+
+✨ Life's Vital Takeaway: Salah connects your heart to God above; Zakah connects your compassion to those around you; and congregational prayer dissolves all ego in divine unity!`
   },
   44: {
     arabic: 'أَتَأْمُرُونَ النَّاسَ بِالْبِرِّ وَتَنسَوْنَ أَنفُسَكُمْ وَأَنتُمْ تَتْلُونَ الْكِتَابَ ۚ أَفَلَا تَعْقِلُونَ',
-    translationUr: 'کیا تم دوسرے لوگوں کو نیکی کا حکم دیتے ہو اور اپنے آپ کو بھول جاتے ہو، حالانکہ تم کتاب (تورات) کی تلاوت کرتے ہو؟ کیا تم عقل نہیں رکھتے؟',
+    translationUr: 'کیا تم دوسرے لوگوں کو تو نیکی کا حکم دیتے ہو اور اپنے آپ کو بھول جاتے ہو، حالانکہ تم خود کتاب (تورات) پڑھتے ہو؟ کیا پھر بھی تم عقل سے کام نہیں لیتے؟',
     translationEn: 'Do you order righteousness of the people and forget yourselves while you recite the Scripture? Then will you not reason?',
     words: [
       { arabic: 'أَتَأْمُرُونَ النَّاسَ', transliteration: 'A-ta\'muroona an-nas', translationEn: 'Do you order people', translationUr: 'کیا تم حکم دیتے ہو لوگوں کو' },
-      { arabic: 'بِالْبِرِّ', transliteration: 'bil-birri', translationEn: 'to righteousness', translationUr: 'نیکی کا' },
+      { arabic: 'بِالْبِرِّ', transliteration: 'bil-birri', translationEn: 'to righteousness', translationUr: 'نیکی اور بھلائی کا' },
       { arabic: 'وَتَنسَوْنَ أَنفُسَكُمْ', transliteration: 'wa tansawna anfusakum', translationEn: 'and forget yourselves', translationUr: 'اور بھول جاتے ہو اپنے آپ کو' },
-      { arabic: 'وَأَنتُمْ تَتْلُونَ', transliteration: 'wa antum tatloona', translationEn: 'while you recite', translationUr: 'حالانکہ تم پڑھتے ہو' },
+      { arabic: 'وَأَنتُمْ تَتْلُونَ', transliteration: 'wa antum tatloona', translationEn: 'while you recite', translationUr: 'حالانکہ تم خود پڑھتے ہو' },
       { arabic: 'الْكِتَابَ', transliteration: 'al-kitaba', translationEn: 'the Scripture', translationUr: 'کتاب کو' },
-      { arabic: 'أَفَلَا تَعْقِلُونَ', transliteration: 'afala ta\'qiloon', translationEn: 'then will you not reason?', translationUr: 'کیا تم عقل نہیں رکھتے؟' }
+      { arabic: 'أَفَلَا تَعْقِلُونَ', transliteration: 'afala ta\'qiloon', translationEn: 'then will you not reason?', translationUr: 'تو کیا تم عقل استعمال نہیں کرتے؟' }
     ],
-    tafseerUr: `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ):
-قول و فعل کا تضاد اور واعظین کے لیے سخت تازیانہ:
-۱. شانِ نزول:
-یہود کے علماء اپنے قریبی رشتہ داروں سے جو اسلام لانے کا ارادہ رکھتے تھے، خفیہ طور پر کہتے تھے کہ محمد (ﷺ) کا دین سچا ہے تم اس پر قائم رہو، مگر خود دنیاوی لالچ کی وجہ سے ایمان نہیں لاتے تھے۔
+    tafseerUr: `📖 اس آیت میں اللہ تعالیٰ نے ایک بہت بڑی اخلاقی بیماری پر جھنجھوڑا ہے جسے "قول و فعل کا تضاد" کہتے ہیں—یعنی زبان سے دوسروں کو تو نیکی کے بڑے بڑے بھاشن دینا مگر خود اپنی ذات کو اس نیکی سے بالکل غافل رکھنا۔
 
-۲. بے عمل مبلغ کی وعید:
-جو شخص دوسروں کو نیکی کی تلقین کرے مگر خود اس پر عمل نہ کرے، قرآن اس کے طرزِ عمل کو بے عقلی اور حماقت قرار دیتا ہے۔ حدیث شریف میں ہے کہ قیامت کے دن ایسے عالم کو جہنم میں لایا جائے گا اور اس کی آنتیں آگ میں نکل پڑیں گی اور وہ چکی کے بیل کی طرح چکر کاٹے گا؛ لوگ پوچھیں گے کہ تم تو ہمیں نیکی کا حکم دیتے تھے، وہ کہے گا میں تمہیں کہتا تھا مگر خود عمل نہیں کرتا تھا۔`,
-    tafseerEn: `Ma'ariful Qur'an Comprehensive Commentary:
-The Severe Indictment of Hypocritical Preaching:
-1. Occasion of Revelation:
-Jewish rabbis secretly advised relatives who inclined toward Islam: "Muhammad's message is authentic, persevere in it," yet refrained from converting themselves to safeguard their ecclesiastical perks.
+آئیے اس آیت مبارکہ کے ہر ہر لفظ کی آسان اور دلنشین وضاحت سمجھتے ہیں:
 
-2. The Peril of Preaching Without Personal Practice:
-The verse reprimands the tragic dichotomy between verbal eloquence and moral behavior. The Prophet ﷺ warned that on the Day of Judgment, a preacher who commanded virtue while indulging in secret vices will circle in Hellfire like a donkey turning a millstone, publicly exposed before all creation for preaching what he never practiced.`
+- أَتَأْمُرُونَ النَّاسَ بِالْبِرِّ (کیا تم دوسرے لوگوں کو نیکی کی تلقین کرتے ہو؟):
+'بِرّ' ہر اس نیکی، سچائی، خیرخواہی اور اطاعت کو کہتے ہیں جس سے اللہ راضی ہو۔ یہود کے علماء اپنے پیروکاروں سے کہتے تھے کہ صدقہ دو، سچ بولو، اور حتیٰ کہ اپنے ان رشتہ داروں سے جو اسلام لانا چاہتے تھے چپکے سے کہتے تھے کہ محمد ﷺ سچے نبی ہیں ان کا ساتھ دو!
+
+- وَتَنسَوْنَ أَنفُسَكُمْ (اور اپنے آپ کو بالکل بھلا دیتے ہو):
+مگر خود پر عمل کرنے کی باری آتی تو دنیاوی مفاد، انا اور ضد کی وجہ سے سچائی کو قبول نہیں کرتے تھے۔ دوسروں کو کنویں سے بچانا اور خود اسی میں چھلانگ لگا دینا کتنی بڑی حماقت ہے!
+
+- وَأَنتُمْ تَتْلُونَ الْكِتَابَ (حالانکہ تم خود اللہ کی کتاب کی تلاوت کرتے ہو):
+تم کوئی ان پڑھ یا جاہل نہیں ہو، تم تو صبح شام تورات پڑھتے ہو جس میں نیکی کا راستہ اور بے عملی کی سزا لکھی ہوئی ہے۔
+
+- أَفَلَا تَعْقِلُونَ (تو کیا تم عقل سے بالکل کام نہیں لیتے؟):
+قرآن نے اس تضاد کو کھلی بے عقلی قرار دیا۔ سچی عقل تو وہ ہے جو انسان کو اپنے نفع اور نقصان کی پہچان کروائے اور اسے اچھے اعمال پر مجبور کرے۔
+
+[سوال: اس آیت میں کس سنگین اخلاقی بیماری پر تنبیہ فرمائی گئی ہے؟ | جواب: قول و فعل کے تضاد پر، یعنی زبان سے دوسروں کو نیکی کی نصیحت کرنا مگر خود اس پر عمل نہ کرنا اور اپنے اعمال سے غافل ہو جانا!]
+
+[سوال: 'أَفَلَا تَعْقِلُونَ' (کیا تم عقل نہیں رکھتے) کا حقیقی مفہوم کیا ہے؟ | جواب: حقیقی عقل کا تقاضا یہ ہے کہ انسان کا علم اس کے اپنے عمل اور اخلاق میں دکھائی دے؛ علم کے باوجود عمل نہ کرنا کھلی بے عقلی ہے!]
+
+✨ دل کو چھو لینے والا سبق: انسان کو سب سے پہلے اپنی اصلاح کی فکر کرنی چاہیے۔ سب سے زیادہ اثر اس بات میں ہوتا ہے جو انسان کی زبان کے بجائے اس کے اپنے اچھے کردار اور پاکیزہ عمل سے بولتی ہو!`,
+    tafseerEn: `📖 This verse addresses a profound ethical pitfall: the hypocrisy of preaching noble virtues to others while completely neglecting them in one's personal life.
+
+Let us explore the gentle and clear word-by-word meaning:
+
+- أَتَأْمُرُونَ النَّاسَ بِالْبِرِّ (A-ta'muroona an-nasa bil-birr - Do you enjoin virtue upon people):
+'Birr' represents comprehensive righteousness, integrity, and obedience to Allah. The Jewish leaders advised their followers to do good and even secretly told relatives that Muhammad ﷺ was indeed the true Prophet.
+
+- وَتَنسَوْنَ أَنفُسَكُمْ (Wa tansawna anfusakum - While forgetting your own selves):
+Yet they failed to submit to the truth themselves, paralyzed by clerical prestige, love of status, and fear of material loss. Guiding others to safety while casually wandering into peril is tragic folly.
+
+- وَأَنتُمْ تَتْلُونَ الْكِتَابَ (Wa antum tatloona al-kitab - While you recite the Scripture):
+You are not uneducated; you recite the Torah daily, which explicitly warns against hypocrisy and commands sincere practice.
+
+- أَفَلَا تَعْقِلُونَ (Afala ta'qiloon - Will you not then reason?):
+The Quran characterizes the gap between eloquent preaching and moral inaction as irrationality. True intellect harmonizes sacred knowledge with personal practice.
+
+[QUESTION: What spiritual disease does this verse reprove? | ANSWER: Moral inconsistency and hypocrisy—urging others toward virtue while personally neglecting moral obligations!]
+
+[QUESTION: Why does the verse conclude with 'will you not then reason'? | ANSWER: Because knowing the divine command and teaching it to others while disobeying it in private is the height of foolishness!]
+
+✨ Life's Vital Takeaway: Always begin reform with your own heart and habits. The most powerful speech in the world is the silent eloquence of your personal character and good deeds!`
   },
   45: {
     arabic: 'وَاسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ وَإِنَّهَا لَكَبِيرَةٌ إِلَّا عَلَى الْخَاشِعِينَ',
-    translationUr: 'اور صبر اور نماز کے ذریعے مدد چاہو، اور بے شک نماز بڑی بھاری چیز ہے مگر ان کے لیے جو دل سے عاجزی کرنے والے ہیں۔',
+    translationUr: 'اور صبر اور نماز کے ذریعے (اللہ سے) مدد مانگو، اور بے شک نماز بہت بھاری چیز ہے مگر ان لوگوں کے لیے جو دل سے عاجزی کرنے والے ہیں۔',
     translationEn: 'And seek help through patience and prayer, and indeed, it is difficult except for the humbly submissive [to Allah].',
     words: [
-      { arabic: 'وَاسْتَعِينُوا', transliteration: 'Wasta\'eenoo', translationEn: 'And seek help', translationUr: 'اور مدد طلب کرو' },
-      { arabic: 'بِالصَّبْرِ', transliteration: 'bis-sabr', translationEn: 'through patience', translationUr: 'صبر کے ساتھ' },
-      { arabic: 'وَالصَّلَاةِ', transliteration: 'was-salah', translationEn: 'and prayer', translationUr: 'اور نماز کے ساتھ' },
-      { arabic: 'وَإِنَّهَا لَكَبِيرَةٌ', transliteration: 'wa-innaha lakabeeratun', translationEn: 'and indeed it is difficult', translationUr: 'اور بے شک وہ بھاری ہے' },
-      { arabic: 'إِلَّا عَلَى الْخَاشِعِينَ', transliteration: 'illa \'alal-khashi\'een', translationEn: 'except for the humble', translationUr: 'مگر عاجزی کرنے والوں پر' }
+      { arabic: 'وَاسْتَعِينُوا', transliteration: 'Wasta\'eenoo', translationEn: 'And seek help', translationUr: 'اور تم مدد طلب کرو' },
+      { arabic: 'بِالصَّبْرِ', transliteration: 'bis-sabr', translationEn: 'through patience', translationUr: 'صبر کے ذریعے' },
+      { arabic: 'وَالصَّلَاةِ', transliteration: 'was-salah', translationEn: 'and prayer', translationUr: 'اور نماز کے ذریعے' },
+      { arabic: 'وَإِنَّهَا لَكَبِيرَةٌ', transliteration: 'wa-innaha lakabeeratun', translationEn: 'and indeed it is heavy/difficult', translationUr: 'اور بے شک وہ بہت بھاری ہے' },
+      { arabic: 'إِلَّا عَلَى الْخَاشِعِينَ', transliteration: 'illa \'alal-khashi\'een', translationEn: 'except for the humble', translationUr: 'سوائے عاجزی کرنے والوں کے' }
     ],
-    tafseerUr: `تفسیر معارف القرآن (مفتی محمد شفیع رحمہ اللہ):
-صبر اور نماز: ہر مشکل کا روحانی علاج:
-۱. صبر کے تین درجات:
-- نفس کو گناہوں کی رغبت سے روکنا۔
-- طاعت اور عبادات کی پابندی پر قائم رہنا۔
-- مصائب و پریشانیوں پر شکوہ شکایت کیے بغیر اللہ کی رضا پر راضی رہنا۔
+    tafseerUr: `📖 زندگی کے سفر میں جب بھی کوئی پریشانی، بیماری، غم، نفس کی خواہشات کا دباؤ یا دین پر قائم رہنے کی آزمائش آئے، تو اللہ تعالیٰ نے دو بے مثال روحانی سہارے اور ہتھیار عطا فرمائے ہیں: صبر اور نماز!
 
-۲. نماز کے ذریعے نصرتِ الٰہی:
-جب بھی انسان پر دنیاوی، مالی، یا روحانی بوجھ پڑے تو اسے فوراً نماز کی طرف دوڑنا چاہیے۔ حضور اکرم ﷺ کی مبارک عادت تھی کہ جب بھی کوئی اہم معاملہ یا مشکل پیش آتی تو فوراً نماز میں مشغول ہو جاتے (کان اذا حزبہ امر صلی)۔
+آئیے اس آیت مبارکہ کے ہر ہر لفظ کی آسان اور دلنشین وضاحت سمجھتے ہیں:
 
-۳. نماز کس پر بھاری نہیں ہوتی؟
-'خاشعین' یعنی جن کے دلوں میں اللہ کی عظمت کا خوف اور محبت ہے، ان کے لیے نماز بوجھ نہیں بلکہ آنکھوں کی ٹھنڈک اور روح کی راحت بن جاتی ہے۔`,
-    tafseerEn: `Ma'ariful Qur'an Comprehensive Commentary:
-Patience and Prayer: The Spiritual Armor for Every Crisis:
-1. The Three Dimensions of Sabr (Patience):
-- Restraining the soul from sinful desires (Sabr 'an al-Ma'siyah).
-- Enduring hardship to persevere in religious obligations (Sabr 'ala at-Ta'ah).
-- Bearing worldly tribulations with serene resignation to divine destiny (Sabr 'ala al-Bala').
+- وَاسْتَعِينُوا (اور تم اللہ سے مدد حاصل کرو):
+انسان کمزور ہے، اس لیے اسے قدم قدم پر اپنے پروردگار کی نصرت اور تائید کی ضرورت ہوتی ہے۔
 
-2. Salah as Divine Refuge:
-Prayer establishes a direct conduit to divine omnipotence. The Prophet ﷺ habitually sought refuge in Salah whenever overwhelmed by distress ("Kāna idhā hazabahu amrun sallā").
+- بِالصَّبْرِ (صبر کے ذریعے):
+صبر کا آسان مفہوم یہ ہے:
+۱. گناہ کا موقع آئے تو اپنے نفس کو سختی سے قابو میں رکھنا۔
+۲. نیکی کرنے میں مشقت یا سستی آئے تو ڈٹ کر لگے رہنا۔
+۳. اور جب کوئی مصیبت، بیماری یا صدمہ آئے تو شکوہ شکایت کیے بغیر اللہ کی رضا پر راضی رہنا۔
 
-3. Why Prayer is Light for the Humble (Khashi'een):
-For souls alienated from God, prayer feels like an arduous chore. But for the 'Khashi'in' whose hearts are illuminated with divine love and reverence, Salah is the ultimate sanctuary and coolness of their eyes.`
+- وَالصَّلَاةِ (اور نماز کے ذریعے):
+جب بھی دل بوجھل ہو یا کوئی مشکل آ پڑے تو فوراً وضو کر کے نماز کی طرف دوڑو۔ ہمارے پیارے نبی حضرت محمد مصطفیٰ ﷺ کا مبارک معمول تھا کہ جب بھی کوئی پریشانی یا مشکل پیش آتی تو آپ فوراً نماز میں مشغول ہو جاتے تھے، کیونکہ نماز روح کو براہِ راست اللہ کی لامحدود رحمت سے جوڑ دیتی ہے۔
+
+- وَإِنَّهَا لَكَبِيرَةٌ (اور بے شک یہ نماز بہت بھاری اور مشکل لگتی ہے):
+پانچ وقت وقت نکالنا، سردی گرمی میں وضو کرنا اور خشوع سے کھڑے ہونا غافل انسان کے نفس پر بہت بھاری پڑتا ہے۔
+
+- إِلَّا عَلَى الْخَاشِعِينَ (سوائے ان خوش نصیبوں کے جو دل سے عاجزی کرنے والے ہیں):
+'خاشعین' وہ بندے ہیں جن کے دلوں میں اللہ کی سچی محبت، عظمت اور احترام ہوتا ہے۔ ایسے لوگوں کے لیے نماز کوئی بوجھ نہیں بلکہ دل کا چین، روح کی تازگی اور آنکھوں کی ٹھنڈک بن جاتی ہے!
+
+[سوال: زندگی کی ہر مشکل، بیماری اور پریشانی میں کن دو عظیم طریقوں سے مدد مانگنے کا حکم دیا گیا ہے؟ | جواب: صبر (برداشت و ضبطِ نفس) اور نماز کے ذریعے!]
+
+[سوال: نماز کس قسم کے انسان پر بوجھ نہیں بنتی بلکہ راحت بن جاتی ہے؟ | جواب: 'خاشعین' یعنی جن کے دلوں میں اللہ کا سچا پیار، خشوع اور عاجزی ہوتی ہے، ان کے لیے نماز بوجھ کے بجائے دلی سکون اور خوشی بن جاتی ہے!]
+
+✨ دل کو چھو لینے والا سبق: جب بھی دنیا کے تمام دروازے بند ہوتے نظر آئیں، اداس ہونے کے بجائے جائے نماز بچھا لو۔ صبر اور نماز وہ دو روحانی پر ہیں جن کے ذریعے انسان ہر غم کے طوفان سے نکل کر اللہ کی رحمت کے سایہ میں پہنچ جاتا ہے!`,
+    tafseerEn: `📖 In the journey of earthly life, whenever trials, emotional distress, or the pressures of worldly desires arise, Allah equips the believer with two invincible spiritual instruments: Patience (Sabr) and Prayer (Salah).
+
+Let us explore the gentle and clear word-by-word meaning:
+
+- وَاسْتَعِينُوا (Wasta'eenoo - And seek assistance):
+Human beings are fragile by nature; we are in constant need of divine strength, serenity, and reinforcement.
+
+- بِالصَّبْرِ (Bis-sabr - Through patience and perseverance):
+Sabr comprises three essential dimensions:
+1. Restraining the ego from forbidden desires and harmful impulses.
+2. Steadfastly enduring hardship to maintain righteous deeds.
+3. Bearing unexpected trials, losses, or illnesses with calm trust in Allah's wisdom without despair.
+
+- وَالصَّلَاةِ (Was-salah - And through prayer):
+Whenever overwhelmed, turn to Salah. It was the beloved habit of the Prophet Muhammad ﷺ that whenever any distress overtook him, he immediately hurried to stand in prayer, connecting his heart directly to divine serenity.
+
+- وَإِنَّهَا لَكَبِيرَةٌ (Wa-innaha lakabeeratun - And indeed, it is burdensome / heavy):
+To the casual or heedless heart, waking for dawn prayer and detaching five times daily from worldly distractions feels like an arduous chore.
+
+- إِلَّا عَلَى الْخَاشِعِينَ (Illa 'alal-khashi'een - Except for the humbly submissive):
+'Al-Khashi'een' are those whose hearts are illuminated by awe, love, and serene humility before Allah. For them, prayer is not a burden; it is the sanctuary of the heart, the healing of anxieties, and the supreme joy of the eyes!
+
+[QUESTION: Which two divine anchors are prescribed to overcome difficulties and emotional distress? | ANSWER: Patience (Sabr) to discipline the heart, and Prayer (Salah) to draw down divine strength and peace!]
+
+[QUESTION: Why is prayer light and joyful rather than difficult for the 'Khashi'een'? | ANSWER: Because their hearts are filled with reverence, love, and certainty in meeting Allah, making prayer a sweet conversation rather than a ritual burden!]
+
+✨ Life's Vital Takeaway: When the world presses heavy on your shoulders, don't despair—spread your prayer mat. Patience calms the storm within, and prayer invites the help of the Lord of the heavens and the earth!`
   },
   46: {
     arabic: 'الَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَاقُو رَبِّهِمْ وَأَنَّهُمْ إِلَيْهِ رَاجِعُونَ',

@@ -202,49 +202,449 @@ const CURATED_QA_MAP: Record<string, AyahQA[]> = {
   '2:23': [
     {
       questionUr: 'قرآن مجید نے منکرین اور شک کرنے والوں کو کیا چیلنج دیا؟',
-      answerUr: 'فرمایا کہ اگر تمہیں اس کلام کے اللہ کی طرف سے ہونے میں شک ہے تو تم سب مل کر اس جیسی کوئی ایک چھوٹی سی سورت ہی بنا کر لا دکھاؤ۔',
+      answerUr: 'فرمایا کہ اگر تمہیں اس کلام کے اللہ کی طرف سے ہونے میں ذرا بھی شک ہے تو تم اپنے تمام مددگاروں کے ساتھ مل کر اس جیسی کوئی ایک چھوٹی سی سورت ہی بنا کر لا دکھاؤ۔',
       questionEn: 'What challenge did the Quran give to skeptics and deniers?',
-      answerEn: 'To produce even a single chapter (Surah) resembling the Quran\'s divine wisdom and eloquence.'
+      answerEn: 'To produce even a single chapter (Surah) resembling the Quran\'s divine wisdom and eloquence, calling upon any witnesses or supporters besides Allah.'
+    },
+    {
+      questionUr: 'اللہ تعالیٰ نے پیارے نبی ﷺ کو "عَبْدِنَا" (ہمارا بندہ) کیوں فرمایا؟',
+      answerUr: 'کیونکہ اللہ تعالیٰ کی مخلصانہ بندگی اور اطاعت انسان کا بلند ترین روحانی مقام اور شرف ہے، اور اللہ نے اپنے رسول کو اپنے ساتھ منسوب کر کے کمالِ محبت اور سچی نبوت کی تصدیق فرمائی۔',
+      questionEn: 'Why did Allah address Prophet Muhammad ﷺ as "Abdina" (Our Servant)?',
+      answerEn: 'Because wholehearted servitude to Allah is the highest rank of human spiritual honor, and Allah affirmed His profound love and the divine authenticity of his prophethood.'
+    },
+    {
+      questionUr: 'لفظ "نَزَّلْنَا" (تنزیل) میں کیا خاص الٰہی حکمت ہے؟',
+      answerUr: 'قرآن 23 سال کے طویل عرصے میں تھوڑا تھوڑا کر کے نازل ہوا، اور اس کے باوجود اس کی تمام سورتوں میں کامل ربط، فصاحت اور سچائی ہے، کہیں کوئی تضاد یا کمزوری نہیں پائی جاتی۔',
+      questionEn: 'What divine wisdom is encapsulated in the word "Nazzalna" (gradual revelation)?',
+      answerEn: 'The Quran was revealed incrementally over 23 years, yet maintains absolute structural harmony, eloquence, and divine truth without a single flaw or contradiction.'
+    },
+    {
+      questionUr: 'کیا چودہ سو سال کی تاریخ میں کوئی انسان قرآن جیسی ایک چھوٹی سورت بھی بنا سکا؟',
+      answerUr: 'ہرگز نہیں! چودہ سو سال سے آج تک کوئی بھی شاعر، ادیب، فلسفی یا سائنسدان اس چیلنج کا جواب نہیں دے سکا، جو اس بات کا قطعی ثبوت ہے کہ قرآن اللہ کا سچا کلام ہے۔',
+      questionEn: 'Has anyone in 1,400 years succeeded in matching the Quran\'s challenge?',
+      answerEn: 'Never! For over 1,400 years, not a single literary master or skeptic has matched even the shortest Surah, proving the Quran is the eternal, inimitable Word of Allah.'
+    }
+  ],
+  '2:24': [
+    {
+      questionUr: 'جہنم کی آگ کا ایندھن کیا چیزیں ہیں؟',
+      answerUr: 'جہنم کا ایندھن انسان اور پتھر ہیں۔ انسان وہ جنہوں نے جان بوجھ کر حق کا انکار کیا، اور پتھر وہ جن کے وہ بت تراش کر پوجتے تھے۔',
+      questionEn: 'What is the fuel of the Hellfire mentioned in Verse 24?',
+      answerEn: 'The fuel is men and stones—those who obstinately rejected the truth and the stones/idols they worshipped instead of Allah.'
+    },
+    {
+      questionUr: 'اللہ تعالیٰ کے فرمان "وَلَن تَفْعَلُوا" (اور تم ہرگز کبھی نہ کر سکو گے) میں کیا معجزہ ہے؟',
+      answerUr: 'یہ قرآن کی سچی پیشگوئی ہے کہ قیامت تک تمام انسان اور جنات مل کر بھی قرآن کی ایک چھوٹی سورت جیسا کلام نہیں لا سکیں گے، اور چودہ سو سال سے یہ دعویٰ سچ ثابت ہے۔',
+      questionEn: 'What prophetic miracle is contained in the phrase "wa lan taf\'aloo" (and you will never be able to)?',
+      answerEn: 'It is a permanent divine prophecy that humanity will never be able to produce the like of the Quran, a fact proven true throughout history.'
+    },
+    {
+      questionUr: 'اس آیت سے ہمیں اپنی روزمرہ زندگی میں کیا عملی نصیحت ملتی ہے؟',
+      answerUr: 'ضد اور انا کو چھوڑ کر سچائی کے آگے جھک جانا چاہیے اور نیک اعمال کر کے خود کو جہنم کی آگ سے بچانا چاہیے۔',
+      questionEn: 'What practical lesson does Verse 24 teach us?',
+      answerEn: 'To abandon arrogance and stubbornness, embrace truth humbly, and protect oneself from spiritual ruin through sincere faith and good deeds.'
     }
   ],
   '2:25': [
     {
-      questionUr: 'اہلِ ایمان اور نیک عمل کرنے والوں کے لیے جنت میں کن انعامات کی خوشخبری دی گئی ہے؟',
-      answerUr: 'ایسے باغات جن کے نیچے نہریں بہتی ہیں، لذیذ اور پاکیزہ پھل، پاک صاف جوڑے اور وہاں ہمیشہ ہمیشہ کی پرسکون اور ابدی زندگی۔',
-      questionEn: 'What glad tidings are promised to the believers who do righteous deeds?',
-      answerEn: 'Gardens beneath which rivers flow, pure fruits, purified companions, and eternal bliss in Paradise.'
+      questionUr: 'اہلِ ایمان اور نیک عمل کرنے والوں کے لیے جنت میں کن نعمتوں کی خوشخبری دی گئی ہے؟',
+      answerUr: 'ایسے سرسبز باغات جن کے نیچے میٹھی نہریں بہتی ہیں، لذیذ اور پاکیزہ پھل، پاک صاف جوڑے اور ہمیشہ کی پرسکون زندگی۔',
+      questionEn: 'What glad tidings are promised to the believers who do righteous deeds in Verse 25?',
+      answerEn: 'Gardens beneath which rivers flow, delightful fruits, purified companions, and eternal peace and happiness in Paradise.'
+    },
+    {
+      questionUr: 'اہلِ جنت پھل دیکھ کر کیوں کہیں گے کہ "یہ تو وہی ہے جو ہمیں پہلے ملا تھا"؟',
+      answerUr: 'کیونکہ وہ پھل دیکھنے میں دنیا کے پھلوں سے مشابہ ہوں گے تاکہ اپنائیت رہے، لیکن ان کا ذائقہ، خوشبو اور لذت دنیا سے بے انتہا زیادہ اعلیٰ ہو گی۔',
+      questionEn: 'Why will the inhabitants of Paradise say "This is what we were provided with before"?',
+      answerEn: 'Because the fruits will bear familiar, beautiful resemblances to worldly fruits, yet their sublime taste, fragrance, and delight will be incomparably superior.'
+    },
+    {
+      questionUr: '"أَزْوَاجٌ مُّطَہَّرَةٌ" (پاکیزہ جوڑے) سے کیا مراد ہے؟',
+      answerUr: 'ایسے ساتھی جو ہر قسم کی ظاہری بیماری، میل کچیل اور باطنی برائیوں جیسے حسد، غصے اور بے وفائی سے بالکل پاک و صاف ہوں گے۔',
+      questionEn: 'What is meant by "azwajun mutahharah" (purified spouses)?',
+      answerEn: 'Companions completely purified from all physical imperfections, illnesses, and inner spiritual defects like jealousy, anger, or pettiness.'
+    },
+    {
+      questionUr: '"وَهُمْ فِيهَا خَالِدُونَ" میں اہلِ جنت کے لیے کیا سب سے بڑی تسلی ہے؟',
+      answerUr: 'کہ جنت کی یہ بے شمار نعمتیں اور خوشیاں عارضی نہیں ہیں، نہ یہ کبھی ختم ہوں گی اور نہ انہیں کبھی جنت سے نکالا جائے گا۔',
+      questionEn: 'What supreme comfort is conveyed by "wa hum feeha khalidoon" (abiding eternally)?',
+      answerEn: 'The absolute reassurance that the peace and bliss of Paradise will never end, expire, or be taken away.'
+    }
+  ],
+  '2:26': [
+    {
+      questionUr: 'اللہ تعالیٰ نے مچھر جیسے چھوٹے جاندار کی مثال کیوں بیان فرمائی؟',
+      answerUr: 'کیونکہ اللہ تعالیٰ کی قدرت، حکمت اور دستکاری سب سے چھوٹی مخلوق میں بھی اتنی ہی کمال سے نظر آتی ہے جتنی بڑی سے بڑی کہکشاں میں۔ مچھر کے پروں، رگوں اور سونڈ کا باریک نظام اللہ کی عظمت کا زندہ ثبوت ہے۔',
+      questionEn: 'Why did Allah present the parable of a small mosquito in Verse 26?',
+      answerEn: 'Because divine wisdom and exquisite craftsmanship are as magnificently visible in the microscopic anatomy of a tiny mosquito as in vast cosmic galaxies.'
+    },
+    {
+      questionUr: 'قرآن کی مثالوں پر مؤمن اور دل کے بیمار انسان کے ردعمل میں کیا فرق ہوتا ہے؟',
+      answerUr: 'مؤمن مثال کے اندر چھپی سچائی اور گہری حکمت کو پہچان کر ایمان میں مضبوط ہوتے ہیں، جبکہ ہٹ دھرم لوگ فضول اعتراضات اور کٹ حجتی میں الجھ جاتے ہیں۔',
+      questionEn: 'How do believers and doubters react differently to the Quran\'s parables?',
+      answerEn: 'Believers appreciate the profound truth and wisdom within the examples, while stubborn deniers engage in trivial debates and miss the deeper guidance.'
+    },
+    {
+      questionUr: '"يُضِلُّ بِهِ كَثِيرًا وَيَهْدِي بِهِ كَثِيرًا" کا آسان مفہوم کیا ہے؟',
+      answerUr: 'قرآن ایک صاف شفاف آئینے کی طرح ہے: سچی نیت سے آنے والے کو ہدایت ملتی ہے، اور تکبر اور ہٹ دھرمی رکھنے والا اپنے ہی عناد کے سبب گمراہی میں بڑھتا چلا جاتا ہے۔',
+      questionEn: 'What is the clear meaning of "He misleads many thereby and guides many thereby"?',
+      answerEn: 'The Quran acts as a clear mirror: those seeking truth sincerely find illumination and guidance, while those filled with arrogance and malice veer further into confusion.'
+    }
+  ],
+  '2:27': [
+    {
+      questionUr: 'آیت 27 میں عہد شکن اور فاسق لوگوں کی کون سی تین برائیاں بیان ہوئی ہیں؟',
+      answerUr: '1. اللہ کے ساتھ باندھے ہوئے پکے عہد کو توڑنا، 2. جن رشتوں کو جوڑنے کا حکم تھا انہیں کاٹنا، اور 3. زمین پر فساد اور جھگڑے پھیلانا۔',
+      questionEn: 'What three negative traits of the corrupt (Fasiqeen) are highlighted in Verse 27?',
+      answerEn: '1. Breaking their solemn covenant with Allah, 2. Severing the ties of kinship and social care Allah ordered to be joined, and 3. Spreading corruption and discord on earth.'
+    },
+    {
+      questionUr: '"مَا أَمَرَ اللَّهُ بِهِ أَن يُوصَلَ" سے ہمیں کیا عملی اخلاقی حکم ملتا ہے؟',
+      answerUr: 'صلہ رحمی کا حکم ملتا ہے، یعنی اپنے والدین، بہن بھائیوں، رشتہ داروں اور غریبوں کے ساتھ اچھے تعلقات رکھنا اور ان کے حقوق محبت اور خیر خواہی سے ادا کرنا۔',
+      questionEn: 'What practical moral commandment is contained in "what Allah has ordered to be joined"?',
+      answerEn: 'Upholding the ties of kinship (Silat ar-Rahim), maintaining compassion with parents, relatives, and neighbors, and fostering unity in the community.'
+    },
+    {
+      questionUr: 'حقیقی گھاٹا اور خسارہ پانے والے (الْخَاسِرُونَ) کون لوگ ہیں؟',
+      answerUr: 'وہ لوگ جو دنیا کی جھوٹی چمک اور وقتی فائدے کے لیے اپنے اخلاق، رشتے اور اللہ کے ساتھ اپنا تعلق توڑ کر اپنی ابدی آخرت برباد کر بیٹھتے ہیں۔',
+      questionEn: 'Who are the true losers ("al-khasireen") described in Verse 27?',
+      answerEn: 'Those who sacrifice their moral integrity, family bonds, and relationship with their Creator for fleeting worldly gains, losing both this world and the Hereafter.'
+    }
+  ],
+  '2:28': [
+    {
+      questionUr: 'اللہ تعالیٰ نے "كَيْفَ تَكْفُرُونَ بِاللَّهِ" کے ذریعے کس انداز میں انسان کو پکارا ہے؟',
+      answerUr: 'ایک بہت پیارے، دوستانہ اور ہوش ربا انداز میں انسان کی عقل کو جھنجھوڑا ہے کہ جس پروردگار نے تمہیں عدم سے زندگی بخشی اور لاتعداد نعمتیں دیں، اس کی ناشکری اور انکار کیسے ممکن ہو سکتا ہے؟',
+      questionEn: 'In what tone does Allah ask "How can you disbelieve in Allah" in Verse 28?',
+      answerEn: 'In an intimate, loving, and thought-provoking tone, awakening human consciousness to reflect on how one could ever deny the loving Creator who gave life out of nothingness.'
+    },
+    {
+      questionUr: 'آیت 28 میں انسان کی زندگی کے کن چار عظیم مراحل کا ذکر ہے؟',
+      answerUr: '1. تم بے جان (معدوم) تھے، 2. اللہ نے دنیا میں تمہیں زندگی بخشی، 3. پھر تمہیں موت دے گا، 4. اور پھر قیامت کے دن دوبارہ زندہ کر کے اپنے حضور بلائے گا۔',
+      questionEn: 'Which four major life-stages of human existence are summarized in Verse 28?',
+      answerEn: '1. Inanimate non-existence, 2. Creation and life in this worldly realm, 3. Physical death, and 4. Resurrection on the Day of Reckoning to return to Allah.'
+    },
+    {
+      questionUr: '"ثُمَّ إِلَيْهِ تُرْجَعُونَ" کا انسان کی روزمرہ زندگی پر کیا نیک اثر ہونا چاہیے؟',
+      answerUr: 'انسان کے دل میں یہ یقین پیدا ہوتا ہے کہ ہم نے آخرکار اپنے مہربان رب کے پاس واپس جانا ہے، اس لیے ہر کام سچائی، نیکی اور دوسروں کی خیر خواہی کے جذبے سے کرنا چاہیے۔',
+      questionEn: 'What positive mindset should "then to Him you will be returned" instill in our daily life?',
+      answerEn: 'A comforting awareness of accountability before our loving Lord, motivating us to fill each day with kindness, honest dealings, and righteous actions.'
+    }
+  ],
+  '2:29': [
+    {
+      questionUr: 'اللہ تعالیٰ نے "خَلَقَ لَكُم" فرما کر انسان پر کیا خاص احسان جتایا ہے؟',
+      answerUr: 'اللہ تعالیٰ نے زمین کی تمام تر نعمتیں (پھل، اناج، میٹھے پانی، معدنیات اور ہوائیں) خاص انسان کے فائدے، راحت اور زندگی کے لیے پیدا فرمائیں۔',
+      questionEn: 'What special favor did Allah emphasize with the words "khalaqa lakum" (created for you)?',
+      answerEn: 'Allah uniquely honored human beings by designing and dedicating all the bounties of the earth (water, crops, flora, minerals) for their benefit, nourishment, and comfort.'
+    },
+    {
+      questionUr: 'سات آسمانوں کے محکم نظام سے ہمیں کیا سبق ملتا ہے؟',
+      answerUr: 'یہ کہ اتنی وسیع و عریض کائنات بغیر کسی ستون اور بغیر کسی نقص کے کامل توازن کے ساتھ چل رہی ہے، جو اللہ تعالیٰ کی بے مثال کاریگری اور کمالِ قدرت کا زندہ ثبوت ہے۔',
+      questionEn: 'What lesson is derived from the architecture of the seven heavens?',
+      answerEn: 'That the vast universe operates in perfect cosmic equilibrium without flaws or pillars, bearing testimony to Allah\'s flawless design and supreme omnipotence.'
+    },
+    {
+      questionUr: '"وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ" سے ہمارے دل کو کیا تسلی ملتی ہے؟',
+      answerUr: 'یہ کہ ہمارا رب ہماری ہر تکلیف، ہر ضرورت اور ہر چھپی ہوئی دعا سے باخبر ہے اور کائنات کا کوئی بھی ذرہ اس کے علم اور رحمت سے باہر نہیں ہے۔',
+      questionEn: 'What inner comfort does knowing "He is All-Knowing of everything" provide?',
+      answerEn: 'Absolute peace of mind knowing that Allah is aware of our deepest needs, trials, and silent supplications, and nothing in existence escapes His loving watch.'
     }
   ],
   '2:30': [
     {
-      questionUr: 'اللہ تعالیٰ نے حضرت آدم علیہ السلام کو زمین پر کس حیثیت سے پیدا فرمایا؟',
-      answerUr: 'زمین میں اپنا خلیفہ (نائب) بنا کر، تاکہ وہ اور ان کی اولاد اللہ کے احکام کے مطابق زمین کا نظام چلائیں۔',
-      questionEn: 'In what capacity was Prophet Adam (A.S.) created on earth?',
-      answerEn: 'As a Khalifah (vicegerent/successor), entrusted with implementing divine values on earth.'
+      questionUr: 'انسان کو زمین میں "خَلِيفَةً" (نائب) بنانے کا کیا مطلب ہے؟',
+      answerUr: 'انسان کو اللہ نے زمین کا امین اور نائب بنایا تاکہ وہ اللہ کے دیے ہوئے اختیارات، عقل اور شریعت کے مطابق دنیا میں عدل و انصاف، امن اور نیکی کا نظام قائم کرے۔',
+      questionEn: 'What does it mean that man was appointed as "Khalifah" (vicegerent) on earth?',
+      answerEn: 'Humanity was designated as Allah\'s trustee on earth to establish divine justice, care for creation, and govern affairs according to sacred guidance and moral conscience.'
+    },
+    {
+      questionUr: 'کیا فرشتوں کا سوال اللہ کے فیصلے پر کوئی اعتراض تھا؟',
+      answerUr: 'ہرگز نہیں! فرشتے معصوم ہیں اور نافرمانی نہیں کر سکتے، انہوں نے صرف ادب اور حیرت کے ساتھ انسان کو پیدا کرنے کی گہری الٰہی حکمت جاننا چاہی تھی۔',
+      questionEn: 'Was the angels\' inquiry an objection to Allah\'s decree?',
+      answerEn: 'Absolutely not! Angels are incapable of sin or protest; they merely inquired with reverence to understand the divine wisdom behind placing beings with free will on earth.'
+    },
+    {
+      questionUr: 'اللہ تعالیٰ نے "إِنِّي أَعْلَمُ مَا لَا تَعْلَمُونَ" فرما کر کیا راز کھولا؟',
+      answerUr: 'یہ کہ انسان میں آزمائشوں اور نفسانی خواہشات کے باوجود اپنے ارادے سے نیکی، محبت اور ایثار اختیار کرنے کی وہ صلاحیت ہے جس کی بدولت انسان فرشتوں سے بھی اعلیٰ روحانی رتبہ پا سکتا ہے۔',
+      questionEn: 'What profound mystery was revealed in "Indeed, I know that which you do not know"?',
+      answerEn: 'That humans have the unique capacity to choose faith and righteousness despite trials and temptations, achieving a noble spiritual rank that inspires the admiration of angels.'
+    }
+  ],
+  '2:31': [
+    {
+      questionUr: 'اللہ تعالیٰ نے حضرت آدم علیہ السلام کو "الْأَسْمَاءَ كُلَّهَا" سکھا کر کیا فضیلت بخشی؟',
+      answerUr: 'صرف الفاظ اور نام نہیں بلکہ کائنات کی تمام اشیاء کی حقیقتیں، ان کے خواص، زبان، اور عقل و فہم کے ذریعے نئی چیزیں دریافت کرنے کی زبردست ذہنی صلاحیت عطا فرمائی۔',
+      questionEn: 'What excellence was bestowed upon Adam through teaching him "all the names"?',
+      answerEn: 'Not merely words, but the inner natures, functions, and properties of created things, endowing humanity with conceptual language, scientific curiosity, and analytical intellect.'
+    },
+    {
+      questionUr: 'فرشتوں کے سامنے چیزیں پیش کرنے کا کیا مقصد تھا؟',
+      answerUr: 'فرشتوں پر یہ حقیقت واضح کرنا کہ زمین کو سنوارنے اور اس کا نظام چلانے کے لیے صرف عبادت کافی نہیں بلکہ دنیا کے امور کی علمی سمجھ بوجھ اور ادراک بھی ضروری ہے جو انسان کو دیا گیا ہے۔',
+      questionEn: 'What was the purpose of displaying the entities before the angels?',
+      answerEn: 'To demonstrate that the stewardship of earth requires not only spiritual devotion, but deep empirical and conceptual knowledge—faculties uniquely gifted to humanity.'
+    },
+    {
+      questionUr: 'اس آیت سے علم حاصل کرنے کی کیا اہمیت ثابت ہوتی ہے؟',
+      answerUr: 'یہ ثابت ہوتا ہے کہ علم ہی انسان کی اصل عظمت، فضیلت اور خلافت کا تاج ہے، اور ہمارے دادا آدم علیہ السلام کے پہلے استاد خود اللہ تعالیٰ تھے۔',
+      questionEn: 'What significance of seeking knowledge is proven from Verse 31?',
+      answerEn: 'It proves that beneficial knowledge is the crown of human nobility, and that humanity\'s very first teacher was Allah Himself.'
+    }
+  ],
+  '2:32': [
+    {
+      questionUr: 'فرشتوں کے جواب "سُبْحَانَكَ لَا عِلْمَ لَنَا" سے ہمیں کیا اخلاقی سبق ملتا ہے؟',
+      answerUr: 'علمی عاجزی اور سچائی کا سبق ملتا ہے کہ جب کسی بات کا علم نہ ہو تو جھوٹ یا تکے لگانے کے بجائے سچائی سے "مجھے معلوم نہیں" کہہ دینا چاہیے؛ یہ سچے عالم کی نشانی ہے۔',
+      questionEn: 'What moral virtue does the angels\' response "Exalted are You; we have no knowledge" teach us?',
+      answerEn: 'The virtue of intellectual honesty—humbly admitting "I do not know" when lacking knowledge, rather than pretending or speculating out of false pride.'
+    },
+    {
+      questionUr: 'فرشتوں نے اللہ کو "الْعَلِيمُ الْحَكِيمُ" کہہ کر کس بات کا اعتراف کیا؟',
+      answerUr: 'اس بات کا کہ اللہ کا علم لامحدود اور مکمل ہے، اور انسان کو پیدا کرنے اور اسے خلافت دینے کا فیصلہ کمالِ حکمت اور دانائی پر مبنی ہے۔',
+      questionEn: 'What reality did the angels affirm by addressing Allah as "Al-\'Aleem Al-Hakeem"?',
+      answerEn: 'That Allah\'s knowledge is boundless and all-encompassing, and His appointment of humanity as vicegerent is rooted in supreme, flawless divine wisdom.'
+    }
+  ],
+  '2:33': [
+    {
+      questionUr: 'جب حضرت آدم علیہ السلام نے فرشتوں کو تمام اشیاء کے نام بتا دیے تو کیا ثابت ہوا؟',
+      answerUr: 'یہ ثابت ہو گیا کہ انسان محض مٹی کا پتلا نہیں بلکہ اللہ کے عطا کردہ علم اور عقل کا وہ شاہکار ہے جو زمین کی خلافت اور امانت داری کا مکمل اہل ہے۔',
+      questionEn: 'What was proven when Adam informed the angels of the names of the entities?',
+      answerEn: 'It proved that humanity was uniquely gifted with intellect, conceptual understanding, and language necessary to fulfill the sacred trust of vicegerency on earth.'
+    },
+    {
+      questionUr: '"وَأَعْلَمُ مَا تُبْدُونَ وَمَا كُنتُمْ تَكْتُمُونَ" میں ظاہر اور چھپی ہوئی باتوں سے کیا مراد ہے؟',
+      answerUr: 'ظاہر بات فرشتوں کا وہ سوال تھا، اور چھپی ہوئی بات ابلیس کے دل کا وہ چھپا ہوا حسد اور تکبر تھا جو وہ اپنے دل میں دبائے بیٹھا تھا کہ میں انسان کے آگے کبھی نہیں جھکوں گا۔',
+      questionEn: 'What is meant by "what you reveal and what you were concealing" in Verse 33?',
+      answerEn: '"What you reveal" refers to the spoken inquiry of the angels, while "what you were concealing" refers to the secret pride and envy simmering within Iblis\'s heart.'
+    },
+    {
+      questionUr: 'اس آیت سے ہمیں اپنے دل اور نیتوں کے بارے میں کیا رہنمائی ملتی ہے؟',
+      answerUr: 'یہ کہ اللہ ہمارے دلوں کے ہر چھپے ہوئے خیال اور نیت سے باخبر ہے، اس لیے ہمیں اپنے دل کو حسد، غرور اور منافقت سے ہمیشہ پاک و صاف رکھنا چاہیے۔',
+      questionEn: 'What guidance does this verse provide regarding our inner intentions?',
+      answerEn: 'That Allah perceives the innermost thoughts of our hearts, urging us to maintain sincerity and guard ourselves against hidden arrogance, envy, and malice.'
     }
   ],
   '2:34': [
     {
-      questionUr: 'ابلیس (شیطان) نے حضرت آدم علیہ السلام کو سجدہ کرنے سے کیوں انکار کیا اور اس کا کیا انجام ہوا؟',
-      answerUr: 'اس نے تکبر اور حسد کی وجہ سے اللہ کے حکم کی نافرمانی کی، جس کی وجہ سے وہ اللہ کی بارگاہ سے دھتکارا گیا اور کافر ہو گیا۔',
-      questionEn: 'Why did Iblees refuse to prostrate to Adam, and what was the consequence?',
-      answerEn: 'He refused out of pride and envy, resulting in his expulsion from divine mercy and becoming a disbeliever.'
+      questionUr: 'فرشتوں کا حضرت آدم علیہ السلام کو سجدہ کرنا کس نوعیت کا تھا؟',
+      answerUr: 'یہ سجدہ عبادت کا نہیں تھا (کیونکہ عبادت کا سجدہ صرف اللہ کے لیے ہے)، بلکہ یہ اللہ کے حکم سے حضرت آدم کے علم، شرف اور خلافت کی تعظیم و سلام کا سجدہ تھا۔',
+      questionEn: 'What kind of prostration were the angels commanded to perform before Adam?',
+      answerEn: 'It was a ceremonial prostration of honor and greeting (Sajdah Ta\'dheem) commanded by Allah to recognize Adam\'s knowledge, not an act of worship, which belongs exclusively to Allah.'
+    },
+    {
+      questionUr: 'ابلیس نے سجدہ کرنے سے کیوں انکار کیا اور اس کا کیا انجام ہوا؟',
+      answerUr: 'اس نے نسل پرستی، تکبر اور حسد کی وجہ سے انکار کیا کہ "میں آگ سے ہوں اور یہ مٹی سے، میں بہتر ہوں"؛ اس تکبر نے اس کی تمام عبادتوں کو راکھ کر دیا اور وہ ملعون و کافر ہو گیا۔',
+      questionEn: 'Why did Iblis refuse to prostrate, and what was his fate?',
+      answerEn: 'He refused out of chauvinistic pride and envy, arguing that fire was superior to clay. His arrogance destroyed centuries of worship and rendered him an outcast disbeliever.'
+    },
+    {
+      questionUr: 'ابلیس کے واقعے سے ہمیں اپنی عملی زندگی کے لیے کیا سب سے بڑی نصیحت ملتی ہے؟',
+      answerUr: 'یہ کہ تکبر اور حسد وہ زہر ہیں جو انسان کے تمام نیک اعمال کو جلا دیتے ہیں۔ انسان کو ہمیشہ عاجزی، انکساری اور اللہ کے ہر حکم کے سامنے جھکنے کی دعا کرنی چاہیے۔',
+      questionEn: 'What is the most critical life-lesson from the downfall of Iblis?',
+      answerEn: 'That arrogance and jealousy consume good deeds like fire consumes wood. True spiritual greatness lies in humility, gratitude, and wholehearted submission to divine guidance.'
+    }
+  ],
+  '2:35': [
+    {
+      questionUr: 'اللہ تعالیٰ نے حضرت آدم اور حضرت حوا علیہما السلام کو جنت میں کیا کیا نعمتیں اور آزادیاں عطا فرمائیں؟',
+      answerUr: 'اللہ تعالیٰ نے انہیں جنت کے پرامن اور پُرسکون ماحول میں رہنے کا شرف بخشا اور فرمایا کہ بغیر کسی روک ٹوک، محنت یا حساب کے جہاں سے چاہیں لذیذ نعمتیں بافراغت (رَغَدًا) کھائیں۔',
+      questionEn: 'What blessings and liberties were granted to Adam and Hawwa in Paradise?',
+      answerEn: 'Allah granted them serene dwelling in Paradise with unrestrained freedom to enjoy all wholesome fruits and delights in lavish abundance (\'raghadan\') wherever they wished without toil.'
+    },
+    {
+      questionUr: 'اللہ تعالیٰ نے اس خاص درخت سے روکنے کے لیے "اس کے قریب نہ جانا" کا اسلوب کیوں اختیار فرمایا؟',
+      answerUr: 'یہ اسلامی شریعت کا سنہری اصول "سدِ ذرائع" سکھانے کے لیے ہے، یعنی گناہ سے بچنے کا مؤثر ترین طریقہ یہ ہے کہ انسان ان تمام اسباب، ترغیبات اور ماحول سے بھی دور رہے جو گناہ کی طرف لے جاتے ہیں۔',
+      questionEn: 'Why did Allah command "do not approach this tree" instead of simply "do not eat"?',
+      answerEn: 'This teaches the foundational protective principle of Sadd al-Dhara\'i (blocking avenues to sin)—advising believers to avoid tempting proximity and environments that make slipping into error easy.'
+    },
+    {
+      questionUr: '"فتکونا من الظالمین" میں "ظلم" کا لغوی اور معنوی مفہوم کیا ہے؟',
+      answerUr: 'ظلم کا بنیادی لغوی معنی ہے کسی چیز کو اس کے مناسب مقام سے ہٹا دینا۔ یعنی الٰہی حدود عبور کر کے اپنے آپ کو نقصان پہنچانا اور جنت کے پرسکون قیام سے محروم ہونا۔',
+      questionEn: 'What is the linguistic and spiritual meaning of \'Dhulm\' in this verse?',
+      answerEn: '\'Dhulm\' linguistically means placing something outside its proper place or overstepping boundaries, which in this context means harming one\'s own soul by crossing divine limits.'
+    }
+  ],
+  '2:36': [
+    {
+      questionUr: 'شیطان نے حضرت آدم اور حضرت حوا علیہما السلام کو کس طرح بہکایا اور فریب دیا؟',
+      answerUr: 'شیطان نے خیرخواہ بن کر اللہ کے نام کی جھوٹی قسمیں کھائیں کہ اگر تم اس درخت کو چکھ لو گے تو ہمیشہ کے لیے فرشتے بن جاؤ گے؛ چونکہ حضرت آدم علیہ السلام کا گمان بھی نہ تھا کہ کوئی اللہ کے نام کی جھوٹی قسم کھا سکتا ہے، اس لیے وہ اجتہادی تاویل کی وجہ سے بھول گئے۔',
+      questionEn: 'How did Satan deceive Adam and Hawwa into tasting from the forbidden tree?',
+      answerEn: 'Satan disguised himself as an affectionate counselor and swore false oaths in Allah\'s holy name, promising angelic immortality. Adam could not imagine any creature would dare utter a fabricated oath by Allah\'s name.'
+    },
+    {
+      questionUr: 'کیا حضرت آدم علیہ السلام کا زمین پر اتارا جانا محض ایک سزا تھی؟',
+      answerUr: 'ہرگز نہیں! اللہ تعالیٰ نے تخلیقِ آدم سے پہلے ہی فرشتوں سے فرمایا تھا کہ "میں زمین میں خلیفہ بنانے والا ہوں"۔ جنت کا قیام دراصل ایک تربیتی مرحلہ تھا تاکہ انسان اپنے ازلی دشمن کی چالوں کو پہچان کر زمین پر خلافت کی ذمہ داریاں نبھا سکے۔',
+      questionEn: 'Was the descent to Earth merely a punitive consequence for Adam?',
+      answerEn: 'No! Allah had declared before Adam\'s creation: "Indeed, I will place on earth a vicegerent." The Edenic stay was an essential pedagogical orientation preparing humanity to fulfill their earthly stewardship.'
+    },
+    {
+      questionUr: '"ولکم فی الارض مستقر ومتاع الیٰ حین" سے انسانی زندگی کے بارے میں کیا رہنمائی ملتی ہے؟',
+      answerUr: 'یہ کہ زمین انسان کا مستقل اور دائمی گھر نہیں بلکہ ایک عارضی امتحان گاہ اور مسافر خانہ ہے، جہاں مقررہ وقت یعنی موت تک کے لیے نفع اٹھانے کا سامان دیا گیا ہے۔',
+      questionEn: 'What profound reality does "a dwelling and provision for a time" reveal?',
+      answerEn: 'That this worldly life is a temporary transit station and testing ground equipped with sufficient provisions until death, while our ultimate eternal home is the Hereafter.'
+    }
+  ],
+  '2:37': [
+    {
+      questionUr: 'حضرت آدم علیہ السلام نے لغزش کے بعد اپنے رب سے کون سے مبارک کلمات سیکھے؟',
+      answerUr: 'وہ مبارک کلمات یہ تھے: "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ" (اے ہمارے رب! ہم نے اپنی جانوں پر ظلم کیا، اور اگر تو نے ہمیں نہ بخشا اور ہم پر رحم نہ کیا تو ہم یقیناً خسارہ پانے والوں میں سے ہو جائیں گے - سورۃ الاعراف: 23)۔',
+      questionEn: 'What specific words of repentance did Adam receive and pray with?',
+      answerEn: 'The sacred supplication in Surah Al-A\'raf (7:23): "Rabbana dhalamna anfusana wa-in lam taghfir lana wa-tarhamna lanakoonanna minal-khasireen" (Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers).'
+    },
+    {
+      questionUr: 'لغزش کے بعد حضرت آدم علیہ السلام کے طرزِ عمل اور ابلیس کے طرزِ عمل میں کیا بنیادی فرق تھا؟',
+      answerUr: 'ابلیس نے نافرمانی کے بعد تکبر، بحث اور ضد کا مظاہرہ کیا جس نے اسے ہمیشہ کے لیے ملعون کر دیا، جبکہ حضرت آدم علیہ السلام نے فوراً ندامت کے آنسو بہائے، اپنی غلطی کا اعتراف کیا اور توبہ کے ذریعے اللہ کا مزید قرب پا لیا۔',
+      questionEn: 'What was the contrasting reaction between Adam and Iblis after sinning?',
+      answerEn: 'Iblis defended his rebellion with arrogant pride and was cursed forever, whereas Adam responded with immediate remorse, humility, and tearful repentance, securing divine love and forgiveness.'
+    },
+    {
+      questionUr: 'اللہ تعالیٰ کے اسمِ مبارک "التواب" سے بندوں کو کیا تسلی اور امید ملتی ہے؟',
+      answerUr: '"التواب" کا مطلب ہے بار بار توبہ قبول کرنے والا؛ یعنی انسان سے جب بھی کمزوری میں خطا ہو جائے، اگر وہ سچے دل سے پشیمان ہو کر رجوع کرے تو اللہ تعالیٰ اسے کبھی مایوس نہیں کرتا بلکہ اپنی رحمت سے معاف فرما دیتا ہے۔',
+      questionEn: 'What comfort does Allah\'s attribute \'At-Tawwab\' offer to believers?',
+      answerEn: '\'At-Tawwab\' signifies the One who relentlessly accepts repentance time and again. A sincere return with heartfelt remorse is met with infinite divine forgiveness.'
+    }
+  ],
+  '2:38': [
+    {
+      questionUr: '"فمن تبع ھدای فلا خوف علیھم ولا ھم یحزنون" میں ہدایت کی پیروی کرنے والوں کو کن دو عظیم نعمتوں کی بشارت دی گئی ہے؟',
+      answerUr: 'انہیں مستقبل کے تمام خطرات، قبر، حشر اور جہنم کے "خوف" سے امن، اور دنیاوی و ماضی کے تمام صدمات و نقصانات کے "حزن" (غم) سے نجات کی ابدی خوشخبری دی گئی ہے۔',
+      questionEn: 'What twin blessings are promised to those who follow divine guidance?',
+      answerEn: 'Complete liberation from \'Khawf\' (fear and dread regarding impending perils and the Day of Judgment) and from \'Huzn\' (grief and sorrow over past losses and worldly afflictions).'
+    },
+    {
+      questionUr: 'قرآن مجید میں "خوف" اور "حزن" کے مفہوم میں کیا فرق ہے؟',
+      answerUr: '"خوف" کا تعلق مستقبل کے آنے والے خطرات اور عذاب کے ڈر سے ہوتا ہے، جبکہ "حزن" کا تعلق ماضی کے گزرے ہوئے دکھوں، محرومیوں اور نقصانات کے ملال سے ہوتا ہے۔',
+      questionEn: 'What is the subtle linguistic difference between \'Khawf\' and \'Huzn\'?',
+      answerEn: '\'Khawf\' relates to future anxieties, perils, and dreadful expectations, whereas \'Huzn\' relates to psychological pain, grief, and regret over past events.'
+    },
+    {
+      questionUr: 'زمین پر اترتے وقت اللہ تعالیٰ نے تمام نسلِ انسانی کو کس تسلسل کا اطمینان بخشا؟',
+      answerUr: 'یہ کہ انسان کو زمین پر بغیر راہنمائی کے اندھیرے میں نہیں چھوڑا جائے گا، بلکہ وقتاً فوقتاً انبیاء اور آسمانی کتابوں کے ذریعے روشن شریعت اور ہدایت نازل ہوتی رہے گی۔',
+      questionEn: 'What divine assurance did Allah grant humanity upon their earthly descent?',
+      answerEn: 'That humanity would never be left stranded in spiritual darkness; continuous divine guidance through prophets and revealed scriptures would guide them to safety.'
+    }
+  ],
+  '2:39': [
+    {
+      questionUr: 'آیت 39 میں کفر کرنے والوں اور نشانیوں کو جھٹلانے والوں کو "اصحاب النار" کیوں کہا گیا ہے؟',
+      answerUr: '"اصحاب" صاحب کی جمع ہے جس کا مطلب ہے مستقل ساتھی۔ یعنی جس طرح مخلص ساتھی کبھی جدا نہیں ہوتا، اسی طرح جہنم کی آگ ان کا ایسا دائمی اور لازمی ٹھکانا بن جائے گی جس سے وہ کبھی الگ نہیں ہو سکیں گے۔',
+      questionEn: 'Why are deniers of truth designated as \'Ashab an-Nar\' (Companions of the Fire)?',
+      answerEn: '\'Ashab\' implies inseparable companionship—meaning Hellfire will cling to them relentlessly without any reprieve or escape.'
+    },
+    {
+      questionUr: 'سورۃ البقرہ کے چوتھے رکوع کا بنیادی خلاصہ اور پیغام کیا ہے؟',
+      answerUr: 'یہ کہ انسان کی تخلیق، فرشتوں کا سجدہ، شیطان کا حسد اور دنیا کا امتحان یہ واضح کرتے ہیں کہ کامیابی کا واحد راستہ اللہ کی ہدایت کی پیروی میں ہے، اور تکبر و سرکشی کا انجام دائمی تباہی ہے۔',
+      questionEn: 'What is the core message and conclusion of the fourth Ruku of Surah Al-Baqarah?',
+      answerEn: 'That humanity\'s purpose is defined by divine stewardship: following Allah\'s revelation leads to eternal peace, while arrogance and denial lead to unending regret.'
+    }
+  ],
+  '2:40': [
+    {
+      questionUr: '"بنی اسرائیل" میں "اسرائیل" کس پیغمبر کا لقب ہے اور اس کا لغوی معنی کیا ہے؟',
+      answerUr: '"اسرائیل" حضرت یعقوب علیہ السلام کا عبرانی لقب ہے، جس کا معنی "عبد اللہ" یعنی اللہ کا فرماں بردار بندہ ہے؛ اور بنی اسرائیل ان کے بارہ بیٹوں کی نسل ہے۔',
+      questionEn: 'Whose title was \'Isra\'il\', and what does it mean linguistically?',
+      answerEn: '\'Isra\'il\' was the Hebrew honorific title of Prophet Ya\'qub (Jacob A.S.), meaning \'Servant of God\' (\'Abdullah). His descendants form the twelve tribes of Israel.'
+    },
+    {
+      questionUr: 'آیت 40 میں بنی اسرائیل سے کس عہد (وعدے) کو پورا کرنے کا مطالبہ کیا گیا ہے؟',
+      answerUr: 'تورات میں لیا گیا وہ عہد کہ جب آخری نبی حضرت محمد مصطفیٰ ﷺ تشریف لائیں تو وہ حسد اور تعصب چھوڑ کر سب سے پہلے ان پر ایمان لائیں گے اور ان کی تائید کریں گے۔',
+      questionEn: 'What divine covenant were the Children of Israel commanded to fulfill?',
+      answerEn: 'The scriptural pledge in the Torah to recognize, embrace, and champion the Final Messenger Muhammad ﷺ upon his advent.'
+    },
+    {
+      questionUr: '"وإياي فارهبون" میں صرف اللہ ہی سے ڈرنے کی کیا حکمت ہے؟',
+      answerUr: 'اس کا مقصد یہ ہے کہ یہودی علماء اپنے معاشرے کے سرداروں، دنیاوی منصب اور نذرانوں کے ضائع ہونے کے ڈر سے حق بات کو نہ چھپائیں، بلکہ صرف اللہ کی گرفت اور آخرت کی جوابدہی کا خوف دل میں رکھیں۔',
+      questionEn: 'What is the intent behind the command "and fear only Me"?',
+      answerEn: 'To urge their scholars and leaders not to suppress or distort divine truth out of fear of losing worldly prestige, tribal stature, or economic gains, but to fear Allah alone.'
+    }
+  ],
+  '2:41': [
+    {
+      questionUr: 'قرآن مجید کو تورات کی "تصدیق کرنے والا" کیوں کہا گیا ہے؟',
+      answerUr: 'کیونکہ قرآن پاک تورات کی اصل تعلیم یعنی توحید و اخلاق کو سچا ثابت کرتا ہے، اور تورات میں نبی کریم حضرت محمد ﷺ کی تشریف آوری کی دی گئی بشارتوں کی عملی تصدیق کرتا ہے۔',
+      questionEn: 'Why is the Holy Quran described as \'confirming\' the Torah?',
+      answerEn: 'Because the Quran confirms the core monotheistic and moral teachings of the Torah and fulfills the scriptural prophecies regarding the advent of Prophet Muhammad ﷺ.'
+    },
+    {
+      questionUr: '\'ثَمَنًا قَلِيلًا\' (تھوڑی قیمت) سے کیا مراد ہے اور اس سے کیوں منع کیا گیا؟',
+      answerUr: 'اس سے مراد دنیا کی عارضی دولت، نذرانے، مذہبی چودہراہٹ اور سرداری ہے؛ دین اور سچائی کو بیچ کر دنیا کا سارا خزانہ بھی حاصل ہو جائے تو وہ اللہ کے نزدیک نہایت حقیر اور معمولی چیز ہے۔',
+      questionEn: 'What is meant by \'a small price\' (thamanan qaleela), and why was it forbidden?',
+      answerEn: 'It refers to temporary worldly gains, social status, and clerical gifts. Trading divine truth for any worldly benefit—no matter how immense—is a wretched bargain.'
+    },
+    {
+      questionUr: 'بنی اسرائیل کے علماء کو "سب سے پہلے اس کا انکار کرنے والے نہ بنو" کی تنبیہ کیوں کی گئی؟',
+      answerUr: 'کیونکہ اہل کتاب اور صاحبِ علم ہونے کے ناطے ان کا فرض تھا کہ سب سے پہلے حق کو قبول کریں؛ اگر وہ خود انکار کرتے تو ان کی دیکھا دیکھی دوسرے عام لوگ بھی گمراہی میں مبتلا ہو جاتے۔',
+      questionEn: 'Why were the scholars of the Children of Israel warned not to be the first to disbelieve?',
+      answerEn: 'Because as literate custodians of scripture, they should have been the foremost champions of truth; their denial would lead the unlettered masses into error.'
+    }
+  ],
+  '2:42': [
+    {
+      questionUr: 'اس آیت میں کن دو بڑی فکری بددیانتیوں سے سختی کے ساتھ روکا گیا ہے؟',
+      answerUr: 'پہلا گناہ "لبسِ حق بالباطل" یعنی سچ میں جھوٹ اور خود ساختہ تاویلیں مکس کرنا، اور دوسرا گناہ "کتمانِ حق" یعنی جان بوجھ کر سچائی اور نبی کریم ﷺ کی نشانیوں کو لوگوں سے چھپانا۔',
+      questionEn: 'Which two grave corruptions are strictly prohibited in this verse?',
+      answerEn: '1. Mixing divine truth with falsehood (Talbees), and 2. Deliberately concealing known divine truth and prophecies of the Prophet ﷺ (Kitman).'
+    },
+    {
+      questionUr: '\'وَأَنتُمْ تَعْلَمُونَ\' (حالانکہ تم جانتے ہو) کا کیا مفہوم اور سبق ہے؟',
+      answerUr: 'اس کا مفہوم یہ ہے کہ جانتے بوجھتے سچ چھپانا اور دھوکہ دینا نادانی کی غلطی سے کہیں زیادہ سنگین جرم ہے، کیونکہ علم انسان پر حق بات کو بغیر ملاوٹ کے ظاہر کرنے کی ذمہ داری ڈالتا ہے۔',
+      questionEn: 'What is the significance of \'while you know\' in this verse?',
+      answerEn: 'It emphasizes that knowingly distorting or concealing the truth is far more egregious than erring out of ignorance; knowledge imposes the sacred obligation of honesty.'
     }
   ],
   '2:43': [
     {
-      questionUr: '"وارکعوا مع الراکعین" سے کیا حکم ملتا ہے؟',
-      answerUr: 'اس سے یہ حکم ملتا ہے کہ مردوں کو نماز باجماعت مسجد میں جا کر ادا کرنی چاہیے اور دوسرے مسلمانوں کے ساتھ مل کر عاجزی اختیار کرنی چاہیے۔',
-      questionEn: 'What command is given in "and bow with those who bow"?',
-      answerEn: 'The importance of performing congregational prayers (Salat al-Jama\'ah) in humble submission.'
+      questionUr: 'قرآن مجید میں نماز کے لیے "اقامت" (قائم کرنے) کا لفظ کیوں استعمال کیا گیا ہے؟',
+      answerUr: 'کیونکہ اقامت کا مطلب ہے نماز کو محض رسمی طور پر جلدی جلدی نہ پڑھنا، بلکہ اس کے تمام ارکان، آداب، باقاعدہ اوقات، اور دل میں اللہ کے خشوع کے ساتھ ہمیشہ زندہ رکھنا۔',
+      questionEn: 'Why does the Quran use the term \'establish\' (iqamah) for prayer?',
+      answerEn: 'Because \'establishing\' prayer means observing it regularly at its proper times, with physical tranquility, inner reverence (Khushu\'), and lifelong commitment.'
+    },
+    {
+      questionUr: '\'وَآتُوا الزَّكَاةَ\' (اور زکوٰۃ ادا کرو) سے دل اور معاشرے پر کیا اثر پڑتا ہے؟',
+      answerUr: 'زکوٰۃ انسان کے دل سے کنجوسی، خود غرضی اور مال کی ہوس کو دھو کر صاف کر دیتی ہے، اور معاشرے کے غریبوں، یتیموں اور محتاجوں کی ضرورتیں پوری کر کے محبت اور برابری پیدا کرتی ہے۔',
+      questionEn: 'What spiritual and social impact does giving Zakah produce?',
+      answerEn: 'Zakah purifies the heart from greed and materialism while weaving a compassionate social safety net for the poor, orphans, and needy.'
+    },
+    {
+      questionUr: '\'وَارْكَعُوا مَعَ الرَّاكِعِينَ\' میں کس اہم عبادت کی تاکید ہے؟',
+      answerUr: 'اس سے مسجد میں عام مسلمانوں کے ساتھ کندھے سے کندھا ملا کر باجماعت نماز ادا کرنے، دل کا تکبر ختم کرنے، اور امت کے باہمی اتحاد کی پرزور تاکید ملتی ہے۔',
+      questionEn: 'What vital practice is emphasized in \'and bow with those who bow\'?',
+      answerEn: 'It underscores congregational prayer in the mosque, eliminating arrogance and uniting all believers in equality and brotherhood before Allah.'
+    }
+  ],
+  '2:44': [
+    {
+      questionUr: 'اس آیت میں کس سنگین اخلاقی اور دینی بیماری پر تنبیہ فرمائی گئی ہے؟',
+      answerUr: 'قول و فعل کے تضاد پر، یعنی زبان سے تو دوسروں کو نیکی، سچائی اور خیرخواہی کی تلقین کرنا مگر خود اس پر عمل نہ کرنا اور اپنے اعمال سے غافل ہو جانا۔',
+      questionEn: 'What severe spiritual pitfall does this verse reprove?',
+      answerEn: 'Hypocrisy and moral inconsistency—instructing others to embrace virtue and righteousness while completely neglecting to practice it in one\'s personal life.'
+    },
+    {
+      questionUr: '\'أَفَلَا تَعْقِلُونَ\' (کیا تم عقل سے کام نہیں لیتے) کا انسان کے عمل سے کیا تعلق ہے؟',
+      answerUr: 'حقیقی عقل کا تقاضا یہ ہے کہ انسان کا علم اس کے اپنے کردار اور عمل میں جھلکے؛ جو شخص کتاب کا علم رکھ کر بھی بے عمل رہے، قرآن اسے عقل سے عاری اور بے وقوف قرار دیتا ہے۔',
+      questionEn: 'How does \'will you not then reason\' connect knowledge to action?',
+      answerEn: 'True reason requires harmonizing sacred knowledge with personal practice; preaching virtue while practicing vice is irrational and spiritually self-destructive.'
     }
   ],
   '2:45': [
     {
-      questionUr: 'مشکلات، پریشانیوں اور مصائب کے وقت کن دو چیزوں سے مدد حاصل کرنے کا حکم دیا گیا ہے؟',
-      answerUr: 'صبر (برداشت و ضبطِ نفس) اور نماز کے ذریعے اللہ تعالیٰ سے مدد مانگنے کا حکم دیا گیا ہے۔',
-      questionEn: 'Which two powerful means of seeking help are prescribed during trials?',
+      questionUr: 'زندگی کی ہر مشکل، بیماری اور پریشانی میں کن دو عظیم چیزوں کے ذریعے اللہ سے مدد مانگنے کا حکم دیا گیا ہے؟',
+      answerUr: 'صبر (برداشت و ضبطِ نفس) اور نماز کے ذریعے اللہ تعالیٰ سے مدد اور سکون حاصل کرنے کا حکم دیا گیا ہے۔',
+      questionEn: 'Which two divine anchors are prescribed to overcome hardship and trials?',
       answerEn: 'Patience (Sabr) and Prayer (Salah).'
+    },
+    {
+      questionUr: 'نماز کس قسم کے لوگوں پر بوجھ نہیں بنتی بلکہ راحت اور ٹھنڈک بن جاتی ہے؟',
+      answerUr: '\'خاشعین\' یعنی جن کے دلوں میں اللہ کی سچی محبت، عظمت، احترام اور عاجزی ہوتی ہے، ان کے لیے نماز کوئی بوجھ نہیں بلکہ دل کا چین اور آنکھوں کی ٹھنڈک بن جاتی ہے۔',
+      questionEn: 'For whom is prayer a source of joy and peace rather than a burden?',
+      answerEn: 'The \'Khashi\'een\'—those whose hearts are humble, reverent, and filled with deep love and awe of Allah.'
+    },
+    {
+      questionUr: 'اسلام میں \'صبر\' کے تین بنیادی پہلو کون سے ہیں؟',
+      answerUr: '۱. گناہوں کے سامنے نفس کی خواہشات کو روکنا، ۲. نیکی اور عبادت پر ثابت قدم رہنا، اور ۳. مصیبت یا بیماری کے وقت شکوہ شکایت کے بجائے اللہ کی رضا پر راضی رہنا۔',
+      questionEn: 'What are the three core dimensions of Sabr (patience) in Islam?',
+      answerEn: '1. Restraining the ego from sins, 2. Steadfastly persevering in righteous worship, and 3. Bearing trials and afflictions with serene trust in Allah.'
     }
   ],
   // Para 2 Key Verses Q&A

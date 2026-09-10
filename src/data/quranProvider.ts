@@ -196,21 +196,153 @@ This is the very first universal imperative command addressed to all mankind in 
   },
   23: {
     arabic: 'وَإِن كُنتُمْ فِي رَيْبٍ مِّمَّا نَزَّلْنَا عَلَىٰ عَبْدِنَا فَأْتُوا بِسُورَةٍ مِّن مِّثْلِهِ وَادْعُوا شُهَدَاءَكُم مِّن دُونِ اللَّهِ إِن كُنتُمْ صَادِقِينَ',
-    translationUr: 'اور اگر تم اس کلام کے بارے میں کسی شک میں ہو جو ہم نے اپنے بندے (محمد ﷺ) پر نازل کیا ہے، تو اس جیسی کوئی ایک سورت ہی بنا لاؤ، اور اللہ کے سوا اپنے سب حمایتیوں کو بلا لو اگر تم سچے ہو۔',
+    translationUr: 'اور اگر تم اس کلام کے بارے میں کسی شک میں ہو جو ہم نے اپنے (برگزیدہ) بندے (محمد ﷺ) پر نازل فرمایا ہے، تو اس جیسی کوئی ایک سورت ہی بنا لاؤ، اور اللہ کے سوا اپنے تمام مددگاروں کو بھی بلا لو اگر تم سچے ہو۔',
     translationEn: 'And if you are in doubt about what We have sent down upon Our Servant [Muhammad], then produce a surah the like thereof and call upon your witnesses other than Allah, if you should be truthful.',
     words: [
-      { arabic: 'وَإِن كُنتُمْ فِي رَيْبٍ', transliteration: 'Wa-in kuntum fee raybin', translationEn: 'And if you are in doubt', translationUr: 'اور اگر ہو تم شک میں' },
-      { arabic: 'مِّمَّا نَزَّلْنَا', transliteration: 'mimma nazzalna', translationEn: 'about what We sent down', translationUr: 'اس میں سے جو نازل کیا ہم نے' },
-      { arabic: 'عَلَىٰ عَبْدِنَا', transliteration: 'ala \'abdina', translationEn: 'upon Our servant', translationUr: 'اپنے بندے پر' },
-      { arabic: 'فَأْتُوا بِسُورَةٍ مِّن مِّثْلِهِ', transliteration: 'fa\'too bi-suratin min mithlihi', translationEn: 'then produce a chapter like it', translationUr: 'تو لے آؤ ایک سورت اس جیسی' },
-      { arabic: 'وَادْعُوا شُهَدَاءَكُم', transliteration: 'wad\'oo shuhada\'akum', translationEn: 'and call your witnesses/helpers', translationUr: 'اور پکار لو اپنے مددگاروں کو' },
+      { arabic: 'وَإِن', transliteration: 'Wa-in', translationEn: 'And if', translationUr: 'اور اگر' },
+      { arabic: 'كُنتُمْ', transliteration: 'kuntum', translationEn: 'you are', translationUr: 'تم ہو' },
+      { arabic: 'فِي', transliteration: 'fee', translationEn: 'in', translationUr: 'کسی / میں' },
+      { arabic: 'رَيْبٍ', transliteration: 'raybin', translationEn: 'doubt', translationUr: 'شک و شبہ میں' },
+      { arabic: 'مِّمَّا', transliteration: 'mimma', translationEn: 'about what', translationUr: 'اس کلام سے جو' },
+      { arabic: 'نَزَّلْنَا', transliteration: 'nazzalna', translationEn: 'We have revealed', translationUr: 'ہم نے نازل فرمایا' },
+      { arabic: 'عَلَىٰ', transliteration: 'ala', translationEn: 'upon', translationUr: 'اوپر / پر' },
+      { arabic: 'عَبْدِنَا', transliteration: 'abdina', translationEn: 'Our servant (Muhammad ﷺ)', translationUr: 'اپنے برگزیدہ بندے کے' },
+      { arabic: 'فَأْتُوا', transliteration: 'fa\'too', translationEn: 'then produce / bring', translationUr: 'تو تم لے آؤ' },
+      { arabic: 'بِسُورَةٍ', transliteration: 'bi-sooratin', translationEn: 'a Surah (chapter)', translationUr: 'ایک سورت' },
+      { arabic: 'مِّن مِّثْلِهِ', transliteration: 'min mithlihi', translationEn: 'the like thereof', translationUr: 'اس جیسی' },
+      { arabic: 'وَادْعُوا', transliteration: 'wad\'oo', translationEn: 'and call upon', translationUr: 'اور پکار لو / بلا لو' },
+      { arabic: 'شُهَدَاءَكُم', transliteration: 'shuhada\'akum', translationEn: 'your witnesses and supporters', translationUr: 'اپنے گواہوں اور حمایتیوں کو' },
       { arabic: 'مِّن دُونِ اللَّهِ', transliteration: 'min doonillahi', translationEn: 'besides Allah', translationUr: 'اللہ کے سوا' },
-      { arabic: 'إِن كُنتُمْ صَادِقِينَ', transliteration: 'in kuntum sadiqeen', translationEn: 'if you are truthful', translationUr: 'اگر تم سچے ہو' }
+      { arabic: 'إِن', transliteration: 'in', translationEn: 'if', translationUr: 'اگر' },
+      { arabic: 'كُنتُمْ', transliteration: 'kuntum', translationEn: 'you are', translationUr: 'تم ہو' },
+      { arabic: 'صَادِقِينَ', transliteration: 'sadiqeen', translationEn: 'truthful', translationUr: 'سچے' }
     ],
-    tafseerUr: `تفسیر معارف القرآن:
-اعجازِ قرآن کا کھلم کھلا چیلنج: قرآن مجید نے مشرکینِ عرب اور تمام فصحاء و بلغاتِ عالم کو چیلنج دیا کہ وہ قرآن کی سب سے چھوٹی سورت (جیسے سورۃ الکوثر، تین آیات) جیسی ہی کوئی ایک سورت بنا کر دکھا دیں۔ چودہ سو سال گزر جانے کے باوجود کوئی انسان یہ چیلنج پورا نہ کر سکا۔`,
-    tafseerEn: `Ma'ariful Qur'an Commentary:
-The Timeless Challenge of Quranic Inimitability (I'jaz): Allah challenges mankind to formulate even a single Surah matching the sublime eloquence, wisdom, and transformative power of the Quran.`
+    tafseerUr: `📖 پچھلی آیات (21 اور 22) میں اللہ تعالیٰ نے تمام انسانوں کو اپنی بندگی اور شکر گزاری کی دعوت دی، اور زمین، آسمان، بارش اور لذیذ پھلوں کی خوبصورت نعمتیں یاد دلائیں۔ اب کسی کے ذہن میں یہ فطری سوال آ سکتا تھا کہ: "ہمیں کیسے سو فیصد یقین ہو کہ یہ قرآن واقعی اللہ تعالیٰ کا بھیجا ہوا سچا کلام ہے اور حضرت محمد ﷺ اللہ کے سچے رسول ہیں؟"
+
+چنانچہ اس آیت مبارکہ میں اللہ تعالیٰ نے عقل اور دل کو مطمئن کرنے کے لیے ایک نہایت دوستانہ، آسان اور کھلا تاریخی چیلنج پیش فرمایا۔ فرمایا کہ اگر تمہیں ذرا بھی شک ہے تو چلو تم سب مل کر اس جیسی صرف ایک چھوٹی سی سورت ہی بنا کر دکھا دو!
+
+آئیے اس آیت مبارکہ کے ہر ہر لفظ کی خوبصورت اور آسان وضاحت سمجھتے ہیں:
+
+- وَإِن (اور اگر):
+اللہ تعالیٰ نے کسی پر سختی کرنے کے بجائے پیار اور منطق سے بات شروع فرمائی کہ چلو "اگر" تمہارے دل میں کوئی الجھن، سوال یا شبہ ہے۔
+
+- كُنتُمْ (تم ہو):
+مخاطب وہ تمام لوگ ہیں جو قرآن کی حقانیت پر سوچ رہے ہیں یا اپنی زبان دانی پر فخر کرتے تھے۔
+
+- فِي (میں / کے اندر):
+جیسے کوئی انسان کسی گھنی دھند یا اندھیرے کے اندر الجھ جائے، اسی طرح شک انسان کی سوچ کو گھیر لیتا ہے۔
+
+- رَيْبٍ (شک و بے چینی):
+عربی میں 'ریب' ایسے شک کو کہتے ہیں جو دل کے اندر بے چینی اور اضطراب پیدا کرے۔ اللہ تعالیٰ فرماتا ہے کہ اپنے دل کے اس شک اور بے چینی کو دور کرنے کے لیے خود کھلے دل سے آزما کر دیکھ لو!
+
+[سوال: اس آیت میں لفظ 'ریب' سے کیا مراد ہے اور قرآن کے بارے میں شک کی کیا حقیقت ہے؟ | جواب: 'ریب' کا مطلب ایسا شک ہے جو دل کو بے چین کرے۔ اللہ تعالیٰ فرماتا ہے کہ دل کی تسلی کے لیے خود قرآن کا مقابلہ کر کے دیکھ لو، تاکہ حق بالکل واضح ہو جائے!]
+
+- مِّمَّا (اس کلام کے بارے میں جو):
+یعنی اس بابرکت، میٹھے اور حکمت سے بھرپور کلام (قرآن مجید) کے بارے میں۔
+
+- نَزَّلْنَا (ہم نے تھوڑا تھوڑا کر کے نازل فرمایا):
+یہ لفظ 'تنزیل' سے ہے، یعنی یہ کلام ایک ہی دن میں نہیں اتارا گیا بلکہ ۲۳ سال کے طویل عرصے میں مختلف حالات اور ضرورتوں کے مطابق تھوڑا تھوڑا اتارا گیا۔ ذرا سوچیے: اگر کوئی انسان ۲۳ سال تک الگ الگ موقعوں پر کوئی کتاب لکھے تو اس کی باتوں، سوچ اور انداز میں کتنا فرق اور تضاد آ جاتا ہے! لیکن قرآن ۲۳ سال کے دوران نازل ہونے کے باوجود شروع سے آخر تک ایک ہی جیسا بے مثال، مربوط اور غلطیوں سے پاک ہے۔
+
+[سوال: لفظ 'نَزَّلْنَا' میں کیا خاص الٰہی حکمت اور معجزہ ہے؟ | جواب: قرآن ۲۳ سال کے طویل عرصے میں موقع بہ موقع نازل ہوا، اور اس کے باوجود اس کی تمام سورتوں میں کامل ہم آہنگی اور روانی ہے، کہیں کوئی تضاد یا کمزوری نہیں!]
+
+- عَلَىٰ (اوپر / پر):
+آسمانوں کی بلندی سے پاک فرشتے حضرت جبرائیل علیہ السلام کے ذریعے اتارا گیا۔
+
+- عَبْدِنَا (اپنے خاص بندے یعنی حضرت محمد ﷺ پر):
+یہاں ایک بڑی پیاری اور محبت بھری بات ہے! اللہ تعالیٰ نے اپنے حبیب ﷺ کا نام لینے یا 'ہمارے نبی' کہنے کے بجائے محبت سے فرمایا: 'عَبْدِنَا' (ہمارا بندہ)۔ اللہ کے دربار میں انسان کا سب سے اونچا اور معزز ترین مقام یہی ہے کہ وہ اللہ کا سچا اور مخلص بندہ بن جائے۔ اللہ نے اپنے پیارے رسول ﷺ کو اپنے ساتھ جوڑ کر کمالِ محبت، عزت اور سچی نبوت کی تصدیق فرما دی۔
+
+[سوال: اللہ تعالیٰ نے پیارے نبی ﷺ کو 'عَبْدِنَا' (ہمارا بندہ) فرما کر کیا اعزاز بخشا؟ | جواب: اللہ کی سچی بندگی اور اطاعت انسان کا سب سے اونچا روحانی مقام ہے! اللہ تعالیٰ نے اپنے حبیب ﷺ کو اپنا بندہ فرما کر اپنی خاص محبت اور سچی نبوت پر مہر لگا دی!]
+
+- فَأْتُوا (تو تم لے آؤ):
+اللہ نے فرمایا کہ صرف خالی باتوں یا اعتراضات سے بات نہیں بنے گی، اگر اپنے دعوے میں سچے ہو تو میدان میں آؤ اور کچھ بنا کر دکھاؤ!
+
+- بِسُورَةٍ (ایک چھوٹی سی سورت ہی):
+اللہ تعالیٰ نے چیلنج کو کتنا آسان اور مختصر فرما دیا! یہ نہیں کہا کہ پوری کتاب بنا لاؤ، نہ یہ کہا کہ سورۃ البقرہ جیسی بڑی سورت لاؤ، بلکہ فرمایا کہ صرف ایک چھوٹی سی سورت (جیسے سورۃ الکوثر جس میں صرف ۳ چھوٹی آیات ہیں) جیسی ہی کوئی ایک سورت بنا لاؤ!
+
+[سوال: اللہ تعالیٰ نے منکرین کو کتنی بڑی سورت بنا لانے کا چیلنج دیا؟ | جواب: اللہ تعالیٰ نے چیلنج کو انتہائی آسان کرتے ہوئے فرمایا کہ چلو صرف ایک چھوٹی سی سورت (جیسے سورۃ الکوثر، صرف ۳ آیات) جیسی سورت بنا لاؤ!]
+
+- مِّن مِّثْلِهِ (اس قرآن جیسی / اس کے مانند):
+یعنی الفاظ کی خوبصورتی، تلاوت کی مٹھاس، اعلیٰ اخلاقی حکمت، اور دلوں کو بدل دینے والی روحانی تاثیر میں اس کے برابر ہو۔
+
+- وَادْعُوا (اور تم سب پکار لو / بلا لو):
+تمہیں تنہا مقابلہ کرنے کی ضرورت نہیں، جہاں سے بھی مدد مل سکے کھلے دل سے بلا لو۔
+
+- شُهَدَاءَكُم (اپنے تمام مددگاروں، گواہوں اور شاعروں کو):
+تمہارے بڑے بڑے شاعر، زبان دان، فلسفی، سردار اور وہ بت جن کی تم پوجا کرتے ہو، سب کو اکٹھا کر لو۔
+
+- مِّن دُونِ اللَّهِ (اللہ کے سوا):
+یعنی بس اکیلے اللہ کو چھوڑ کر باقی پوری کائنات کے انسان اور جنات مل کر تمہاری مدد کے لیے کھڑے ہو جائیں۔
+
+- إِن كُنتُمْ صَادِقِينَ (اگر تم سچے ہو):
+اگر تم واقعی اپنے اس خیال میں سچے ہو کہ یہ کلام کسی انسان کا خود گھڑا ہوا ہے۔
+
+### تاریخی حقیقت اور سنہری سبق:
+عرب کے لوگ اپنی زبان دانی اور شاعری پر اتنا ناز کرتے تھے کہ باقی پوری دنیا کو 'عجمی' (گونگا) کہتے تھے! مگر جب قرآن نے انہیں یہ چیلنج دیا تو وہ مکمل طور پر لاجواب اور بے بس ہو گئے۔ وہ تلوار لے کر جنگیں لڑنے پر تو تیار ہو گئے لیکن قرآن کے مقابلے میں تین سطریں بھی نہ لا سکے! اور چودہ سو سال سے آج تک کوئی بھی انسان قرآن جیسی ایک سورت نہیں بنا سکا۔
+
+[سوال: کیا چودہ سو سال کی تاریخ میں کوئی انسان قرآن جیسی ایک سورت بھی بنا سکا؟ | جواب: ہرگز نہیں! چودہ سو سال سے زائد عرصہ گزر چکا ہے، مگر دنیا کا کوئی بھی ادیب، شاعر یا فلسفی قرآن جیسی ایک چھوٹی سی سورت بھی نہیں بنا سکا، جو اس بات کا قطعی ثبوت ہے کہ قرآن اللہ کا سچا کلام ہے!]`,
+    tafseerEn: `📖 In the previous verses (21 and 22), Allah invited all humanity to worship Him with love and gratitude, reminding us of His beautiful gifts—the earth as a resting bed, the sky as a canopy, refreshing rain, and delicious fruits. Naturally, a sincere seeker might wonder: "How can we be 100% certain that this Quran is truly from Allah, and that Prophet Muhammad ﷺ is His genuine Messenger?"
+
+To satisfy both our intellect and our heart, Allah presents an open, welcoming, and unbeatable challenge in this verse: If anyone has any doubt, let them simply try to produce even one tiny chapter like it!
+
+Let us explore the rich, easy, and friendly meaning of every single word:
+
+- وَإِن (Wa-in - And if):
+Instead of scolding, Allah begins with gentle logic: "And if" you have any uncertainty or question in your mind...
+
+- كُنتُمْ (Kuntum - You are):
+Directly addressing everyone who ponders over the Quran or takes pride in their literary skills.
+
+- فِي (Fee - In / Enveloped by):
+Just like someone wandering in a thick mist or darkness, doubt can cloud one's clear thinking.
+
+- رَيْبٍ (Raybin - Doubt / Restlessness):
+In Arabic, 'Rayb' is an unsettling doubt that makes the heart restless. Allah says: To clear away that restlessness, put your doubts to a practical, open test!
+
+[QUESTION: What does the word 'Rayb' mean in this verse? | ANSWER: 'Rayb' means an unsettling doubt that causes restlessness. Allah invites people to test the Quran openly so the truth becomes crystal clear!]
+
+- مِّمَّا (Mimma - Concerning that which):
+Referring to this blessed, beautiful, and wisdom-filled message—the Holy Quran.
+
+- نَزَّلْنَا (Nazzalna - We have revealed gradually):
+This comes from 'Tanzeel', meaning the Quran was revealed gradually over 23 years according to real-life situations. Imagine: If a human authored a book over 23 years in changing circumstances, it would be full of contradictions and mood swings! Yet the Quran, revealed across two decades, maintains flawless structural harmony, unmatched eloquence, and absolute truth from beginning to end.
+
+[QUESTION: What divine wisdom is contained in the word 'Nazzalna'? | ANSWER: The Quran was revealed gradually over 23 years, yet every single verse fits together in flawless harmony without a single error or contradiction!]
+
+- عَلَىٰ (Ala - Upon):
+Sent down with noble honor from the high heavens through the trustworthy Angel Jibreel.
+
+- عَبْدِنَا (Abdina - Our Servant, Muhammad ﷺ):
+Notice this touching expression of divine love! Allah did not just say "Our Prophet", but affectionately said "Our Servant" ('Abdina). In the sight of Allah, sincere and loving servitude is the highest rank of human nobility. By linking the Prophet ﷺ directly to Himself ("Our Servant"), Allah confirmed His supreme love, closeness, and authentic prophethood.
+
+[QUESTION: Why did Allah refer to Prophet Muhammad ﷺ as 'Abdina' (Our Servant)? | ANSWER: Sincere devotion to Allah is the highest badge of human honor. By calling him 'Our Servant', Allah demonstrated His supreme love and confirmed his true prophethood!]
+
+- فَأْتُوا (Fa'too - Then bring forth / produce):
+A welcoming challenge: do not just rely on verbal objections; come forward and demonstrate your claim with real action!
+
+- بِسُورَةٍ (Bi-sooratin - Even a single small Surah):
+Look how easy Allah made the challenge! He did not ask for a whole book, nor for a long chapter like Al-Baqarah. He simply asked for one tiny chapter—like Surah Al-Kawthar, which has only three short verses!
+
+[QUESTION: How long of a chapter did Allah challenge the doubters to produce? | ANSWER: Allah made the challenge remarkably simple: produce just one tiny chapter (like Surah Al-Kawthar with only 3 short verses), yet no human could ever match it!]
+
+- مِّن مِّثْلِهِ (Min mithlihi - The like thereof):
+Matching its melodic recitation, deep wisdom, scientific truth, and life-changing spiritual power.
+
+- وَادْعُوا (Wad'oo - And summon / call upon):
+You do not need to work in isolation; call upon any helper you wish!
+
+- شُهَدَاءَكُم (Shuhada'akum - Your witnesses, poets, and supporters):
+Gather your celebrated poets, scholars, wise leaders, and the idols you relied on.
+
+- مِّن دُونِ اللَّهِ (Min doonillahi - Other than Allah):
+Enlist the entire creation—all humans and jinn—except Allah alone.
+
+- إِن كُنتُمْ صَادِقِينَ (In kuntum sadiqeen - If you are truthful):
+If your claim that this is merely a human-made book is genuine.
+
+### Historical Fact & Key Takeaway:
+The pre-Islamic Arabs were so proud of their poetry that they considered all non-Arabs to be 'Ajam' (tongue-tied)! Yet when this challenge was presented, they stood completely speechless. They chose to risk their lives and fight difficult wars rather than write just three lines to match the Quran! Over 1,400 years have passed, and not a single person has ever met this challenge.
+
+[QUESTION: Has anyone in 1,400 years ever succeeded in matching this challenge? | ANSWER: Never! For over 1,400 years, no poet, scholar, or philosopher has matched even the shortest Surah, proving the Quran is the eternal, divine Word of Allah!]`
   },
   24: {
     arabic: 'فَإِن لَّمْ تَفْعَلُوا وَلَن تَفْعَلُوا فَاتَّقُوا النَّارَ الَّتِي وَقُودُهَا النَّاسُ وَالْحِجَارَةُ ۖ أُعِدَّتْ لِلْكَافِرِينَ',
