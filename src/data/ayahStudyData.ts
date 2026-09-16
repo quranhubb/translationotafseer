@@ -647,6 +647,286 @@ const CURATED_QA_MAP: Record<string, AyahQA[]> = {
       answerEn: '1. Restraining the ego from sins, 2. Steadfastly persevering in righteous worship, and 3. Bearing trials and afflictions with serene trust in Allah.'
     }
   ],
+  '2:46': [
+    {
+      questionUr: 'قرآن مجید میں لفظ \'يَظُنُّونَ\' یہاں کس معنی میں آیا ہے؟',
+      answerUr: 'یہاں \'ظن\' شک کے بجائے \'پختہ اور کامل یقین\' کے معنی میں ہے، یعنی جن کے دلوں میں آخرت کی پیشی اور ملاقاتِ الٰہی پر ذرا برابر بھی شبہ نہیں ہوتا۔',
+      questionEn: 'Why does the Qur\'an use the term \'yathunnoona\' here?',
+      answerEn: 'In classical Arabic usage, \'Dhann\' here signifies rock-solid certainty and unshakeable inner conviction (Yaqeen) regarding the resurrection and divine encounter.'
+    },
+    {
+      questionUr: 'آخرت اور ملاقاتِ الٰہی کا یقین انسان کی عبادت پر کیا اثر ڈالتا ہے؟',
+      answerUr: 'جب انسان کو یقین ہوتا ہے کہ وہ جلد اپنے شفیق رب سے ملنے والا ہے، تو نماز کا ہر سجدہ اس کے لیے بوجھ کے بجائے دلی سرور، راحت اور تسکین بن جاتا ہے۔',
+      questionEn: 'How does consciousness of meeting Allah transform one\'s prayer?',
+      answerEn: 'It elevates prayer from a mechanical chore into a tranquil, sacred conversation with the beloved Lord whom one longs to meet.'
+    }
+  ],
+  '2:47': [
+    {
+      questionUr: 'بنی اسرائیل کو \'عالمین پر فضیلت\' کس لحاظ سے دی گئی تھی؟',
+      answerUr: 'یہ فضیلت ان کے اپنے دور کے اعتبار سے تھی کہ انہیں آسمانی کتابیں اور نبوتیں دے کر توحید کی امانت اور دنیا کی رہنمائی سونپی گئی تھی، نہ کہ کوئی نسلی یا پیدائشی برتری۔',
+      questionEn: 'What is the nature of the favor \'preferred over the worlds\' granted to Bani Isra\'il?',
+      answerEn: 'It was contextual spiritual custodianship for their historical era—tasked with carrying monotheism and divine revelation when the rest of the world was steeped in idol worship.'
+    },
+    {
+      questionUr: 'اللہ تعالیٰ کی نعمتوں کو یاد کرنے کا اصل مقصد کیا ہوتا ہے؟',
+      answerUr: 'تاکہ انسان کے دل میں سچی عاجزی اور شکر گزاری پیدا ہو، غرور مٹے اور وہ احکامِ الٰہی اور آخری نبی ﷺ کی پیروی کے سامنے سرِ تسلیم خم کر دے۔',
+      questionEn: 'Why does Allah repeatedly ask them to remember His blessings?',
+      answerEn: 'Because genuine remembrance of divine grace softens the stubborn ego, inspires humility, and leads naturally to accepting new truth with obedience.'
+    }
+  ],
+  '2:48': [
+    {
+      questionUr: 'بنی اسرائیل کے کس باطل عقیدے کو اس آیت میں رد کیا گیا ہے؟',
+      answerUr: 'ان کا یہ باطل گمان کہ وہ انبیاء کی اولاد ہیں اس لیے بزرگوں کے سہارے اور بغیر ذاتی نیک اعمال کے خود بخود بخشے جائیں گے۔',
+      questionEn: 'Which dangerous misconception of Bani Isra\'il is shattered in this verse?',
+      answerEn: 'The false assumption that ancestral lineage and prophetic heritage would automatically guarantee salvation without personal faith and righteous deeds.'
+    },
+    {
+      questionUr: 'قیامت کے دن کن چار دنیاوی سہاروں کی مکمل نفی کی گئی ہے؟',
+      answerUr: '۱. باہمی بدلہ (کوئی کسی کا گناہ نہیں اٹھائے گا)، ۲. بے اجازت یا زبردستی کی سفارش، ۳. مالی فدیہ یا رشوت، اور ۴. کسی بیرونی طاقت کی مدد۔',
+      questionEn: 'What are the four escape routes of worldly courts that will be useless on Judgment Day?',
+      answerEn: '1. Personal substitution, 2. Unauthorized partisan intercession, 3. Monetary ransom or bail, and 4. Armed external rescue.'
+    }
+  ],
+  '2:49': [
+    {
+      questionUr: 'فرعون بنی اسرائیل کے لڑکوں کو ذبح اور لڑکیوں کو زندہ کیوں رکھتا تھا؟',
+      answerUr: 'اپنی سلطنت کے زوال کے خوف سے لڑکوں کو قتل کرواتا تھا تاکہ وہ بڑے ہو کر بغاوت نہ کر سکیں، اور لڑکیوں کو خادماؤں کی صورت میں ذلت آمیز غلامی کے لیے زندہ رکھتا تھا۔',
+      questionEn: 'Why did Pharaoh order the slaughter of Israelite baby boys while sparing the girls?',
+      answerEn: 'Out of paranoia that an Israelite boy would overthrow his dynasty, while the girls were preserved for generational domestic servitude and humiliation.'
+    },
+    {
+      questionUr: 'لفظ \'بَلاء\' کے اس آیت میں کیا دو معنی مراد لیے جا سکتے ہیں؟',
+      answerUr: 'ایک تو فرعون کے ظلم کا سخت ترین امتحان، اور دوسرا اس کے بعد اللہ تعالیٰ کی طرف سے معجزانہ آزادی کا عظیم احسان اور انعام۔',
+      questionEn: 'What dual meaning does the word \'Bala\'\' hold in this context?',
+      answerEn: 'It signifies both the agonizing test of Pharaonic oppression and the supreme blessing of miraculous liberation from Allah.'
+    }
+  ],
+  '2:50': [
+    {
+      questionUr: 'سمندر کے کنارے بنی اسرائیل کے گھبرا کر مایوس ہونے پر حضرت موسیٰ علیہ السلام نے کیا ایمان افروز جواب دیا؟',
+      answerUr: 'آپ نے فرمایا: "ہرگز نہیں! بے شک میرا رب میرے ساتھ ہے وہ مجھے ضرور راستہ دکھائے گا!" اور پھر لاٹھی مارتے ہی سمندر بارہ راستوں میں پھٹ گیا۔',
+      questionEn: 'What did Prophet Musa say when his people panicked at the edge of the Red Sea?',
+      answerEn: 'He proclaimed with crystalline faith: "Never! Indeed, with me is my Lord; He will guide me!" (Kalla! Inna ma\'iya Rabbee sayahdeen).'
+    },
+    {
+      questionUr: 'اللہ تعالیٰ نے فرعون کی ہلاکت بنی اسرائیل کو آنکھوں کے سامنے کیوں دکھائی؟',
+      answerUr: 'تاکہ ان کے دلوں سے فرعون کا صدیوں پرانا خوف اور رعب ہمیشہ کے لیے ختم ہو جائے، یقین کامل ہو اور وہ اللہ کی بے پایاں قدرت کا شکر ادا کریں۔',
+      questionEn: 'Why did Allah grant the Israelites the opportunity to witness the drowning of Pharaoh with their own eyes?',
+      answerEn: 'To permanently cure the trauma and fear ingrained by centuries of slavery, to confirm the tyrant\'s end, and to witness divine omnipotence.'
+    }
+  ],
+  '2:51': [
+    {
+      questionUr: 'حضرت موسیٰ علیہ السلام کوہِ طور پر کتنے عرصے کے لیے تشریف لے گئے تھے اور کیوں؟',
+      answerUr: 'چالیس (۴۰) راتوں کے لیے، تاکہ عبادت کریں اور اللہ تعالیٰ سے آسمانی کتاب (تورات) کے مقدس احکامات حاصل کریں۔',
+      questionEn: 'Why did Prophet Moses go to the mountain for forty nights?',
+      answerEn: 'To pray to Allah, fast, and receive the Holy Book (the Torah) with good rules and guidance for his people.'
+    },
+    {
+      questionUr: 'بچھڑے کی پوجا کو سب سے بڑا \'ظلم\' کیوں قرار دیا گیا؟',
+      answerUr: 'کیونکہ عبادت کا حق صرف اور صرف اکیلے اللہ تعالیٰ کا ہے، اس حق کو کسی بے جان بت یا سونے کے کھلونے کو دینا سب سے بڑی زیادتی اور ظلم ہے۔',
+      questionEn: 'Why was worshiping the golden calf called a great wrong?',
+      answerEn: 'Because only Allah made us and takes care of us. Praying to a silent gold statue is very wrong and ungrateful.'
+    }
+  ],
+  '2:52': [
+    {
+      questionUr: 'عربی لفظ \'عَفْو\' (معافی) کا اصل مفہوم کیا ہوتا ہے؟',
+      answerUr: 'کسی غلطی کے برے اثرات کو اس طرح مٹا دینا کہ اس کا کوئی نشان باقی نہ رہے اور انسان پر سے سزا کو ہٹا لینا۔',
+      questionEn: 'What does Allah\'s forgiveness (Afw) mean in simple words?',
+      answerEn: 'It means cleaning away a mistake completely, like wiping a whiteboard clean so it looks fresh and new.'
+    },
+    {
+      questionUr: 'اتنے بڑے گناہ کے بعد بھی اللہ تعالیٰ نے انہیں کیوں معاف فرمایا؟',
+      answerUr: 'تاکہ وہ اللہ تعالیٰ کی بے پایاں رحمت اور احسان کو پہچانیں، اور دل سے شکر گزار اور فرمانبردار بندے بن جائیں۔',
+      questionEn: 'Why did Allah forgive them after they felt sorry for their big mistake?',
+      answerEn: 'Because Allah is full of love and mercy, and He wanted them to feel thankful in their hearts and obey His good rules.'
+    }
+  ],
+  '2:53': [
+    {
+      questionUr: 'لفظ \'الْفُرْقَانَ\' کا کیا معنی ہے اور تورات کو فرقان کیوں کہا گیا؟',
+      answerUr: 'فرقان کا معنی ہے \'حق اور باطل میں فرق کرنے والی کسوٹی\'؛ کیونکہ تورات نے سچ اور جھوٹ، حلال اور حرام، اور نیکی اور برائی میں واضح فرق کر دیا۔',
+      questionEn: 'What does the word "Al-Furqan" mean?',
+      answerEn: 'It means a clear guide that shows the difference between right and wrong, just like a bright flashlight shines light in the dark.'
+    },
+    {
+      questionUr: 'اللہ تعالیٰ نے اپنے انبیاء پر آسمانی کتابیں کیوں نازل فرمائیں؟',
+      answerUr: 'تاکہ انسان زندگی کے غلط اور گمراہ راستوں پر بھٹکنے سے بچ جائے اور نیکی، امن اور جنت کے سیدھے راستے پر قائم رہے۔',
+      questionEn: 'Why does Allah send Holy Books like the Torah and the Quran?',
+      answerEn: 'To guide us like a map or compass so we do not get lost in life, and so we can live happily and safely.'
+    }
+  ],
+  '2:54': [
+    {
+      questionUr: 'حضرت موسیٰ علیہ السلام نے اپنی قوم سے کیوں فرمایا کہ "تم نے اپنی ہی جانوں پر ظلم کیا"؟',
+      answerUr: 'کیونکہ انسان کے گناہ سے اللہ کا کوئی نقصان نہیں ہوتا، بلکہ انسان کا اپنا ہی نقصان ہوتا ہے اور وہ اپنی روح کو آلودہ کر کے سزا کا مستحق بن جاتا ہے۔',
+      questionEn: 'Why did Moses tell his people: "You have hurt your own souls"?',
+      answerEn: 'Because when we do something bad, we cannot harm Allah at all. Sins only hurt the person who does them.'
+    },
+    {
+      questionUr: 'امتِ محمدیہ ﷺ کے لیے توبہ کا طریقہ پچھلی امتوں سے کتنا آسان اور رحیمانہ ہے؟',
+      answerUr: 'پہلے جان کی قربانی دینی پڑتی تھی، مگر حضور ﷺ کی امت کے لیے صرف دل کا سچا پچھتاوا، گناہ چھوڑنا اور آئندہ نہ کرنے کا ارادہ ہی اللہ کی مغفرت کے لیے کافی ہے۔',
+      questionEn: 'How is saying sorry to Allah easy and beautiful for Muslims today?',
+      answerEn: 'In Islam, you simply say sorry to Allah from your heart, feel regret, and try your best to do good deeds, and Allah forgives you.'
+    }
+  ],
+  '2:55': [
+    {
+      questionUr: 'بنی اسرائیل کے ستر (70) سرداروں نے کوہِ طور پر کیا گستاخانہ ضد کی تھی؟',
+      answerUr: 'انہوں نے کہا کہ جب تک ہم اللہ کو اپنی آنکھوں سے کھلم کھلا سامنے نہ دیکھ لیں، ہم موسیٰ کی بات پر ہرگز یقین نہیں کریں گے۔',
+      questionEn: 'What did the 70 leaders ask Moses on the mountain?',
+      answerEn: 'They proudly said they would never believe until they could see Allah with their own eyes in broad daylight.'
+    },
+    {
+      questionUr: 'انسان اس فانی دنیا میں اپنی آنکھوں سے اللہ تعالیٰ کو کیوں نہیں دیکھ سکتا؟',
+      answerUr: 'کیونکہ ہماری آنکھیں دنیا میں اتنی کمزور ہیں کہ وہ ایک سورج کی روشنی بھی نہیں سہہ سکتیں؛ اللہ کے لامحدود نور کا دیدار مومنوں کے لیے جنت کا سب سے بڑا انعام ہے۔',
+      questionEn: 'Why can human eyes not see Allah in this world?',
+      answerEn: 'Because our eyes are too weak to even look at the sun; seeing Allah\'s beautiful light is the greatest gift saved for Jannah (Paradise).'
+    }
+  ],
+  '2:56': [
+    {
+      questionUr: 'اللہ تعالیٰ نے ستر سرداروں کو بجلی سے مرنے کے بعد دوبارہ زندگی کیوں عطا فرمائی؟',
+      answerUr: 'حضرت موسیٰ علیہ السلام کی غمگین اور پرخلوص دعا کی برکت سے، اور تاکہ وہ اللہ کی بے پناہ رحمت اور قدرت کے شکر گزار بندے بن جائیں۔',
+      questionEn: 'Why did Allah bring the seventy leaders back to life after they died?',
+      answerEn: 'Because Prophet Moses prayed for them with caring tears, and Allah gave them a second chance to say thank you and be good believers.'
+    },
+    {
+      questionUr: 'ستر سرداروں کے دوبارہ زندہ ہونے سے قیامت کے دن کے بارے میں کیا یقین ملتا ہے؟',
+      answerUr: 'یہ واقعہ ثابت کرتا ہے کہ جس طرح اللہ نے ان ستر انسانوں کو ایک سیکنڈ میں زندہ کر دیا، اسی طرح قیامت کے دن تمام انسانوں کو دوبارہ زندہ کرنا اللہ کے لیے بالکل آسان ہے۔',
+      questionEn: 'What does this miracle teach us about the Day of Judgment?',
+      answerEn: 'It shows that waking up all people from their graves on the Day of Judgment is super easy for Allah, just like waking up from sleep.'
+    }
+  ],
+  '2:57': [
+    {
+      questionUr: 'میدانِ تیہ کے تپتے ہوئے صحرا میں اللہ تعالیٰ نے بنی اسرائیل پر کیا تین معجزاتی انعامات فرمائے؟',
+      answerUr: '۱. دھوپ سے بچانے کے لیے بادلوں کا ٹھنڈا سایہ، ۲. صبح کے وقت شہد جیسی میٹھی خوراک (مَن)، اور ۳. شام کو لذیذ بٹیر جیسے پرندے (سلویٰ)۔',
+      questionEn: 'What three miraculous gifts did Allah send down in the hot desert?',
+      answerEn: '1. Cool white clouds for shade, 2. Sweet honey dew called Manna every morning, and 3. Plump, gentle quail birds called Salwa every evening.'
+    },
+    {
+      questionUr: 'اللہ تعالیٰ کے فرمان "انہوں نے ہمارا کوئی نقصان نہیں کیا بلکہ اپنی ہی جانوں پر ظلم کیا" سے کیا سبق ملتا ہے؟',
+      answerUr: 'انسان کے گناہ یا نافرمانی سے اللہ کا کوئی نقصان نہیں ہوتا؛ بلکہ انسان خود ہی اپنی برکتیں کھو دیتا ہے اور اپنی روح کا نقصان کرتا ہے۔',
+      questionEn: 'What does it mean when Allah says: "They did not hurt Us, but only hurt themselves"?',
+      answerEn: 'When someone disobeys Allah, they cannot harm Allah at all; sins only bring sadness, loss of blessings, and harm to the person who commits them.'
+    }
+  ],
+  '2:58': [
+    {
+      questionUr: 'اللہ تعالیٰ نے بستی (بیت المقدس) میں داخل ہوتے وقت کن دو باتوں کا حکم دیا تھا؟',
+      answerUr: '۱. شہر کے دروازے میں غرور کے بجائے عاجزی سے سر جھکاتے ہوئے داخل ہونا، اور ۲. زبان سے استغفار کی دعا یعنی "حِطَّةٌ" کہنا۔',
+      questionEn: 'What two things did Allah ask the people to do when entering the city?',
+      answerEn: '1. Bow their heads humbly to Allah without showing off, and 2. Say the prayer "Hittah" to ask Allah to forgive their sins.'
+    },
+    {
+      questionUr: 'عربی لفظ "حِطَّةٌ" کا کیا مطلب ہے اور یہ ہمیں کیا سکھاتا ہے؟',
+      answerUr: 'اس کا مطلب ہے "اے اللہ! ہمارے گناہوں کے بوجھ کو جھاڑ دے اور معاف فرما دے"؛ یہ سکھاتا ہے کہ کامیابی اور فتح کے وقت انسان کو ہمیشہ عاجز اور شکر گزار رہنا چاہیے۔',
+      questionEn: 'What does the word "Hittah" mean, and what does it teach us?',
+      answerEn: 'It means "O Allah, drop away our heavy sins and forgive us!" It teaches us to stay humble and say sorry to Allah whenever we achieve success.'
+    }
+  ],
+  '2:59': [
+    {
+      questionUr: 'سرکش لوگوں نے اللہ کے حکم کا مذاق کیسے اڑایا تھا؟',
+      answerUr: 'وہ عاجزی سے سر جھکانے کے بجائے ہنستے ہوئے پیٹھ کے بل گھسٹ کر داخل ہوئے، اور \'حِطَّة\' (معافی) کے بجائے \'حِنْطَة\' (گیہوں/اناج) کہہ کر دعا کا مذاق اڑانے لگے۔',
+      questionEn: 'How did the disrespectful people make fun of Allah\'s command?',
+      answerEn: 'They crawled through the gate on their backs instead of bowing, and they mocked the prayer by changing "Hittah" (forgiveness) into "Hintah" (wheat grain).'
+    },
+    {
+      questionUr: 'اللہ کی باتوں اور احکامات کا مذاق اڑانے کا کیا برا انجام نکلا؟',
+      answerUr: 'ان پر آسمان سے طاعون کی بیماری کا عذاب نازل ہوا جس سے سرکش لوگ ہلاک ہو گئے؛ دین کی باتوں کا تمسخر اڑانا انسان کو برباد کر دیتا ہے۔',
+      questionEn: 'What happened to them because they made fun of the prayer?',
+      answerEn: 'A sudden sickness (plague) came upon the wrongdoers from the sky; making jokes about prayers and divine rules brings great harm and loss.'
+    }
+  ],
+  '2:60': [
+    {
+      questionUr: 'صحرا میں جب پانی ختم ہو گیا تو اللہ نے حضرت موسیٰ علیہ السلام کے ذریعے کیا عظیم معجزہ ظاہر فرمایا؟',
+      answerUr: 'حضرت موسیٰؑ نے اللہ کے حکم سے اپنی لاٹھی ٹھوس پتھر پر ماری، جس سے میٹھے پانی کے بارہ (۱۲) چشمے ابل پڑے!',
+      questionEn: 'What amazing miracle happened when Prophet Moses prayed for water?',
+      answerEn: 'Allah told Moses to tap a hard rock with his wooden staff, and twelve (12) cool springs of sweet water burst right out of the solid stone!'
+    },
+    {
+      questionUr: 'پتھر سے بارہ (۱۲) چشمے کیوں جاری فرمائے گئے؟',
+      answerUr: 'کیونکہ بنی اسرائیل کے بارہ قبائل تھے، اللہ نے ہر قبیلے کو اپنا الگ چشمہ دیا تاکہ پانی پینے پر کوئی دھکم پیل یا لڑائی جھگڑا نہ ہو۔',
+      questionEn: 'Why were there twelve springs instead of just one?',
+      answerEn: 'Because there were twelve family tribes; having a separate spring for each tribe made sure that everyone could drink peacefully without fighting or pushing.'
+    }
+  ],
+  '2:61': [
+    {
+      questionUr: 'بنی اسرائیل نے من و سلویٰ کی آسمانی نعمت کے مقابلے میں کس چیز کا مطالبہ کیا؟',
+      answerUr: 'انہوں نے بے صبری اور ناشکری کر کے کہا کہ وہ ایک ہی کھانے سے اکتا گئے ہیں، اور انہوں نے زمین کی عام سبزیاں، ککڑی، لہسن، دال اور پیاز مانگے۔',
+      questionEn: 'What food did the Israelites demand instead of the heavenly Manna and Salwa?',
+      answerEn: 'They complained that they were tired of uniform food and demanded earthly vegetables: cucumbers, garlic, lentils, and onions.'
+    },
+    {
+      questionUr: 'حضرت موسیٰ علیہ السلام کے ارشاد "أَتَسْتَبْدِلُونَ الَّذِي هُوَ أَدْنَىٰ بِالَّذِي هُوَ خَيْرٌ" سے کیا سبق ملتا ہے؟',
+      answerUr: 'یہ کہ اللہ کی دی ہوئی بابرکت اور پاکیزہ نعمتوں کی ہمیشہ قدر کرنی چاہیے اور نازیبا فرمائشوں یا ناشکری سے بچنا چاہیے۔',
+      questionEn: 'What lesson do we learn from Moses asking: "Would you exchange what is better for what is ordinary?"',
+      answerEn: 'We learn to cherish and thank Allah for pure blessings, and never complain or trade precious gifts for worldly whims.'
+    }
+  ],
+  '2:62': [
+    {
+      questionUr: 'آیت ۶۲ کے مطابق اللہ تعالیٰ کے ہاں حقیقی نجات اور کامیابی کا کیا معیار ہے؟',
+      answerUr: 'صرف خاندانی نام یا نسل نہیں، بلکہ اللہ تعالیٰ اور یومِ آخرت پر سچا ایمان اور اچھے نیک اعمال اختیار کرنا۔',
+      questionEn: 'What is the true key to salvation according to Ayah 62?',
+      answerEn: 'Sincere faith in Allah, true belief in the Last Day, and doing good righteous deeds—not empty titles or tribal labels.'
+    },
+    {
+      questionUr: '"لَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ" کی کیا خوشخبری ہے؟',
+      answerUr: 'سچے مؤمنوں کو نہ مستقبل کا کوئی خوف اور پریشانی ہوگی اور نہ وہ اپنے ماضی پر غمگین ہوں گے، بلکہ وہ اللہ کی حفاظت میں ہمیشہ مسرور رہیں گے۔',
+      questionEn: 'What beautiful promise is in the words: "No fear shall be upon them, nor will they grieve"?',
+      answerEn: 'True believers will have complete peace and security under Allah\'s care, with no fear of the future and no sorrow about the past.'
+    }
+  ],
+  '2:63': [
+    {
+      questionUr: 'اللہ تعالیٰ نے طور کے پہاڑ کو بنی اسرائیل کے سروں پر کیوں بلند فرمایا تھا؟',
+      answerUr: 'تاکہ وہ اپنی سستی چھوڑیں اور تورات کے الٰہی احکام کو پوری سنجیدگی، عظمت اور پختہ عہد کے ساتھ قبول کریں۔',
+      questionEn: 'Why did Allah raise Mount Sinai above the Israelites?',
+      answerEn: 'To show them His great majesty and prompt them to take the holy Torah and its guidance with deep commitment and seriousness.'
+    },
+    {
+      questionUr: '"خُذُوا مَا آتَيْنَاكُم بِقُوَّةٍ" پر ہم اپنی روزمرہ زندگی میں کیسے عمل کر سکتے ہیں؟',
+      answerUr: 'نماز، تلاوت اور اچھے کاموں میں سستی کے بجائے ہمیشہ خوش دلی، چستی اور پختہ عزم کے ساتھ عمل کر کے۔',
+      questionEn: 'How can we practice "Hold firmly to what We gave you with strength"?',
+      answerEn: 'By fulfilling our prayers and good deeds with energy, focus, and joy, without laziness or delay.'
+    }
+  ],
+  '2:64': [
+    {
+      questionUr: 'بنی اسرائیل کی بار بار عہد شکنی کے باوجود اللہ تعالیٰ نے ان کو فوری عذاب سے کیوں بچایا؟',
+      answerUr: 'اللہ تعالیٰ کے خصوصی فضل اور بے پایاں رحمت کی وجہ سے، تاکہ انہیں سچی توبہ اور اصلاح کا موقع ملے۔',
+      questionEn: 'Why were they not wiped out immediately when they broke their covenant?',
+      answerEn: 'Because of Allah\'s immense grace and mercy, granting them forbearance and time to repent and correct themselves.'
+    },
+    {
+      questionUr: 'حقیقی خسارہ پانے والا (خاسر) کون ہوتا ہے؟',
+      answerUr: 'وہ جو اللہ کی نافرمانی کر کے دنیا کا حقیقی سکون اور آخرت میں جنت کی دائمی نعمتوں کو کھو دے۔',
+      questionEn: 'Who is the true loser (Khasir)?',
+      answerEn: 'Anyone who disobeys Allah and loses His divine love and the eternal joy of Paradise.'
+    }
+  ],
+  '2:65': [
+    {
+      questionUr: 'اصحابِ سبت (ہفتے والوں) نے اللہ کے حکم کو دھوکہ دینے کی کیا چال چلی تھی؟',
+      answerUr: 'ہفتے کے دن شکار منع تھا، انہوں نے گڑھے کھود کر مچھلیاں پھنسائیں اور اتوار کو پکڑ کر حیلہ کیا کہ ہم نے ہفتے کو شکار نہیں کیا۔',
+      questionEn: 'How did the Sabbath-breakers try to cheat the divine command?',
+      answerEn: 'They were forbidden to fish on Saturdays, so they trapped fish in ditches on Saturday and scooped them out on Sunday, pretending they did not fish on the Sabbath.'
+    },
+    {
+      questionUr: 'اصحابِ سبت کے واقعہ سے ہمیں کیا اہم اخلاقی سبق ملتا ہے؟',
+      answerUr: 'اللہ ہر چھپی اور کھلی بات کو جانتا ہے؛ دین کے احکام میں چالاکیاں اور حیلے بہانے بنانا ہلاکت کا باعث ہوتا ہے، اس لیے ہمیشہ سچائی اور دیانت داری اختیار کرنی چاہیے۔',
+      questionEn: 'What vital life lesson does the story of the Sabbath-breakers teach us?',
+      answerEn: 'Allah knows every secret intention. Trying to find sneaky loopholes or tricks around right and wrong brings destruction; always be truthful, sincere, and upright.'
+    }
+  ],
   // Para 2 Key Verses Q&A
   '2:142': [
     {

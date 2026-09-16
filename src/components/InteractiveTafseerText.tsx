@@ -14,6 +14,20 @@ export const InteractiveTafseerText: React.FC<InteractiveTafseerTextProps> = ({ 
     setRevealedQuestions((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
 
+  const renderInlineFormatted = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, pIdx) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return (
+          <strong key={pIdx} className="font-bold text-[#204025]">
+            {part.slice(2, -2)}
+          </strong>
+        );
+      }
+      return part;
+    });
+  };
+
   const renderFormattedChunk = (chunk: string, keyPrefix: string) => {
     const lines = chunk.split('\n');
     return lines.map((line, lIdx) => {
@@ -21,29 +35,55 @@ export const InteractiveTafseerText: React.FC<InteractiveTafseerTextProps> = ({ 
       if (!trimmed) {
         return <div key={`${keyPrefix}-${lIdx}`} className="h-2" />;
       }
+      if (trimmed === '---') {
+        return <hr key={`${keyPrefix}-${lIdx}`} className="my-3 border-t border-[#E5E0D0]/80" />;
+      }
+      if (trimmed.startsWith('# ')) {
+        return (
+          <h2
+            key={`${keyPrefix}-${lIdx}`}
+            className="text-lg sm:text-xl font-extrabold text-[#204025] my-3 pb-1.5 border-b-2 border-[#204025]/20 flex items-center gap-2"
+          >
+            {renderInlineFormatted(trimmed.replace(/^#\s+/, ''))}
+          </h2>
+        );
+      }
+      if (trimmed.startsWith('## ')) {
+        return (
+          <h3
+            key={`${keyPrefix}-${lIdx}`}
+            className="text-base sm:text-lg font-bold text-[#7D6B4B] mt-4 mb-2 flex items-center gap-1.5"
+          >
+            {renderInlineFormatted(trimmed.replace(/^##\s+/, ''))}
+          </h3>
+        );
+      }
       if (trimmed.startsWith('### ')) {
         return (
           <h4
             key={`${keyPrefix}-${lIdx}`}
-            className="text-base sm:text-lg font-bold text-[#7D6B4B] my-2.5 pb-1 border-b border-[#E5E0D0]/60"
+            className="text-base font-bold text-[#2E5A36] my-2 pb-0.5"
           >
-            {trimmed.replace(/^###\s+/, '')}
+            {renderInlineFormatted(trimmed.replace(/^###\s+/, ''))}
           </h4>
         );
       }
-      const parts = line.split(/(\*\*.*?\*\*)/g);
+      if (trimmed.startsWith('👉 ')) {
+        return (
+          <div
+            key={`${keyPrefix}-${lIdx}`}
+            className="my-2 p-2.5 sm:p-3 rounded-xl bg-[#EBF3EC] border border-[#A3C9A8]/70 text-[#204025] font-bold text-sm sm:text-base flex items-start gap-2 shadow-2xs"
+          >
+            <span className="text-lg shrink-0">👉</span>
+            <div className="flex-1 leading-relaxed">
+              {renderInlineFormatted(trimmed.replace(/^👉\s+/, ''))}
+            </div>
+          </div>
+        );
+      }
       return (
         <p key={`${keyPrefix}-${lIdx}`} className="leading-relaxed my-1.5">
-          {parts.map((part, pIdx) => {
-            if (part.startsWith('**') && part.endsWith('**')) {
-              return (
-                <strong key={pIdx} className="font-bold text-[#204025]">
-                  {part.slice(2, -2)}
-                </strong>
-              );
-            }
-            return part;
-          })}
+          {renderInlineFormatted(line)}
         </p>
       );
     });
